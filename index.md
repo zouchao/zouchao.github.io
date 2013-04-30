@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title : zouchao | 热爱PHP，RUBY，专注于web开发. 一个忠实于内心的平凡人
+tagline: 热爱PHP，RUBY，专注于web开发. 一个忠实于内心的平凡人
 ---
 {% include JB/setup %}
 
