@@ -15,7 +15,11 @@ footer {
     margin-top: -40px;
 }
 .nav>a {
-     margin:  0px 20px 0px 0px;
+  margin: 0px 10px 0px 0px;
+  display: inline-block;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 0px 8px;
 }
 html {
     font-size: 100%;
