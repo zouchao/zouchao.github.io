@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Jekyll 和 GitHub Pages</title>
+  <meta name="author" content="Tao Zhang"/>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+  <meta name="apple-itunes-app" content="app-id=577675173">
+  <link rel="stylesheet" type="text/css" href="/assets/css/effector-wide.css">
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS for Tao" href="/feed.xml">
+</head>
+<body onload="prettyPrint()">
+
+  <div class="container">
+      <h1 class="sitename">Tao</h1>
+      <div class="nav">
+<a href="/">主页</a>
+<a href="/archive/">存档</a>
+<a href="/links">链接</a>
+<a href="/search">搜索</a>
+<a href="/apps">游戏</a>
+</div>
+<div class="wrapper">
+<article>
+<h1><a href="http://ztpala.com/2011/09/12/jekyll-and-github-pages">Jekyll 和 GitHub Pages</a> <small class="pull-right">Sep 12, 2011</small></h1>
+<h2>简介</h2>
+
+<p>现在这个blog托管在github上，由<a href="https://github.com/mojombo/jekyll">Jekyll</a>生成。Jekyll最大的好处是快，无需数据库，所有页面均为静态。工作流程如下：</p>
+
+<ol>
+<li><p>本地安装<a href="https://github.com/mojombo/jekyll">Jekyll</a>，然后在硬盘上生成blog站点。比如放在<a href="http://db.tt/H7ei7k2">Dropbox</a>里，双重保险。</p></li>
+<li><p>在<a href="http://pages.github.com">GitHub Pages</a>上创建自己的页面，然后将步骤1里创建的站点上传到这个页面对应的仓库。那么每次你在本地修改了blog的源文件，包括写了新文章，或者修改了某个页面，只要用<code>git push</code>到github，那么你的blog会跟着自动更新。非常方便。也就是说，完全可以只用终端来操作这个blog。当然，如果你不喜欢*.github.com这样的域名的话，也可以绑定自己的。只需要在你的blog文件夹添加一个写着你的域名的名为CNAME的文件，然后再修改域名的DNS设置就可以了。</p></li>
+</ol>
+
+
+<h2>尝试</h2>
+
+<p>如果你已经有了github账号，可以<a href="http://ztpala.com/2012/01/12/zero-to-hosted-jekyll-blog-in-3-minutes/">3分钟建立一个Jekyll Blog</a>。</p>
+
+<h2>特点</h2>
+
+<p>因为生成的blog全为静态页面，所以和WordPress等blog系统相比有以下几点不同：</p>
+
+<ol>
+<li><p>不支持原生评论系统，你可以选择<a href="http://disqus.com">Disqus</a>作为评论系统。</p></li>
+<li><p>对服务器没有数据库和PHP上的要求。虽然使用<a href="https://github.com/mojombo/jekyll">Jekyll</a>需要Ruby、git等，但生成的blog文件则全是html，你可以把它打包上传到你自己的服务器。甚至你想只在自己电脑上看看，那么运行一下<code>jekyll --server</code>，然后在浏览器上访问http://localhost:4000就可以了。</p></li>
+<li><p>速度快。维护方便。</p></li>
+<li><p>写新文章时可以随便找个编辑器，Vim，textedit什么的都可以，模版语言是Markdown，简单清爽。</p></li>
+<li><p>可以用git来管理整个blog的进化历程。</p></li>
+</ol>
+
+
+<h2>搬家</h2>
+
+<p>Jekyll的<a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">Wiki</a>上给了从WordPress，Drupal，Blogger，Posterous，Tumblr等网站的搬家方法，另外在github上也有很多网友自己写的搬家工具。</p>
+
+<h2>参考</h2>
+
+<p>Jekyll完全是开源的，托管到GitHub Pages上的站点也完全是开源的，<a href="https://github.com/mojombo/jekyll/wiki/Sites">这里</a>有个不完全站点列表，基本上都可以看到源代码。</p>
+
+<p><a href="https://github.com/imathis/octopress">octopress</a>是Jekyll的改进版，加入了很多更加高级的功能及更漂亮的模版文件。你可以去它的<a href="http://octopress.org/docs/">官网</a>看看效果。</p>
+
+<h2>历史</h2>
+
+<p>至于Jekyll是怎么发展起来的，可以参考它的作者Tom Preston-Werner（同时也是github的Cofounder）的文章：<a href="http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html">Blogging Like a Hacker</a></p>
+
+</article>
+<div>
+
+    <a class="label" href="/tag/#Blog">Blog</a>
+
+    <a class="label" href="/tag/#Jekyll">Jekyll</a>
+
+    <a class="label" href="/tag/#GitHub">GitHub</a>
+</div>
+<hr>
+<ul class="pager">
+    
+    <li class="previous">
+    <a href="/2011/08/16/brown-belt">&larr; 茶带</a>
+    </li>
+     <small>按 j 或 k 翻页</small>
+     
+    <li class="next">
+    <a href="/2011/09/13/back-from-bike-riding" class="pull-right">Back From Bike Riding &rarr;</a>
+    </li>
+       
+</ul>
+<hr>
+<div id="disqus_thread"></div>
+</div>
+<script type="text/javascript">
+    var disqus_shortname = 'ztpala';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<footer>
+  <p><small><a href="https://github.com/pala/pala.github.com">Designed</a> by <a href="http://ztpala.com">Tao Zhang</a> | Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>, <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://pages.github.com/">GitHub Pages</a> | 版权声明：<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0</a> | <span class="label label-success">2013-05-01</span></small></p>
+  <p><small><a target="_blank" href="http://www.amazon.com/b?_encoding=UTF8&camp=1789&creative=9325&linkCode=ur2&node=172282&site-redirect=&tag=palaapp-20">Shop at Amazon.com and support this blog!</a></small></p>
+  <!-- inspired by http://effectortheme.tumblr.com/ -->
+</footer>
+</div>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/google-code-prettify/prettify.js"></script>
+
+<script>
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow key code
+            
+        url = '/2011/08/16/brown-belt';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow key code
+            
+        url = '/2011/09/13/back-from-bike-riding';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5531632-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
+</body>
+</html>
+

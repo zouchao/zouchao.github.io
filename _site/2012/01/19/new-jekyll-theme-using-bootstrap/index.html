@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>用Bootstrap设计blog界面</title>
+  <meta name="author" content="Tao Zhang"/>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+  <meta name="apple-itunes-app" content="app-id=577675173">
+  <link rel="stylesheet" type="text/css" href="/assets/css/effector-wide.css">
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS for Tao" href="/feed.xml">
+</head>
+<body onload="prettyPrint()">
+
+  <div class="container">
+      <h1 class="sitename">Tao</h1>
+      <div class="nav">
+<a href="/">主页</a>
+<a href="/archive/">存档</a>
+<a href="/links">链接</a>
+<a href="/search">搜索</a>
+<a href="/apps">游戏</a>
+</div>
+<div class="wrapper">
+<article>
+<h1><a href="http://ztpala.com/2012/01/19/new-jekyll-theme-using-bootstrap">用Bootstrap设计blog界面</a> <small class="pull-right">Jan 19, 2012</small></h1>
+<p><a href="http://twitter.github.com/bootstrap/">Bootstrap</a>是<a href="https://twitter.com">Twitter</a>设计并开源的用于开发网页与网络程序的工具套件。用它可以方便快捷地设计各种很漂亮的网页元素，比如字体，表单，按钮导航等。</p>
+
+<p>因为多数<a href="https://github.com/mojombo/jekyll">Jekyll</a>用户都是先fork别人的一套主题，然后根据自己需要再修改。但如果不懂CSS的话，比如我，这个工作是相当头疼和漫长的。这时，强大的Bootstrap就成了Jekyll在界面设计上非常完美的补充。</p>
+
+<p>Jekyll本身的理念是快速方便的用自己喜欢的编辑器发布内容，用Git管理整个站点。Bootstrap则用类似的理念在界面设计上对网站建设提供了强大的支持，把上面说到的修改主题的头疼工作简化到不可思议的程度。</p>
+
+<p>Bootstrap用起来超级简单，只需要在你的网页里包含如下一句：</p>
+
+<pre class="prettyprint">
+&lt;link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.min.css"&gt;
+</pre>
+
+
+<p>然后在HTML元素里加上合适的class名字就可以了，比如下面各种标签：</p>
+
+<p>
+<span class="label">Default</span><span class="label label-success">Success</span>
+<span class="label label-warning">Warning</span> 
+<span class="label label-important">Important</span> 
+<span class="label label-info">Info</span>
+</p>
+
+
+<p>另外Bootstrap支持<a href="http://lesscss.org/">LESS</a>，一种CSS预处理工具，可以把上面已经很简单的工作再简化。</p>
+
+<p>比如在less文件里有如下定义：</p>
+
+<pre class="prettyprint">
+@blue:              #049CDB;
+@green:             #46a546;
+@red:               #dc322f;
+@yellow:            #ffc40d;
+@linkColor:         @blue
+@linkColorHover:    darken(@linkColor, 15);
+</pre>
+
+
+<p>我想就算完全不懂CSS也能很容易的理解和修改。(个人理解LESS就像是CSS的CSS，不知道对不对)</p>
+
+<p>Bootstrap里给了三个挺漂亮的实例，你可以直接拿来用，尤其是<a href="http://twitter.github.com/bootstrap/examples/container-app.html">这个</a>固定宽度并居中的页面，风格上和twitter主页一样，顶部有个黑色导航条。</p>
+
+<p><img src="https://lh3.googleusercontent.com/-QO0oNYoziVA/TxjKcvnQvfI/AAAAAAABixY/sTK3w74GnfU/s800/Screen%252520Shot%2525202012-01-19%252520at%2525208.58.15%252520PM.png" alt="" /></p>
+
+<p>Jekyll和Bootstrap给了用户很大的自由去定义自己的内容，不喜欢黑色导航条？没关系，几秒钟变本站现在用的红色，只要把导航条改成 <code>nav pills</code> 类，然后把上面less文件里的 <code>@linkColor</code> 从 <code>@blue</code> 改成 <code>@red</code>即可。</p>
+
+<p>除了HTML样式上的定制，Bootstrap还提供了十几种jQuery插件，比如下拉菜单，见本文右下角的分享，比如合拢与展开列表，见本站的存档，等等等等。</p>
+
+<p><span class="label label-info">Notice</span> 目前Bootstrap的开发已经到了2.0版，但它的master branch和主页里仍旧是1.4.0版，如果你想试用2.0版，请看它的<a href="https://github.com/twitter/bootstrap/tree/2.0-wip">2.0-wip</a>这个分支。</p>
+
+</article>
+<div>
+
+    <a class="label" href="/tag/#Jekyll">Jekyll</a>
+
+    <a class="label" href="/tag/#Blog">Blog</a>
+
+    <a class="label" href="/tag/#Bootstrap">Bootstrap</a>
+
+    <a class="label" href="/tag/#设计">设计</a>
+</div>
+<hr>
+<ul class="pager">
+    
+    <li class="previous">
+    <a href="/2012/01/18/github-project-pages">&larr; GitHub Project Pages</a>
+    </li>
+     <small>按 j 或 k 翻页</small>
+     
+    <li class="next">
+    <a href="/2012/01/20/git-submodule" class="pull-right">Git Submodule &rarr;</a>
+    </li>
+       
+</ul>
+<hr>
+<div id="disqus_thread"></div>
+</div>
+<script type="text/javascript">
+    var disqus_shortname = 'ztpala';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<footer>
+  <p><small><a href="https://github.com/pala/pala.github.com">Designed</a> by <a href="http://ztpala.com">Tao Zhang</a> | Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>, <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://pages.github.com/">GitHub Pages</a> | 版权声明：<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0</a> | <span class="label label-success">2013-05-01</span></small></p>
+  <p><small><a target="_blank" href="http://www.amazon.com/b?_encoding=UTF8&camp=1789&creative=9325&linkCode=ur2&node=172282&site-redirect=&tag=palaapp-20">Shop at Amazon.com and support this blog!</a></small></p>
+  <!-- inspired by http://effectortheme.tumblr.com/ -->
+</footer>
+</div>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/google-code-prettify/prettify.js"></script>
+
+<script>
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow key code
+            
+        url = '/2012/01/18/github-project-pages';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow key code
+            
+        url = '/2012/01/20/git-submodule';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5531632-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
+</body>
+</html>
+
