@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>zouchao | 3分钟建立一个Jekyll Blog-</title>
+  <meta name="author" content="Sean.Zou"/>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+  <meta name="apple-itunes-app" content="app-id=577675173">
+  <link rel="stylesheet" type="text/css" href="/assets/css/effector-wide.css">
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS for zouchao" href="/feed.xml">
+</head>
+<body onload="prettyPrint()">
+  <div class="container">
+    <div class="header"> 
+      <div class="header-cnt">
+        <h1 class="logo">@zouchao</h1>
+        <small>  </small>
+      </div>
+      <div class="nav">
+        <a href="/">Home</a>
+        <a href="/archive/">存档</a>
+        <a href="/links">链接</a>
+        <a href="/search">搜索</a>
+        <a href="/apps">游戏</a>
+        <a href="/about.html">About Me</a>
+      </div>
+    </div>
+    <div class="wrapper">
+<article>
+<h1><a href="http://zouchao.net/2012/01/12/zero-to-hosted-jekyll-blog-in-3-minutes">3分钟建立一个Jekyll Blog</a> <small class="pull-right">Jan 12, 2012</small></h1>
+<p>如果你正考虑用<a href="https://github.com/mojombo/jekyll">Jekyll</a>作为Blog系统，那么可以参考一下<a href="http://jekyllbootstrap.com/">Jekyll-Bootstrap</a>，上面有从入门到精通的教程。如果你想快速的建一个站看看，那么下面几步可以让你在三分钟里建立一个运行在github上的blog，前提是你已经有了<a href="https://github.com/">github</a>账号和<a href="http://help.github.com/mac-set-up-git/">配置好了git</a>。</p>
+
+<h2>一. 建立一个新的github repository</h2>
+
+<p>名字为<em>USERNAME</em>.github.io, <em>USERNAME</em>为你的github用户名</p>
+
+<h2>二. 克隆一个站点</h2>
+
+<ul>
+<li><p>选择一，使用本站：</p>
+
+<p>  <code>$ git clone https://github.com/pala/pala.github.com.git USERNAME.github.io</code></p>
+
+<p>  <span class="label label-info">注</span> 请将<code>_posts</code>文件夹里的文章清空</p></li>
+<li><p>选择二，使用Jekyll-Bootstrap：</p>
+
+<p>  <code>$ git clone https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.io</code></p></li>
+</ul>
+
+
+<p>接着push到github</p>
+
+<pre class="prettyprint">
+$ cd USERNAME.github.io
+$ git remote set-url origin git@github.com:USERNAME/USERNAME.github.io.git
+$ git push origin master
+</pre>
+
+
+<h2>三. 额，没有三了</h2>
+
+<p>等一会去访问一下http://USERNAME.github.io，github已经为你生成了一个站点。</p>
+
+</article>
+<div>
+
+    <a class="label" href="/tag/#Blog">Blog</a>
+
+    <a class="label" href="/tag/#Jekyll">Jekyll</a>
+
+    <a class="label" href="/tag/#Git">Git</a>
+
+    <a class="label" href="/tag/#GitHub">GitHub</a>
+</div>
+<hr>
+<ul class="pager">
+    
+    <li class="previous">
+    <a href="/2012/01/09/2">&larr; 2</a>
+    </li>
+     <small>按 j 或 k 翻页</small>
+     
+    <li class="next">
+    <a href="/2012/01/15/ios-5-tech-talk-new-york" class="pull-right">纽约行 &rarr;</a>
+    </li>
+       
+</ul>
+<hr>
+<div id="disqus_thread"></div>
+</div>
+<script type="text/javascript">
+    var disqus_shortname = 'zouchao';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+    <footer>
+    <p>
+      &copy;  2012.
+      with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+      and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+    </p>
+    </footer>
+  </div>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/google-code-prettify/prettify.js"></script>
+  
+  <script>
+  $(function(){
+    $(document).keydown(function(e) {
+      var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow key code
+            
+        url = '/2012/01/09/2';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow key code
+            
+        url = '/2012/01/15/ios-5-tech-talk-new-york';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+    });
+  })
+  </script>
+  
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-5531632-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
+</body>
+</html>
+

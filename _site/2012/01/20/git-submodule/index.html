@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>zouchao | Git Submodule-</title>
+  <meta name="author" content="Sean.Zou"/>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+  <meta name="apple-itunes-app" content="app-id=577675173">
+  <link rel="stylesheet" type="text/css" href="/assets/css/effector-wide.css">
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS for zouchao" href="/feed.xml">
+</head>
+<body onload="prettyPrint()">
+  <div class="container">
+    <div class="header"> 
+      <div class="header-cnt">
+        <h1 class="logo">@zouchao</h1>
+        <small>  </small>
+      </div>
+      <div class="nav">
+        <a href="/">Home</a>
+        <a href="/archive/">存档</a>
+        <a href="/links">链接</a>
+        <a href="/search">搜索</a>
+        <a href="/apps">游戏</a>
+        <a href="/about.html">About Me</a>
+      </div>
+    </div>
+    <div class="wrapper">
+<article>
+<h1><a href="http://zouchao.net/2012/01/20/git-submodule">Git Submodule</a> <small class="pull-right">Jan 20, 2012</small></h1>
+<p>现在用git管理的project里经常会用到其他同样用git管理的project，那么怎么在一个项目里管理两者呢。这就需要用到git submodule。</p>
+
+<p>简单来说submodule就像其名字一样，把一个git project作为一个模块加入到另一个里面。这里假设我有一个project叫作pala，它要用到另外一个托管在github的project叫作subpala，那么我可以在pala的根目录下运行：</p>
+
+<p><code>git submodule add git://github.com/pala/subpala.git subpala</code></p>
+
+<p>接着查看git的状态：</p>
+
+<pre class="prettyprint linenums">
+$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#      new file:   .gitmodules
+#      new file:   subpala
+</pre>
+
+
+<p>这时subpala已经被clone到pala的目录下。目录名为subpala。</p>
+
+<p><code>.gitmodules</code> 文件里存储这所有submodule的信息：</p>
+
+<pre class="prettyprint linenums">
+$ cat .gitmodules 
+[submodule "subpala"]
+      path = subpala
+      url = git://github.com/pala/subpala.git
+</pre>
+
+
+<p>虽然subpala是pala的子目录，但pala的git并不会去追踪subpala里具体文件的情况而只会记录subpala这个项目的commit。如果你去pala的github页面看，subpala作为一个超链接链接到自己的github页面。</p>
+
+<p>如果要submodule使用特定的branch，需要到submodule的目录运行：</p>
+
+<p><code>git checkout -b aBranch origin/aBranch</code></p>
+
+<p>这样，你就可以在subpala里用git单独管理，虽然它是另一个git项目的子目录。</p>
+
+<h2>删除submodule</h2>
+
+<ol>
+<li>Delete the relevant section from the .gitmodules file.</li>
+<li>Delete the relevant section from .git/config.</li>
+<li>Run git rm --cached path_to_submodule (no trailing slash).</li>
+<li>Commit and delete the now untracked submodule files.</li>
+</ol>
+
+
+<p><a href="http://stackoverflow.com/a/1260982/100031">via</a></p>
+
+<p><a href="http://progit.org/book/ch6-6.html">Pro Git的详细教程</a></p>
+
+</article>
+<div>
+
+    <a class="label" href="/tag/#Git">Git</a>
+
+    <a class="label" href="/tag/#GitHub">GitHub</a>
+</div>
+<hr>
+<ul class="pager">
+    
+    <li class="previous">
+    <a href="/2012/01/19/new-jekyll-theme-using-bootstrap">&larr; 用Bootstrap设计blog界面</a>
+    </li>
+     <small>按 j 或 k 翻页</small>
+     
+    <li class="next">
+    <a href="/2012/01/23/happy-chinese-new-year" class="pull-right">龍年快樂 &rarr;</a>
+    </li>
+       
+</ul>
+<hr>
+<div id="disqus_thread"></div>
+</div>
+<script type="text/javascript">
+    var disqus_shortname = 'zouchao';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+    <footer>
+    <p>
+      &copy;  2012.
+      with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+      and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+    </p>
+    </footer>
+  </div>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/google-code-prettify/prettify.js"></script>
+  
+  <script>
+  $(function(){
+    $(document).keydown(function(e) {
+      var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow key code
+            
+        url = '/2012/01/19/new-jekyll-theme-using-bootstrap';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow key code
+            
+        url = '/2012/01/23/happy-chinese-new-year';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+    });
+  })
+  </script>
+  
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-5531632-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
+</body>
+</html>
+

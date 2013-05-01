@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
-  <title>{{ page.title }}</title>
+  <title>{{ site.title }} | {{ page.title }}-{{ page.tagline }}</title>
   <meta name="author" content="{{ site.author }}"/>
   <meta name="viewport" content="width=device-width; initial-scale=1.0">
   <meta name="apple-itunes-app" content="app-id=577675173">
@@ -11,30 +11,37 @@
   <link rel="alternate" type="application/rss+xml" title="RSS for {{ site.title }}" href="/feed.xml">
 </head>
 <body onload="prettyPrint()">
-
   <div class="container">
-      <h1 class="sitename">Tao</h1>
+    <div class="header"> 
+      <div class="header-cnt">
+        <h1 class="logo">{{ site.logo }}</h1>
+        <small> {{ page.tagline }} </small>
+      </div>
       <div class="nav">
-<a href="/">主页</a>
-<a href="/archive/">存档</a>
-<a href="/links">链接</a>
-<a href="/search">搜索</a>
-<a href="/apps">游戏</a>
-</div>
-{{ content }}
-<footer>
-  <p><small><a href="https://github.com/pala/pala.github.com">Designed</a> by <a href="http://ztpala.com">Tao Zhang</a> | Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>, <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://pages.github.com/">GitHub Pages</a> | 版权声明：<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0</a> | <span class="label label-success">{{site.time | date:"%Y-%m-%d"}}</span></small></p>
-  <p><small><a target="_blank" href="http://www.amazon.com/b?_encoding=UTF8&camp=1789&creative=9325&linkCode=ur2&node=172282&site-redirect=&tag=palaapp-20">Shop at Amazon.com and support this blog!</a></small></p>
-  <!-- inspired by http://effectortheme.tumblr.com/ -->
-</footer>
-</div>
-<script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/google-code-prettify/prettify.js"></script>
-{% if page.url != "/" %}
-<script>
-$(function(){
-  $(document).keydown(function(e) {
-    var url = false;
+        <a href="/">Home</a>
+        <a href="/archive/">存档</a>
+        <a href="/links">链接</a>
+        <a href="/search">搜索</a>
+        <a href="/apps">游戏</a>
+        <a href="/about.html">About Me</a>
+      </div>
+    </div>
+    {{ content }}
+    <footer>
+    <p>
+      &copy; {{ site.author.name }} 2012.
+      with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+      and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+    </p>
+    </footer>
+  </div>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/google-code-prettify/prettify.js"></script>
+  {% if page.url != "/" %}
+  <script>
+  $(function(){
+    $(document).keydown(function(e) {
+      var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow key code
             {% if page.previous %}
         url = '{{page.previous.url}}';
@@ -48,19 +55,19 @@ $(function(){
         if (url) {
             window.location = url;
         }
-  });
-})
-</script>
-{% endif %}
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', '{{site:googleAnalyticsID}}']);
-_gaq.push(['_trackPageview']);
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+    });
+  })
   </script>
+  {% endif %}
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '{{site:googleAnalyticsID}}']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
 </body>
 </html>
