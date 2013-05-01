@@ -52,7 +52,8 @@ body {
     color: #555;
 }
 a {
-    color: #F95B1F;
+    color: #2f3133;
+    font-weight:bold;
     text-decoration: none;
 }
 a:hover {
@@ -60,7 +61,7 @@ a:hover {
     text-decoration: none;
 }
 a.label:hover {
-    color: #fff;
+    color: red;
     background-color: #F95B1F;
 }
 p a {
