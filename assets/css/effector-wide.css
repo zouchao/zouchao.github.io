@@ -1,9 +1,8 @@
 /*!
- * effector-wide 1.0
+ * Sean 1.0
  *
- * Designed by Tao Zhang
- * http://ztpala.com
- * effecotr-wide is the 99% same as effector, only it's better for displaying photos.
+ * Designed by Sean.Zou
+ * http://zouchao.net
  */
 html, body {
     background-color: #FFFFFF;
@@ -57,7 +56,7 @@ a {
     text-decoration: none;
 }
 a:hover {
-    color: #A33B14;
+    color: red;
     text-decoration: none;
 }
 a.label:hover {
@@ -93,6 +92,7 @@ p small, ul small {
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     color: #555;
+    font-family: Georgia,"Times New Roman",Times,serif;
     margin: 0;
     text-rendering: optimizelegibility;
 }
@@ -376,11 +376,11 @@ text-shadow: 0 1px 0 #fff;
 }
 
 /*add by zouchao<zouchao2008@gmail.com> 2013-05-02*/
-.header{ border-top: 1px dashed #a0a0a0; border-bottom: 1px dashed #aaa; height: 69px; }
+.header{ border-top: 1px dashed #a0a0a0; border-bottom: 1px dashed #aaa; height: 80px; font-family: Georgia,"Times New Roman",Times,serif; }
 .header-cnt{ height: 54px; float:left; padding-top: 15px; margin: 0 auto; position: relative; }
-.header-cnt .logo{ position: absolute; top: -10px; left: -5px; font-size: 36px; font-weight: bold; }
-.header-cnt small{ position:absolute; width:500px; top:35px; }
-.header .nav{ float: right; margin: 25px 0 0 0px; height: 36px; padding: 0px 20px; background: #2f3133; border-radius: 8px 8px; border-top: 1px solid #252a30; border-left: 1px solid #252a30; border-right: 1px solid #252a30; border-bottom: 1px solid #4a4d52; box-shadow: -2px -2px 8px #222222 inset; }
+.header-cnt .logo{ position: absolute; top: 0px; left: -5px; font-size: 36px; font-weight: bold; color:#222222; text-shadow: 2px 2px #abaaaa; }
+.header-cnt small{ position:absolute; width:500px; top:50px; color:#222222; font-size:12px; text-shadow:1px 1px #abaaaa; }
+.header .nav{ float: right; margin: 45px 0 0 0px; height: 30px; line-height:30px; padding: 0px 20px; background: #2f3133; border-radius: 8px 8px; border-top: 1px solid #252a30; border-left: 1px solid #252a30; border-right: 1px solid #252a30; border-bottom: 1px solid #4a4d52; box-shadow: -2px -2px 8px #222222 inset; }
 .header .nav a{color:#eeeeee;}
 .postsList {
     margin: 0px 0px 10px 0px;
