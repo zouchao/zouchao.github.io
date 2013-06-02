@@ -90,7 +90,6 @@ p small, ul small {
     line-height: 45px;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-weight: normal;
     color: #555;
     font-family: Georgia,"Times New Roman",Times,serif;
     margin: 0;
