@@ -1,6 +1,6 @@
 ---
 date: 2013-06-02 12:26:00
-title: Git常用命令收集
+title: 解决Agent admitted failure to sign using the key的方法
 layout: post
 tags:
     - git
@@ -11,7 +11,7 @@ categories:
 ---
 这两天没事瞎折腾`ruby`的`heroku`，把`~/.ssh/id_rsa`搞乱了，结果直接导致我在`github`上的项目没法管理了！对于刚接触`git`不久的我来说算是遇到一个不大不小的麻烦了！
 
-<pre class="prettyprint line-number">
+<pre class="prettyprint linenums">
 $git push origin master 
 Agent admitted failure to sign using the key.
 Permission denied (publickey).
@@ -23,7 +23,7 @@ and the repository exists.
 
 ###解决方法
 
-<pre class="prettyprint">
+<pre class="prettyprint linenums">
 $ssh-add
 Identity added: /home/user/.ssh/id_rsa (/home/user/.ssh/id_rsa)
 </pre>
