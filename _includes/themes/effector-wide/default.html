@@ -2,12 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
-  <title>{{ site.title }} | {{ page.title }}-{{ page.tagline }}</title>
+  <title>{{ site.title }} | {{ page.title }}{% if page.tagline %}-{{ page.tagline }}{% endif %}</title>
   <meta name="author" content="{{ site.author }}"/>
   <meta name="viewport" content="width=device-width; initial-scale=1.0">
-  <meta name="apple-itunes-app" content="app-id=577675173">
   <link rel="stylesheet" type="text/css" href="/assets/css/effector-wide.css">
-  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS for {{ site.title }}" href="/feed.xml">
 </head>
@@ -20,10 +19,10 @@
       </div>
       <div class="nav">
         <a href="/">Home</a>
-        <a href="/archive/">存档</a>
+        <a href="/archive/">文章</a>
         <a href="/links">链接</a>
         <a href="/search">搜索</a>
-        <a href="/apps">游戏</a>
+        <a href="/tag">标签</a>
         <a href="/about.html">About Me</a>
       </div>
     </div>

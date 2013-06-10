@@ -16,9 +16,7 @@ keywords:
 {% assign post_year1 = post_year2 %}
 </ul>
 <h2>{{ post_year1 }}</h2>
-<ul class="postsList">
 {% endif %}
-<li><span>{{ post.date | date: "%b %d, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
+<h2 class="title"><span>{{ post.date | date: "%b %d, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a></h2>
 {% endfor %}
-</ul>
 </div>
