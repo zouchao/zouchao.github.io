@@ -3,14 +3,9 @@
  * Designed by Sean.Zou
  * http://zouchao.net
  */
-code, pre { font-family: Monaco, Menlo, "Courier New", monospace; font-size: 12px; }
-code { padding: 3px 4px; color: #d14; background-color: #f7f7f9; border: 1px solid #e1e1e8; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
-pre { display: block; padding: 8px; margin: 0 0 30px; line-height: 20px; background-color: #f7f7f9; border: 1px solid #e1e1e8; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; white-space: pre; white-space: pre-wrap; word-break: break-all; }
-.prettyprint.linenums{ -webkit-box-shadow:inset 40px 0 0 #fbfbfc,inset 41px 0 0 #ececf0; -moz-box-shadow:inset 40px 0 0 #fbfbfc,inset 41px 0 0 #ececf0; box-shadow:inset 40px 0 0 #fbfbfc,inset 41px 0 0 #ececf0; }
-
-/* Specify class=linenums on a pre to get line numbering */
-ol.linenums { margin: 0 0 0 33px; /* IE indents via margin-left */ } 
-ol.linenums li { padding-left: 12px; color: #bebec5; line-height: 18px; text-shadow: 0 1px 0 #fff; }
+body { font-size:15px; }
+code { font-size:13px; }
+/* google code prettify ===== start =====  */
 .com { color: #93a1a1; }
 .lit { color: #195f91; }
 .pun, .opn, .clo { color: #93a1a1; }
@@ -19,14 +14,20 @@ ol.linenums li { padding-left: 12px; color: #bebec5; line-height: 18px; text-sha
 .kwd, .linenums .tag { color: #1e347b; }
 .typ, .atn, .dec, .var { color: teal; }
 .pln { color: #48484c; }
+.prettyprint { padding: 8px; background-color: #f7f7f9; border: 1px solid #e1e1e8; }
+.prettyprint.linenums{ -webkit-box-shadow:inset 40px 0 0 #fbfbfc,inset 41px 0 0 #ececf0; -moz-box-shadow:inset 40px 0 0 #fbfbfc,inset 41px 0 0 #ececf0; box-shadow:inset 40px 0 0 #fbfbfc,inset 41px 0 0 #ececf0; }
 
-.invisible { visibility: hidden; }
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin: 0 0 0 33px; /* IE indents via margin-left */ } 
+ol.linenums li { padding-left: 12px; color: #bebec5; line-height: 18px; text-shadow: 0 1px 0 #fff; }
+/* google code prettify ===== end =====  */
+
 
 /*add by zouchao<zouchao2008@gmail.com> 2013-05-02*/
-.header{ border-top: 1px dashed #a0a0a0; border-bottom: 1px dashed #aaa; height: 80px; font-family: "Courier New", Georgia; }
-.header-cnt{ height: 54px; float:left; padding-top: 15px; margin: 0 auto; position: relative; }
-.header-cnt .logo{ position: absolute; top: 0px; left: -5px; font-size: 36px; font-weight: bold; color:#222222; text-shadow: 2px 2px #abaaaa; }
-.header-cnt small{ position:absolute; width:500px; top:55px; color:#222222; font-size:13px; text-shadow:1px 1px #abaaaa; }
+.header{ border-top: 1px dashed #a0a0a0; border-bottom: 1px dashed #aaa; height: 80px; }
+.header-cnt{ height: 54px; float:left; padding-top: 15px; color:#222222; margin: 0 auto; position: relative; }
+.header-cnt .logo{ position: absolute; top: 0px; left: -5px; font-size: 36px; font-family: "Courier New", Georgia; font-weight: bold; text-shadow: 2px 2px #abaaaa; }
+.header-cnt small{ position:absolute; width:500px; top:55px; font-size:13px; text-shadow:1px 1px #abaaaa; }
 .header .nav{ float: right; margin: 45px 0 0 0px; height: 30px; line-height:30px; padding: 0px 20px; background: #2f3133; border-radius: 8px 8px; border-top: 1px solid #252a30; border-left: 1px solid #252a30; border-right: 1px solid #252a30; border-bottom: 1px solid #4a4d52; box-shadow: -2px -2px 8px #222222 inset; }
 .header .nav a{color:#eeeeee;margin:  0px 20px 0px 0px; }
 .postsList { margin: 0px 0px 10px 0px; }
@@ -39,5 +40,6 @@ h2.title span, h3.title span{ color: #bbb; float: right; font-size: 14px; font-w
 h3.title span{ font-size: 12px; }
 
 article p{line-height:1.9; font-size:15px;}
+.tab-content { display:block; }
 
 @media only screen and (max-width:768px) { .container { width:  auto; padding: 20px; }

@@ -6,17 +6,49 @@ keywords:
   - blog
   - archive
 ---
-<div class="wrapper">
-  {% capture post_year1 %}{{ 'now' | date: '%Y' }}{% endcapture %}
-<h2>{{ post_year1 }}</h2>
-<ul class="postsList">
-{% for post in site.posts %}
-{% capture post_year2 %}{{ post.date | date: '%Y' }}{% endcapture %}
-{% if post_year1 != post_year2 %}
-{% assign post_year1 = post_year2 %}
-</ul>
-<h2>{{ post_year1 }}</h2>
-{% endif %}
-<h2 class="title"><span>{{ post.date | date: "%b %d, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a></h2>
-{% endfor %}
+<div class="page-header">
+  <div class="tabbable tabs-left">
+    <ul class="nav nav-tabs">
+    {% capture post_year1 %}{{ 'now' | date: '%Y' }}{% endcapture %}
+    {% capture first_year %}{{ site.posts.first.date | date: '%Y' }}{% endcapture %}
+    {% for years in site.posts %}
+      {% capture post_year %}{{ years.date | date: '%Y' }}{% endcapture %}
+      {% if post_year1 != post_year %}
+        {% assign post_year1 = post_year %}
+        {% if first_year == post_year %}
+        <li class="active"><a href="#{{ post_year }}" data-toggle="tab">{{ post_year }}</a></li>
+        {% else %}
+        <li class=""><a href="#{{ post_year }}" data-toggle="tab">{{ post_year }}</a></li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    </ul>
+    {% capture post_year_month1 %}{{ 'now' | date: '%Y' }}{% endcapture %}
+    <div class="tab-content">
+    {% for post in site.posts %}
+      {% capture post_year_month2 %}{{ post.date | date: '%Y' }}{% endcapture %}
+      {% if post_year_month1 != post_year_month2 %}
+        {% if first_year == post_year_month2 %}
+        <div class="tab-pane active" id="{{ post_year_month2 }}">
+        {% else %}
+        <div class="tab-pane" id="{{ post_year_month2 }}">
+        {% endif %}
+      {% endif %}
+      {% if post_year_month1 != post_year_month2 %}
+        {% for list in site.posts %}
+          {% capture post_year_month3 %}{{ list.date | date: '%Y' }}{% endcapture %}
+          {% if post_year_month2 == post_year_month3 %}
+            <p><a href="{{ list.url }}">{{ list.title }}</a></p>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      {% if post_year_month1 != post_year_month2 %}
+        {% assign post_year_month1 = post_year_month2 %}
+        {% assign post_year_month3 = nil %}
+        </div> 
+      {% endif %}
+    {% endfor %}
+    </div>
+  </div>
 </div>
+<script src="/assets/js/bootstrap-tab.js"></script>
