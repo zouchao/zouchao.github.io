@@ -16,9 +16,9 @@ keywords:
       {% if post_year1 != post_year %}
         {% assign post_year1 = post_year %}
         {% if first_year == post_year %}
-        <li class="active"><a href="#{{ post_year }}" data-toggle="tab">{{ post_year }}</a></li>
+          <li class="active"><a href="#{{ post_year }}" data-toggle="tab">{{ post_year }}</a></li>
         {% else %}
-        <li class=""><a href="#{{ post_year }}" data-toggle="tab">{{ post_year }}</a></li>
+          <li class=""><a href="#{{ post_year }}" data-toggle="tab">{{ post_year }}</a></li>
         {% endif %}
       {% endif %}
     {% endfor %}
@@ -29,9 +29,9 @@ keywords:
       {% capture post_year_month2 %}{{ post.date | date: '%Y' }}{% endcapture %}
       {% if post_year_month1 != post_year_month2 %}
         {% if first_year == post_year_month2 %}
-        <div class="tab-pane active" id="{{ post_year_month2 }}">
+          <div class="tab-pane active" id="{{ post_year_month2 }}">
         {% else %}
-        <div class="tab-pane" id="{{ post_year_month2 }}">
+          <div class="tab-pane" id="{{ post_year_month2 }}">
         {% endif %}
       {% endif %}
       {% if post_year_month1 != post_year_month2 %}
