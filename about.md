@@ -14,8 +14,8 @@ description: "我是邹超，一个程序员，一个从农村来到城市打拼
 <pre>
        email : <a href="mailto:zouchao2008@gamil.com">zouchao2008@gmail.com</a>
      twitter : <a href="http://twitter.com/zouchao" target="_blank">Follow me</a>
-    腾讯微博 : <a href="http://t.qq.com/zouchao" target="_blank"><span class="badge badge-inverse">@邹超</span></a>
-    腾讯微博 : <a href="http://t.qq.com/zouchao" target="_blank"><span class="badge badge-inverse">@少装点怪</span></a>
+    腾讯微博 : <a href="http://t.qq.com/zouchao" target="_blank"><span class="label label-important">@邹超</span></a>
+    新浪微博 : <a href="http://weibo.com/u/1784847250" target="_blank"><span class="label label-important">@少装点怪</span></a>
 </pre>
 
 ####关于本站  
