@@ -9,7 +9,7 @@ keywords:
 <div class="page-header">
   <div class="tabbable tabs-left">
     <ul class="nav nav-tabs">
-    {% capture post_year1 %}{{ 'now' | date: '%Y' }}{% endcapture %}
+    {% capture post_year1 %}{{ 'now' }}{% endcapture %}
     {% capture first_year %}{{ site.posts.first.date | date: '%Y' }}{% endcapture %}
     {% for years in site.posts %}
       {% capture post_year %}{{ years.date | date: '%Y' }}{% endcapture %}
@@ -23,7 +23,7 @@ keywords:
       {% endif %}
     {% endfor %}
     </ul>
-    {% capture post_year_month1 %}{{ 'now' | date: '%Y' }}{% endcapture %}
+    {% capture post_year_month1 %}{{ 'now' }}{% endcapture %}
     <div class="tab-content">
     {% for post in site.posts %}
       {% capture post_year_month2 %}{{ post.date | date: '%Y' }}{% endcapture %}
