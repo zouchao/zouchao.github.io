@@ -1,6 +1,7 @@
 <div class="page-header">
   {% for post in site.posts limit: 15 %}
     <h2 class="title"><span>{{ post.date | date: "%Y-%m-%d" }}</span> <a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p>{{ post.content | strip_html | truncatewords:25}}</p>
   {% endfor %}
   <p><a class="btn"  href="/archive/">查看所有文章</a> →</p>
   <div class="clearfix"></div>
