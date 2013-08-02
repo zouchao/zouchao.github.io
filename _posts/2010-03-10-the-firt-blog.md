@@ -1,5 +1,5 @@
 ---
-date: 2013-05-10 12:46:00
+date: 2010-03-10 12:46:00
 title: zouchao.net的第一篇日志
 layout: post
 tags:
