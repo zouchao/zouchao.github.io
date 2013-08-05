@@ -5,9 +5,11 @@
   {% if page.url == "/" %}
   <title>{{ site.title }} | {{ site.tagline }}</title>
   {% else %}
-  <title>{{ page.title }}{% if page.tagline %}-{{ page.tagline }}{% endif %} | {{ site.title }} </title>
+  <title>{{ page.title }}{% if page.tagline %}-{{ page.tagline }}{% endif %} | {{ site.seotitle }} </title>
   {% endif %}
   <meta name="author" content="{{ site.author }}"/>
+  <meta name="keywords" content="{% if page.keywords %} {{ page.keywords}} {% else %} {{ site.keywords }} {% endif %}">
+  <meta name="description" content="邹超的博客,沉醉于php与ruby的海洋,专注于web开发.一个记录轻度间隙整理控，轻度代码洁癖的程序猿生活和学习的地方.">
   <meta name="viewport" content="width=device-width; initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/effector-wide.css">

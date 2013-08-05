@@ -1,6 +1,7 @@
 ---
 date: 2010-03-12 10:26:00
 title: PHP CURL详解
+keywords: php,curl,函数,抓取
 layout: post
 tags:
     - 抓取
