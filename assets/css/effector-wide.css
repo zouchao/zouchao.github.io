@@ -7,6 +7,7 @@ body { font-size:15px; }
 code { font-size:13px; }
 
 /*add by zouchao<zouchao2008@gmail.com> 2013-05-02*/
+.container{ min-width:940px; }
 .header{ border-top: 1px dashed #a0a0a0; border-bottom: 1px dashed #aaa; height: 80px; }
 .header-cnt{ height: 54px; float:left; padding-top: 15px; color:#222222; margin: 0 auto; position: relative; }
 .header-cnt .logo{ position: absolute; top: 0px; left: -5px; font-size: 36px; font-family: "Courier New", Georgia; font-weight: bold; text-shadow: 2px 2px #abaaaa; }
