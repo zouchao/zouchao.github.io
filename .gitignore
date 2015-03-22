@@ -1,2 +1,8 @@
 /bak_post/
 /_site/
+.rbenv-gemsets
+*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
