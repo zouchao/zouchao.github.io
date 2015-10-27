@@ -12,7 +12,7 @@ categories:
     - virtualbox
 ---
 
-#### 安装条件
+#### 一、安装条件
 由于`VMWare`需要收费，本章只介绍安装`Vagrant`和`VirtualBox`所遇到的麻烦，首先请在如下  
 网站下载和自己系统匹配的安装包，并完成安装
 
@@ -24,7 +24,7 @@ categories:
 <pre class="prettyprint">
 vagrant box add laravel/Homestead
 </pre>
-#### 安装中断，没法继续？
+#### 二、安装中断，没法继续？
 兴高采烈安Homestead，网速太渣报错误：
 ![SSL read: error:00000000:lib(0):func(0):reason(0), errno 54] [1]
 无奈又来第二次，结果始终报如下错误:
@@ -34,7 +34,7 @@ vagrant box add laravel/Homestead
 rm ~/.vagrant.d/tmp/*
 </pre>
 
-#### 更好的方式
+#### 三、更好的方式
 1. 更好的方式还是直接下载下来文件,但是用p2p工具的同学千万记住不要用离线下载, 也千万不要用高速通道，就是这么残忍，坑在这里：  
     ![bsdtar: Error opening archive: gzip decompression failed] [3]  
     没错 当你下载的文件名叫`virtualbox.box`那么你很可能已经陷入这个深坑了，正确的文件名大致是这样的`hc-download`，下载完毕了再修改文件名后缀
@@ -44,10 +44,14 @@ rm ~/.vagrant.d/tmp/*
     vagrant box add laravel/Homestead -c </pre>
     加`-c`参数，作用是断点续传，但是我亲试之后还是有问题的，只怪我网络环境特别不好，一、两次可以，多几次之后并没有断点续传。不知道是不是我的问题。大家可以试试，成功的话，希望评论告知，感激
 
+#### 四、福利始终在最后
+提供的版本`homesteam0.3.0_virtualbox.box`
+百度云盘下载链接: [http://pan.baidu.com/s/1jGfIahw][pan.baidu.com] 密码: `9xbp`
 
 
 [virtualbox_url]: https://www.virtualbox.org/wiki/Downloads
 [vagrant_url]: https://www.vagrantup.com/downloads.html
+[pan.baidu.com]: http://pan.baidu.com/s/1jGfIahw
 
 [1]: http://zouchao-pic.b0.upaiyun.com/images/article/2015/10/26/1445867130.png 'SSL read: error:00000000:lib(0):func(0):reason(0), errno 54'
 [2]: http://zouchao-pic.b0.upaiyun.com/images/article/2015/10/26/1445867028.png "HTTP server doesn't seem to support byte ranges. Cannot resume."
