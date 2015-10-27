@@ -1,5 +1,5 @@
 ---
-date: 2015-08-31 14:00:00
+date: 2015-10-27 14:00:00
 title: 安装Laravel Homestead遇到的坑
 layout: post
 tags:
