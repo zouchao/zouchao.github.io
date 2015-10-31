@@ -14,11 +14,11 @@ categories:
 
 但是就在今天来公司我发现我的虚拟机居然神奇般的打不开了
 
->> 不能为虚拟电脑 Centos 打开一个新任务.  
->> VM cannot start because the saved state file   
->> 'F:\VirtualBox VMs\Centos\Snapshots\2015-06-03T02-43-10-456513000Z.sav' is invalid (VERR_FILE_NOT_FOUND)  
->> Delete the saved state prior to starting the VM.   
->> 返回 代码:VBOX_E_FILE_ERROR (0x80BB0004) 组件:Console 界面:IConsole {db7ab4ca-2a3f-4183-9243-c1208da92392}
+> 不能为虚拟电脑 Centos 打开一个新任务.  
+> VM cannot start because the saved state file   
+> 'F:\VirtualBox VMs\Centos\Snapshots\2015-06-03T02-43-10-456513000Z.sav' is invalid (VERR_FILE_NOT_FOUND)  
+> Delete the saved state prior to starting the VM.   
+> 返回 代码:VBOX_E_FILE_ERROR (0x80BB0004) 组件:Console 界面:IConsole {db7ab4ca-2a3f-4183-9243-c1208da92392}
 
 这个可给我吓出一身冷汗啊，今天还必须的完成一个重要的项目呢。
 
