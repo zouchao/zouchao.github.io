@@ -22,7 +22,7 @@ sudo  port install jpeg libpng tiff
 
 ### 2. Building:
 <pre class="prettyprint linenums">
-git clone http://git.chromium.org/webm/libwebp.git
+git clone https://chromium.googlesource.com/webm/libwebp
 cd libwebp
 ./autogen.sh
 ./configure
