@@ -40,12 +40,12 @@ $ vim
 
 <pre class="prettyprint linenums">
 if has('gui_running')
-  set background=light
+  " set background=light
+  set background=dark
 else
   set background=dark
 endif
-" let g:solarized_termcolors=256
-colorscheme solarized
+let g:solarized_termcolors=256
 set tabstop=2
 set shiftwidth=2
 set laststatus=2
@@ -63,13 +63,15 @@ set number                     " 行号
 syntax on                      " 语法高亮
 syntax enable
 
+autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79
+
 nnoremap < v<
 nnoremap > v>
 vnoremap < <gv
 vnoremap > >gv
 
 let mapleader = ","
-map <F3> :%s/\s*$//g<cr>:noh<cr>   "移除行尾空格
+map <F3> :%s/\s*$//g<CR>:noh<CR>   "移除行尾空格
 nmap <F2> :NERDTreeToggle <CR>
 nmap ff :NERDTreeFind <CR>
 nmap gb :Gblame <CR>
@@ -79,7 +81,7 @@ let Tlist_Use_Right_Window=1 "方法列表放在屏幕的右侧
 
 set list
 set listchars=tab:,.,trail:.,extends:#,nbsp:.
-
+let g:vim_markdown_folding_disabled=1
 
 
 set guifont=Monaco:h15
@@ -90,7 +92,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " " required!
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " My Plugins here:
 "
@@ -103,19 +105,24 @@ Plugin 'tpope/vim-rails.git'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'kien/ctrlp.vim'
-Plugin 'vim-scripts/snipMate'
+" Plugin 'vim-scripts/snipMate'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'groenewege/vim-less'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'slim-template/vim-slim'
 Plugin 'yaymukund/vim-rabl'
+Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'eikenberry/acp'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'honza/vim-snippets'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on     " required!
+
+colorscheme solarized
 "
 " Brief help
 " :PluginList          - list configured bundles
@@ -125,4 +132,5 @@ filetype plugin indent on     " required!
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Plugin command are not allowed..
+
 </pre>
