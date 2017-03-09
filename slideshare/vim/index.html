@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>reveal.js - Markdown Demo</title>
+
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../assets/css/slideshare/reveal.css">
+        <link rel="stylesheet" href="../../assets/css/slideshare/blue.css" id="theme">
+        <link rel="stylesheet" href="../../assets/css/slideshare/zenburn.css">
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
+                <section data-markdown="example.md" data-separator="^!---" data-separator-vertical="^\n\n"></section>
+                <style>
+.icon-terminal{background-color: #222; border: 2px solid #fff; padding: 0px 2px;
+border-radius:5px;
+-moz-border-radius:25px; /* Old Firefox */
+}
+                    .icon-tasks {color: #211E55;}
+                    .icon-keyboard { color: #FCFAF2} 
+                    .icon-dropbox { color: #FFC408; }
+                    .icon-facetime-video { color: #C73E3A;}
+                </style>
+            </div>
+        </div>
+
+        <script src="../../assets/js/slideshare/head.min.js"></script>
+        <script src="../../assets/js/slideshare/reveal.js"></script>
+
+        <script>
+
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '../../assets/js/slideshare/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../../assets/js/slideshare/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../../assets/js/slideshare/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../../assets/js/slideshare/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../../assets/js/slideshare/notes.js' }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
