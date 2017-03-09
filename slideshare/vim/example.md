@@ -26,10 +26,10 @@ Note: 这次演讲的主要内容, 大致的目的
 ## <i class="icon-terminal"></i> 一些简单的命令
 
 
-![http://zouchao-pic.b0.upaiyun.com/slideshare/vim/vimshortcuts.png]
+![vim shortcuts](http://zouchao-pic.b0.upaiyun.com/slideshare/vim/vimshortcuts.png)
 
 
-![http://zouchao-pic.b0.upaiyun.com/slideshare/vim/vim_cheat_sheet_for_programmers_print.png]
+![vim cheat sheet for programmers print](http://zouchao-pic.b0.upaiyun.com/slideshare/vim/vim_cheat_sheet_for_programmers_print.png)
 
 Note:
 - x,ZZ或者:wq
@@ -88,7 +88,7 @@ map c a
 ```
 
 
-![http://zouchao-pic.b0.upaiyun.com/slideshare/vim/map.png]
+![map list](http://zouchao-pic.b0.upaiyun.com/slideshare/vim/map.png)
 
 !---
 
