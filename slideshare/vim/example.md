@@ -26,17 +26,10 @@ Note: 这次演讲的主要内容, 大致的目的
 ## <i class="icon-terminal"></i> 一些简单的命令
 
 
-![../../images/slideshare/vim-shortcuts.png](../../images/slideshare/vim-shortcuts.png)
+![http://zouchao-pic.b0.upaiyun.com/slideshare/vim/vimshortcuts.png]
 
 
-![../../images/slideshare/vim_cheat_sheet_for_programmers_print.png](../../images/slideshare/vim_cheat_sheet_for_programmers_print.png)
-
-光标的移动
-插入文本
-剪切复制和寄存器
-查找与替换
-排版
-编辑多个文件
+![http://zouchao-pic.b0.upaiyun.com/slideshare/vim/vim_cheat_sheet_for_programmers_print.png]
 
 Note:
 - x,ZZ或者:wq
@@ -95,7 +88,7 @@ map c a
 ```
 
 
-![../../images/slideshare/map.png](../../images/slideshare/map.png)
+![http://zouchao-pic.b0.upaiyun.com/slideshare/vim/map.png]
 
 !---
 
