@@ -26,10 +26,10 @@ Note: 这次演讲的主要内容, 大致的目的
 ## <i class="icon-terminal"></i> 一些简单的命令
 
 
-![./vim-shortcuts.png](../../images/slideshare/vim-shortcuts.png)
+![../../images/slideshare/vim-shortcuts.png](../../images/slideshare/vim-shortcuts.png)
 
 
-![./vim-shortcuts.png](../../images/slideshare/vim_cheat_sheet_for_programmers_print.png)
+![../../images/slideshare/vim_cheat_sheet_for_programmers_print.png](../../images/slideshare/vim_cheat_sheet_for_programmers_print.png)
 
 光标的移动
 插入文本
@@ -95,7 +95,7 @@ map c a
 ```
 
 
-![./map.png](../../images/slideshare/map.png)
+![../../images/slideshare/map.png](../../images/slideshare/map.png)
 
 !---
 
