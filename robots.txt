@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: http://zouchao.net/sitemap.xml
+Sitemap: http://zouchao.me/sitemap.xml
