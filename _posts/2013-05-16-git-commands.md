@@ -8,7 +8,7 @@ tags:
 categories:
     - git
 ---
-###1) 远程仓库相关命令
+### 1) 远程仓库相关命令
 
 > 检出仓库：`$ git clone git://github.com/jquery/jquery.git`  
 > 查看远程仓库：`$ git remote -v`  
@@ -25,7 +25,7 @@ $ git push origin test:master         // 提交本地test分支作为远程的ma
 $ git push origin test:test              // 提交本地test分支作为远程的test分支
 </pre>
 
-###2）分支(branch)操作相关命令
+### 2）分支(branch)操作相关命令
 
 > 查看本地分支：`$ git branch`  
 > 查看远程分支：`$ git branch -r` （如果还是看不到就先 git fetch origin 先）  
@@ -47,7 +47,7 @@ $ rm .git/index
 $ git clean -fdx
 </pre>
 
-###3）版本(tag)操作相关命令
+### 3）版本(tag)操作相关命令
 
 > 查看版本：`$ git tag`  
 > 创建版本：`$ git tag [name]`  
@@ -59,7 +59,7 @@ $ git clean -fdx
 > 上传本地tag到远程仓库：`$ git push origin --tags`  
 > 创建带注释的tag：`$ git tag -a [name] -m 'yourMessage'`
 
-###4) 子模块(submodule)相关操作命令
+### 4) 子模块(submodule)相关操作命令
 
 * 添加子模块：`$ git submodule add [url] [path]`  
   如：`$ git submodule add git://github.com/soberh/ui-libs.git src/main/webapp/ui-libs`  
@@ -71,7 +71,7 @@ $ git clean -fdx
   3. 编辑“ .git/config”文件，将子模块的相关配置节点删除掉
   4. 手动删除子模块残留的目录
 
-###5）忽略一些文件、文件夹不提交
+### 5）忽略一些文件、文件夹不提交
 
 在仓库根目录下创建名称为`.gitignore`文件，写入不需要的文件夹名或文件，每个元素占一行即可，如
 
@@ -81,7 +81,7 @@ bin
 *.db
 </pre>
 
-###6）后悔药
+### 6）后悔药
 
 > 删除当前仓库内未受版本管理的文件：`$ git clean -f`  
 > 恢复仓库到上一次的提交状态：`$ git reset --hard`  
@@ -91,7 +91,7 @@ bin
 > 将本地的状态回退到和远程的一样：`$ git reset –hard origin/master`  
 > 向前回退到第3个版本：`$ git reset –soft HEAD~3`  
 
-###7）Git一键推送多个远程仓库
+### 7）Git一键推送多个远程仓库
 
 编辑本地仓库的`.git/config`文件：
 

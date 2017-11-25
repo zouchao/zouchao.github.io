@@ -21,7 +21,7 @@ Please make sure you have the correct access rights
 and the repository exists. 
 </pre>
 
-###解决方法
+### 解决方法
 
 <pre class="prettyprint linenums">
 $ssh-add

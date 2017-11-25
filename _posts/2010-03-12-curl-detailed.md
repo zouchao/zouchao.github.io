@@ -10,7 +10,7 @@ tags:
 categories:
     - php
 ---
-####PHP中的CURL函数库（Client URL Library Function）
+#### PHP中的CURL函数库（Client URL Library Function）
 + `curl_close` — 关闭一个curl会话
 + `curl_copy_handle` — 拷贝一个curl连接资源的所有内容和参数
 + `curl_errno` — 返回一个包含当前会话错误信息的数字编号
@@ -47,7 +47,7 @@ $ch = curl_init("http://www.baidu.com/");
 print_r(curl_getinfo($ch));
 </pre>
 
-#####可选的常量包括：
+##### 可选的常量包括：
 
 >1. `CURLINFO_EFFECTIVE_URL`  最后一个有效的url地址
 >1. `CURLINFO_HTTP_CODE`  最后一个收到的HTTP代码
@@ -85,7 +85,7 @@ curl_close($ch);
 fclose($fp);
 </pre>
 
-#####可设置的参数有：
+##### 可设置的参数有：
 
 >1. `CURLOPT_AUTOREFERER`  自动设置header中的referer信息
 >1. `CURLOPT_BINARYTRANSFER`  在启用CURLOPT_RETURNTRANSFER时候将获取数据返回

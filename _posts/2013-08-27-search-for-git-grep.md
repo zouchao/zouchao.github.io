@@ -11,7 +11,7 @@ categories:
     - git
 ---
 背景：公司现在的团购站所使用的数据和主站有诸多联系，因此代码里面也有部分相互纠缠不清。现在要把他们单独独立出来。
-###首先还是介绍下git grep
+### 首先还是介绍下git grep
 git grep可以不用checkout就能很方便的查找Git库的一段文字。  
 例如，我们要查找文件中哪些地方是用到了Redis:
 <pre class="prettyprint linenums">
@@ -54,7 +54,7 @@ $ git grep -ni Redis aa4a326d4feb0f3b69f423bd66b6bc6558742c8d #提交号也可�
 .
 .
 </pre>
-###一个更实用的ruby脚本
+### 一个更实用的ruby脚本
 这是同事分享的一段ruby脚本可以查询到是哪一行，最后是哪个人操作过这段代码。方便了解功能逻辑，不多废话了，上代码：  
 文件名: `blame_after_grep.rb`
 <pre class="prettyprint linenums">
