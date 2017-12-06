@@ -40,8 +40,6 @@ debug
 could not launch process: exec: "lldb-server": executable file not found in $PATH
 Process exiting with code: 1
 ```
-![](http://ww1.sinaimg.cn/large/6a629b92gy1flu6fg9vcsj21r41as15n.jpg)
-
 没关系，在terminal中执行如下语句，就可以了
 ```
 xcode-select --install
