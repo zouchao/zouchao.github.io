@@ -1,10 +1,11 @@
 markdown : kramdown
-permalink : /:year/:month/:day/:title 
+highlighter: pygments
+permalink : /:year/:month/:day/:title
 title : zouchao
 seotitle : "邹超的博客"
 logo : "@ZouChao"
-tagline: "热爱PHP,RUBY,专注于web开发. 一个忠实于内心的平凡人"
-keywords: "zouchao,邹超,Web开发,JavaScript,jQuery,CSS,HTML,PHP,RUBY,SEO,用户体验,网站策划,网站优化"
+tagline: "热爱PHP,RUBY,专注于web开发. 撸起袖子加油干！"
+keywords: "zouchao,邹超,Web开发,JavaScript,jQuery,CSS,HTML,PHP,RUBY,SEO,用户体验,网站策划,网站优化,Golang"
 description: "邹超的博客,沉醉于php与ruby的海洋,专注于web开发.一个记录轻度间隙整理控，轻度代码洁癖的程序猿生活和学习的地方."
 url : http://zouchao.me
 subscribe : http://zouchao.me/feed.xml
