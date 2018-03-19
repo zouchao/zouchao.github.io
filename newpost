@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+require "pathname"
+
+unless ARGV[0]
+  puts 'Usage: newpost "the post title"'
+  exit(-1)
+end
+
+date_prefix = Time.now.strftime("%Y-%m-%d")
+postname = ARGV[0].strip.downcase.gsub(/ /, '-')
+post = Pathname(__FILE__).dirname + "_posts" + "#{date_prefix}-#{postname}.md"
+
+
+header = <<-END
+---
+date: #{Time.new.strftime('%F %T')}
+title: #{ARGV[0]}
+layout: post
+tags:
+    - 
+categories:
+    - 
+---
+
+END
+
+File.open(post, 'w') do |f|
+  f << header
+end
+
+system("#{ENV['EDITOR']}", post.to_s)
