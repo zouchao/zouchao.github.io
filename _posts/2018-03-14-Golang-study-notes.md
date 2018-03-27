@@ -63,9 +63,9 @@ categories:
 4. 不同类型的变量之间不允许互相赋值或操作
 >
 > ```go
->   var a int8
->   var b int32
->   c:=a + b
+> var a int8
+> var b int32
+> c:=a + b
 > ```
 > 另外，尽管int的长度是32 bit, 但int 与 int32并不可以互用。
 
@@ -73,19 +73,50 @@ categories:
 
 6. 在Go中字符串是不可以直接修改的
 > ```go
->     var s string = "hello"
->     s[0] = 'c'
->     // 报错: cannot assign to s[0]
+> var s string = "hello"
+> s[0] = 'c'
+> // 报错: cannot assign to s[0]
 >
->     // 如果硬要修改可如下方式：
->     // 1. 将字符串 s 转换为 []byte 类型
->     c := []byte(s)
->     c[0] = 'c'                 // 或者c[0] = 99, 单引号 == ASCII码值
->     s2 := string(c)            // 再转换回 string 类型
->     fmt.Printf("%s\n", s2)     // cello
->     // 2. 通过+号连接2个字符串
->     s = "c" + s[1:]            // 字符串虽不能更改，但可进行切片操作
->     fmt.Printf("%s\n", s)      // cello
+> // 如果硬要修改可如下方式：
+> // 1. 将字符串 s 转换为 []byte 类型
+> c := []byte(s)
+> c[0] = 'c'                 // 或者c[0] = 99, 单引号 == ASCII码值
+> s2 := string(c)            // 再转换回 string 类型
+> fmt.Printf("%s\n", s2)     // cello
+> // 2. 通过+号连接2个字符串
+> s = "c" + s[1:]            // 字符串虽不能更改，但可进行切片操作
+> fmt.Printf("%s\n", s)      // cello
 > ```
 
 7. `` ` `` 括起的字符串为Raw字符串，即字符串在代码中的形式就是打印时的形式，它没有字符转义，换行也将原样输出。
+
+8. 数组的长度是固定的，不可改变
+> ```go
+> a := [3]int{1, 2, 3} // 声明了一个长度为3的int数组
+> ```
+
+9. 数组作为参数传递的时候是传递的副本，而不是它的指针, 而`slice`可以传递指针
+
+10. `array[i:j]`的长度是`j - i`
+> ```go
+> // 声明一个含有10个元素元素类型为byte的数组
+> var ar = [10]string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"}
+>
+> // 声明两个含有byte的slice
+> var a []string
+>
+> // a指向数组的第3个元素开始，并到第五个元素结束，
+> a = ar[2:5]
+> //现在a含有的元素: ar[2]、ar[3]和ar[4]
+> fmt.Println(a) // output: [c d e]
+> ```
+
+11. `slice`总是指向一个底层`array`
+
+12. `map`和其他基本型别不同，它不是`thread-safe`，在多个`go-routine`存取时，必须使用`mutex lock`机制
+
+13. `make`用于内建类型（`map`、`slice` 和`channel`）的内存分配。`new`用于各种类型的内存分配。
+
+14. `new`返回指针
+
+15. `make`返回初始化后的（非零）值
