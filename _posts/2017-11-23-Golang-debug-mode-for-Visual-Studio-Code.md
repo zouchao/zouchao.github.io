@@ -22,7 +22,7 @@ categories:
 3. 点击绿色三角形符号的`Start Debugging`按钮
 
 4. 第一次使用VSCode会自动判断你的语言类型，生产如下的一个`launch.josn`文件
-![](http://ww1.sinaimg.cn/large/6a629b92gy1fluf8ejfztj21r41asan3.jpg)
+![](https://ww1.sinaimg.cn/large/6a629b92gy1fluf8ejfztj21r41asan3.jpg)
 
 5. 成功之后会在你所在的项目目录下生产如下2个文件
 ```
@@ -31,7 +31,7 @@ debug
 ```
 
 6. `git status`也能看到他们，所以别忘了把他们加到`.gitignore`文件中去哦
-![](http://ww1.sinaimg.cn/large/6a629b92gy1flufndpw0fj211w0vcag6.jpg)
+![](https://ww1.sinaimg.cn/large/6a629b92gy1flufndpw0fj211w0vcag6.jpg)
 
 #### 当然你也有可能和我一样遇到如下问题：
 ```

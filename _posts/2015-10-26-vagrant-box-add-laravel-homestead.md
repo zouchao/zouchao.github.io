@@ -53,6 +53,6 @@ rm ~/.vagrant.d/tmp/*
 [vagrant_url]: https://www.vagrantup.com/downloads.html
 [pan.baidu.com]: http://pan.baidu.com/s/1jGfIahw
 
-[1]: http://zouchao-pic.b0.upaiyun.com/images/article/2015/10/26/1445867130.png 'SSL read: error:00000000:lib(0):func(0):reason(0), errno 54'
-[2]: http://zouchao-pic.b0.upaiyun.com/images/article/2015/10/26/1445867028.png "HTTP server doesn't seem to support byte ranges. Cannot resume."
-[3]: http://zouchao-pic.b0.upaiyun.com/images/article/2015/10/27/1445920118.png "bsdtar: Error opening archive: gzip decompression failed"
+[1]: https://ws1.sinaimg.cn/large/6a629b92gy1fqh64k1hhcj20u008vju4.jpg 'SSL read: error:00000000:lib(0):func(0):reason(0), errno 54'
+[2]: https://ws1.sinaimg.cn/large/6a629b92gy1fqh65po22qj20u00ajjue.jpg "HTTP server doesn't seem to support byte ranges. Cannot resume."
+[3]: https://ws1.sinaimg.cn/large/6a629b92gy1fqh672m9urj20mn04n0ty.jpg "bsdtar: Error opening archive: gzip decompression failed"

@@ -26,10 +26,10 @@ Note: 这次演讲的主要内容, 大致的目的
 ## <i class="icon-terminal"></i> 一些简单的命令
 
 
-![vim shortcuts](http://zouchao-pic.b0.upaiyun.com/slideshare/vim/vimshortcuts.png)
+![vim shortcuts](https://ws1.sinaimg.cn/large/6a629b92gy1fqh6ja1nmoj20u00irdj9.jpg)
 
 
-![vim cheat sheet for programmers print](http://zouchao-pic.b0.upaiyun.com/slideshare/vim/vim_cheat_sheet_for_programmers_print.png)
+![vim cheat sheet for programmers print](https://ws1.sinaimg.cn/large/6a629b92gy1fqh6jzftz5j20u00n6k8y.jpg)
 
 Note:
 - x,ZZ或者:wq
@@ -88,7 +88,7 @@ map c a
 ```
 
 
-![map list](http://zouchao-pic.b0.upaiyun.com/slideshare/vim/map.png)
+![map list](https://ws1.sinaimg.cn/large/6a629b92gy1fqh6l1x1i8j20os09qgne.jpg)
 
 !---
 
@@ -129,4 +129,4 @@ filetype plugin indent on
 
 # T<i class="icon-h-sign"></i>ANK YOU
 
-[@ZOUCHAO](http://zouchao.me)
+[@ZOUCHAO](https://zouchao.me)

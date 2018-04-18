@@ -14,4 +14,4 @@ categories:
 
 ####  幻灯片
 
-[VIM: THE UBIQUITOUS TEXT EDITOR](http://zouchao.me/slideshare/vim)
+[VIM: THE UBIQUITOUS TEXT EDITOR](https://zouchao.me/slideshare/vim)
