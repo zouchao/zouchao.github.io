@@ -11,7 +11,7 @@ categories:
 ---
 关于浏览器缓存，在header中有如下几个：（以下示例均为php代码）
 
-###Last-Modified
+### Last-Modified
 
 1. 浏览器第一次打开 返回状态码 200
 2. 浏览器第二次打开 返回状态码 304
@@ -29,7 +29,7 @@ header("Last-Modified: ".gmdate("D, d M Y H:i:s", time() )." GMT");
 echo time(); 
 </pre>
 
-###Expires
+### Expires
 1. 浏览器第一次打开 返回状态码 200
 2. 浏览器第二次打开 返回状态码 200
 3. 删除服务器文件 在访问 返回状态码 200
@@ -40,7 +40,7 @@ $cache_time = 3600;
 header("Expires: ".gmdate("D, d M Y H:i:s", time()+$cache_time )." GMT");    
 echo time(); 
 </pre>
-###Cache-Control
+### Cache-Control
 1. 浏览器第一次打开 返回状态码 200
 2. 浏览器第二次打开 返回状态码 200
 3. 删除服务器文件 在访问 返回状态码 200
