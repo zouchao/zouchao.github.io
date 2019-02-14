@@ -3,12 +3,12 @@ date: 2019-02-14 11:14:12
 title: 记录一次mysql升级之后rails遇到的问题
 layout: post
 tags:
-    - rails
-		- activerecord
-		- mysql
-		- ruby
+   - rails
+   - activerecord
+   - mysql
+   - ruby
 categories:
-    - activerecord
+   - activerecord
 ---
 
 mysql升级之后数据文件夹共用, 但是无法使用`db:migrate`
