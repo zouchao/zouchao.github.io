@@ -1,5 +1,5 @@
 ---
-date: 2026-08-27 22:00:00
+date: 2026-08-27 16:00:00 +0800
 title: 本地虚拟机跑 OpenClash 接管整台 Mac 的代理，Raycast 一键切换
 layout: post
 tags:
