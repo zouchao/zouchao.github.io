@@ -25,44 +25,6 @@ Nix 是一个**声明式、可复现**的包管理器，也有配套的发行版
 4. **临时环境** —— `nix shell` / `nix develop` 进入一个只含你声明了依赖的 shell，用完即弃。
 5. **管理整个系统** —— 不只是装软件：Linux 上用 NixOS，macOS 上用 `nix-darwin`，dotfiles 和用户级配置用 `home-manager`。
 
-## 一个常见疑问：能管 App Store 里的应用吗
-
-答案有点绕：**直接不行，间接可以**。
-
-App Store 应用有几个特性，让它们没法像普通包那样进 Nix：
-
-- 绑定 Apple ID，登录才能下载 / 授权
-- 闭源 + DRM 签名，不是从源码构建的
-- 必须走 Apple 的下载通道
-
-所以它们享受不到 Nix 的「哈希可复现、原子回滚」。但它们可以借助 Homebrew 的 `mas`（Mac App Store 命令行工具）纳入声明式管理，比如在 `nix-darwin` 里写：
-
-```nix
-homebrew = {
-  enable = true;
-  masApps = {
-    # 键是名字，值是 App Store 里的数字 ID
-    "Slack" = 803453959;
-  };
-};
-```
-
-底层还是走 Apple 的通道，只是「装了什么」这件事变成了配置的一部分。
-
-## 先看看我的机器装了没
-
-检查了一圈，结果很明确：
-
-| 检查项 | 状态 |
-|--------|------|
-| `nix` 命令 | 未找到 |
-| `/nix` store 目录 | 不存在 |
-| `nix-darwin` / `home-manager` | 都没装 |
-| Homebrew | 已装（`/opt/homebrew`，Apple Silicon） |
-| 架构 / 系统 | arm64 / macOS 26.6 |
-
-结论：还没装 Nix，但 Homebrew 已在、是 arm64，起步会很顺。
-
 ## 上手计划：完整系统管理
 
 我的目标是 **nix-darwin + home-manager** 一整套，分阶段推进，每阶段都能停下来验证。
@@ -143,6 +105,8 @@ mkdir -p ~/nix-config && cd ~/nix-config && git init
   };
 }
 ```
+
+App Store 应用也能声明（`masApps`）——底层是 Homebrew 的 `mas` 走 Apple 官方通道，享受不到 Nix 的可复现回滚，但"装了什么"同样进了配置。
 
 ### Phase 4 —— home-manager 接管 dotfiles
 
