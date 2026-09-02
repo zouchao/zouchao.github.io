@@ -1,0 +1,21 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* 代码块自动换行：长行不再横向滚动，而是在块内折行 */
+.highlight td.rouge-code pre {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}

@@ -57,6 +57,11 @@ theme_mode: # [light | dark]
 # the avatar on sidebar, support local or CORS resources
 avatar: /assets/img/avatar.jpg
 
+# 侧边栏头像下方的标题（_includes/sidebar.html 覆盖主题默认，读取此值；
+# 缺省回退到 site.title，保证 SEO/页签标题仍是「邹超的博客」）
+sidebar:
+  title: "@ZouChao"
+
 # boolean type, the global switch for TOC in posts.
 toc: true
 

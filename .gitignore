@@ -18,6 +18,8 @@ _site
 # Hidden system files
 *~
 *.s[a-w][a-z]
+# vim swap 规则 *.s[a-w][a-z] 会误伤 *.svg，SVG 需要入库（favicon.svg）
+!*.svg
 *.un~
 Session.vim
 .netrwhist
