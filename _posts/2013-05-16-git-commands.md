@@ -20,10 +20,10 @@ categories:
 
 如果想把本地的某个分支test提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫test的分支，如下：
 
-<pre class="prettyprint">
+```shell
 $ git push origin test:master         // 提交本地test分支作为远程的master分支
 $ git push origin test:test              // 提交本地test分支作为远程的test分支
-</pre>
+```
 
 ### 2）分支(branch)操作相关命令
 
@@ -41,11 +41,11 @@ $ git push origin test:test              // 提交本地test分支作为远程�
 
 创建空的分支：(执行命令之前记得先提交你当前分支的修改，否则会被强制删干净没得后悔)
 
-<pre class="prettyprint">
+```shell
 $ git symbolic-ref HEAD refs/heads/[name]
 $ rm .git/index
 $ git clean -fdx
-</pre>
+```
 
 ### 3）版本(tag)操作相关命令
 
@@ -75,11 +75,11 @@ $ git clean -fdx
 
 在仓库根目录下创建名称为`.gitignore`文件，写入不需要的文件夹名或文件，每个元素占一行即可，如
 
-<pre class="prettyprint">
+```
 target
 bin
 *.db
-</pre>
+```
 
 ### 6）后悔药
 
@@ -95,11 +95,11 @@ bin
 
 编辑本地仓库的`.git/config`文件：
 
-<pre class="prettyprint">
+```ini
 [remote "all"]
 url = git@github.com:dragon/test.git
 url = git@gitcafe.com:dragon/test.git
-</pre>
+```
 
 这样，使用git push all即可一键Push到多个远程仓库中。
 

@@ -31,20 +31,25 @@ categories:
 + `curl_init()` — 以 函数的作用初始化一个curl会话，curl_init()函数唯一的一个参数是可选的，表示一个url地址。
 + `curl_exec()` — 以  函数的作用是执行一个curl会话，唯一的参数是curl_init()函数返回的句柄。
 + `curl_close()` — 以  函数的作用是关闭一个curl会话，唯一的参数是curl_init()函数返回的句柄。
-<pre class="prettyprint linenums">
+
+```php
 $ch = curl_init("http://www.baidu.com/");
 curl_exec($ch);
 curl_close($ch);
-</pre>
+```
+
 + `curl_version()` - 函数的作用是获取curl相关的版本信息，curl_version()函数有一个参数，不清楚是做什么的
-<pre class="prettyprint">
+
+```php
 print_r(curl_version())
-</pre>
+```
+
 + `curl_getinfo()` - 函数的作用是获取一个curl连接资源句柄的信息，curl_getinfo()函数有两个参数，第一个参数是curl的资源句柄，第二个参数是下面一些常量：
-<pre class="prettyprint linenums">
+
+```php
 $ch = curl_init("http://www.baidu.com/");
 print_r(curl_getinfo($ch));
-</pre>
+```
 
 ##### 可选的常量包括：
 
@@ -70,7 +75,8 @@ print_r(curl_getinfo($ch));
 >1. `CURLINFO_CONTENT_TYPE`  下载内容的“Content-type”值，NULL表示服务器没有发送有效的“Content-Type: header”
 
 + `curl_setopt()`函数的作用是为一个curl设置会话参数。curl_setopt_array()函数的作用是以数组的形式为一个curl设置会话参数。
-<pre class="prettyprint linenums">
+
+```php
 $ch = curl_init();
 $fp = fopen("example_homepage.txt", "w");
 curl_setopt($ch, CURLOPT_FILE, $fp);
@@ -82,7 +88,7 @@ curl_setopt_array($ch, $options);
 curl_exec($ch);
 curl_close($ch);
 fclose($fp);
-</pre>
+```
 
 ##### 可设置的参数有：
 
@@ -186,12 +192,13 @@ fclose($fp);
 
 + `curl_copy_handle()`函数的作用是拷贝一个curl连接资源的所有内容和参数
 
-<pre class="prettyprint linenums">
+```php
 $ch = curl_init("http://www.baidu.com/");
 $another = curl_copy_handle($ch);
 curl_exec($another);
 curl_close($another);
-</pre>
+```
+
 + `curl_error()`函数的作用是返回一个包含当前会话错误信息的字符串。
 + `curl_errno()`函数的作用是返回一个包含当前会话错误信息的数字编号。
 + `curl_multi_init()`函数的作用是初始化一个curl批处理句柄资源。
@@ -199,7 +206,8 @@ curl_close($another);
 + `curl_multi_exec()`函数的作用是解析一个curl批处理句柄，curl_multi_exec()函数有两个参数，第一个参数表示一个批处理句柄资源，第二个参数是一个引用值的参数，表示剩余需要处理的单个的curl句柄资源数量。
 + `curl_multi_remove_handle()`函数表示移除curl批处理句柄资源中的某个句柄资源，curl_multi_remove_handle()函数有两个参数，第一个参数表示一个curl批处理句柄资源，第二个参数表示一个单独的curl句柄资源。
 + `curl_multi_close()`函数的作用是关闭一个批处理句柄资源。
-<pre class="prettyprint linenums">
+
+```php
 $ch1 = curl_init();
 $ch2 = curl_init();
 curl_setopt($ch1, CURLOPT_URL, "http://www.baidu.com/");
@@ -215,8 +223,9 @@ do {
 curl_multi_remove_handle($mh,$ch1);
 curl_multi_remove_handle($mh,$ch2);
 curl_multi_close($mh);
-</pre>
+```
+
 + `curl_multi_getcontent()`函数的作用是在设置了CURLOPT_RETURNTRANSFER的情况下，返回获取的输出的文本流。
 + `curl_multi_info_read()`函数的作用是获取当前解析的curl的相关传输信息。
 + `curl_multi_select()`Get all the sockets associated with the cURL extension, which can then be "selected"
-<pre> 转载自 <a href="http://www.21andy.com/blog/20080507/1095.html" title="CURL详解 | Andy's Blog" >CURL详解 | Andy's Blog</a></pre>
+> 本文转载自 [CURL详解 | Andy's Blog](http://www.21andy.com/blog/20080507/1095.html)

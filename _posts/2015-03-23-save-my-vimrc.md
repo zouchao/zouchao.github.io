@@ -15,7 +15,7 @@ categories:
 
 再在vimrc加类似如下配置:
 
-<pre class="prettyprint linenums">
+```vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -28,17 +28,18 @@ Plugin 'Lokaltog/vim-easymotion'
 
 call vundle#end()
 filetype plugin indent on     " required!
-</pre>
+```
 
 然随意打开一个vim窗口
-<pre class="prettyprint linenums">
+
+```shell
 $ vim
 :PluginInstall
-</pre>
+```
 
 ### 我的vimrc:
 
-<pre class="prettyprint linenums">
+```vim
 if has('gui_running')
   " set background=light
   set background=dark
@@ -82,7 +83,6 @@ let Tlist_Use_Right_Window=1 "方法列表放在屏幕的右侧
 set list
 set listchars=tab:,.,trail:.,extends:#,nbsp:.
 let g:vim_markdown_folding_disabled=1
-
 
 set guifont=Monaco:h15
 set nocompatible               " be iMproved
@@ -132,5 +132,5 @@ colorscheme solarized
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Plugin command are not allowed..
+```
 
-</pre>

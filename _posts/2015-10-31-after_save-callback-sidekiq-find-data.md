@@ -22,7 +22,8 @@ categories:
 <div class="file_title">
   app/models/question.rb
 </div>
-<pre class="prettyprint linenums">
+
+```ruby
 class Question < ActiveRecord::Base
   after_save :index_for_search
 
@@ -34,11 +35,13 @@ class Question < ActiveRecord::Base
     QuestionIndexerJob.perform_later(self)
   end
 end
-</pre>
+```
+
 <div class="file_title">
 app/jobs/question_indexer_job.rb
 </div>
-<pre class="prettyprint linenums">
+
+```ruby
 class QuestionIndexerJob < ActiveJob::Base
   queue_as :default
 
@@ -46,7 +49,8 @@ class QuestionIndexerJob < ActiveJob::Base
     # ... index the question ...
   end
 end
-</pre>
+```
+
 到这看起来似乎都是完美的。直到你查看你的`sidekiq`日志，看到这些错误显示：
 
 ```log
@@ -61,13 +65,14 @@ end
 <div class="file_title">
   app/models/question.rb
 </div>
-<pre class="prettyprint linenums">
+
+```ruby
 class Question < ActiveRecord::Base
   after_commit :index_for_search, on: [:create, :update]
 
   # ...
 end
-</pre>
+```
 
 再观察`sidekiq`日志，发现问题确实解决了。完美
 
@@ -78,7 +83,8 @@ end
 <div class="file_title">
   test/models/question_test.rb
 </div>
-<pre class="prettyprint linenums">
+
+```ruby
 require 'test_helper'
 
 class QuestionTest < ActiveSupport::TestCase
@@ -88,7 +94,7 @@ class QuestionTest < ActiveSupport::TestCase
     end
   end
 end
-</pre>
+```
 
 ```shell
  1) Failure:
@@ -101,20 +107,19 @@ No enqueued job found with {:job=>QuestionIndexerJob}
 
 其实这个问题也有一个比较简单的方式来解决，那就是引入一个叫`test_after_commit`的gem包：
 
-
 <div class="file_title">
 Gemfile
 </div>
-<pre class="prettyprint linenums">
+
+```ruby
 group :test do
   gem "test_after_commit"
 end
-</pre>
+```
+
 这样有`after_commit`的回调就能在测试中再加一层事物, 得到我们想要的效果。但是也许你还是会觉得别扭，为毛我要为这事儿单独去加载一个gem？你是对的，这非常别扭。但是这事也不会持续太久了，因为`rails5`中已经修复了这个问题：[https://github.com/rails/rails/pull/18458][rails5]
 
-<pre> 本文译自： <a href="http://www.justinweiss.com/articles/a-couple-callback-gotchas-and-a-rails-5-fix/" title="A Couple of Callback Gotchas (and a Rails 5 Fix)" >A Couple of Callback Gotchas (and a Rails 5 Fix) | Justin Weiss's blog</a></pre>
-
-
+> 本文译自： [A Couple of Callback Gotchas (and a Rails 5 Fix) | Justin Weiss's blog](http://www.justinweiss.com/articles/a-couple-callback-gotchas-and-a-rails-5-fix/)
 
 [rails5]: https://github.com/rails/rails/pull/18458
 [railsguides]: http://guides.rubyonrails.org/active_record_callbacks.html

@@ -21,14 +21,16 @@ sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
 sudo  port install jpeg libpng tiff
 
 ### 2. Building:
-<pre class="prettyprint linenums">
+
+```shell
 git clone https://chromium.googlesource.com/webm/libwebp
 cd libwebp
 ./autogen.sh
 ./configure
 make
 sudo make install
-</pre>
+```
+
 ### 3. 安装webp gem
 `gem install webp-ffi`
 ### 4. 如果以上两步装完后，启动服务器并且访问出错，错误信息类似：
