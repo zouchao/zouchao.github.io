@@ -1,5 +1,5 @@
 ---
-date: 2013-06-02 12:26:00
+date: 2013-06-02 12:26:00 +0800
 title: 解决Agent admitted failure to sign using the key的方法
 layout: post
 tags:

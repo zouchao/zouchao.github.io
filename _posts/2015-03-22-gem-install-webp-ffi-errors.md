@@ -1,5 +1,5 @@
 ---
-date: 2015-03-22 16:06:00
+date: 2015-03-22 16:06:00 +0800
 title: webp图片格式配置，bundle时web_ffi未成功
 layout: post
 tags:

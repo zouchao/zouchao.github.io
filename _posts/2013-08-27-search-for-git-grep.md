@@ -1,5 +1,5 @@
 ---
-date: 2013-08-27 12:26:00
+date: 2013-08-27 12:26:00 +0800
 title: git grep在版本库中使用详解
 layout: post
 tags:

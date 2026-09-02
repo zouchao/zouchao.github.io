@@ -1,5 +1,5 @@
 ---
-date: 2010-03-10 12:46:00
+date: 2010-03-10 12:46:00 +0800
 title: 演讲稿/代码片段/站外资料知识库
 layout: post
 tags:
@@ -14,4 +14,4 @@ categories:
 
 ####  幻灯片
 
-[VIM: THE UBIQUITOUS TEXT EDITOR](https://zouchao.me/slideshare/vim)
+[VIM: THE UBIQUITOUS TEXT EDITOR]({{ '/slideshare/vim/' | relative_url }})

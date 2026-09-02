@@ -1,5 +1,5 @@
 ---
-date: 2010-05-18 15:50:00
+date: 2010-05-18 15:50:00 +0800
 title: mysql开放远程访问的设置问题
 keywords: mysql,远程访问,数据库
 layout: post

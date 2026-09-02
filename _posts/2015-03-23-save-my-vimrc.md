@@ -1,5 +1,5 @@
 ---
-date: 2015-03-23 10:59:10
+date: 2015-03-23 10:59:10 +0800
 title: Vundle管理vim插件
 layout: post
 tags:

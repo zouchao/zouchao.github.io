@@ -1,5 +1,5 @@
 ---
-date: 2019-02-14 11:14:12
+date: 2019-02-14 11:14:12 +0800
 title: 记录一次mysql升级之后rails遇到的问题
 layout: post
 tags:

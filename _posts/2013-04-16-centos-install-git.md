@@ -1,5 +1,5 @@
 ---
-date: 2013-04-16 11:26:00
+date: 2013-04-16 11:26:00 +0800
 title: CentOS下安装git
 keywords: CentOS,git
 layout: post

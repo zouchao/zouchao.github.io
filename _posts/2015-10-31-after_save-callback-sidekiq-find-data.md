@@ -1,5 +1,5 @@
 ---
-date: 2015-10-31 10:00:00
+date: 2015-10-31 10:00:00 +0800
 title: after_save和after_commit使用的误区
 layout: post
 tags:

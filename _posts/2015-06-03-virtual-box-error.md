@@ -1,5 +1,5 @@
 ---
-date: 2015-06-03 12:36:33
+date: 2015-06-03 12:36:33 +0800
 title: VirtualBox无法启动报错
 layout: post
 tags:

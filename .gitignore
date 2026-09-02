@@ -1,10 +1,25 @@
+# Bundler cache
+.bundle
+vendor
+Gemfile.lock
+
+# Jekyll cache
+.jekyll-cache
+.jekyll-metadata
+_site
+
+# RubyGems
+*.gem
+
+# legacy
 /bak_post/
-/_site/
 .rbenv-gemsets
+
+# Hidden system files
+*~
 *.s[a-w][a-z]
 *.un~
 Session.vim
 .netrwhist
-*~
-.ruby-version
 .DS_Store
+Thumbs.db
