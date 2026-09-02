@@ -4,7 +4,6 @@ title: CentOS下安装git
 keywords: CentOS,git
 layout: post
 tags:
-    - 工具安装
     - git
 categories:
     - git

@@ -5,8 +5,6 @@ keywords: mysql,远程访问,数据库
 layout: post
 tags:
     - MySQL
-    - 远程访问
-    - 数据库
 categories:
     - mysql
 ---

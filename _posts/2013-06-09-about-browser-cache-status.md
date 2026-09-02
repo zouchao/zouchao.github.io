@@ -5,7 +5,6 @@ layout: post
 tags:
     - 缓存
     - PHP
-    - header
 categories:
     - 缓存
 ---

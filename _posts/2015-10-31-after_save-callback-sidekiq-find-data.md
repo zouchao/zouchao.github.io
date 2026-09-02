@@ -5,8 +5,6 @@ layout: post
 tags:
     - Elasticsearch
     - Sidekiq
-    - after_save
-    - after_commit
     - ActiveRecord
 categories:
     - ruby

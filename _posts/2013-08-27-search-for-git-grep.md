@@ -5,7 +5,6 @@ layout: post
 tags:
     - git
     - grep
-    - 搜索
     - Ruby
 categories:
     - git

@@ -4,7 +4,6 @@ title: 苹果优惠及选购
 layout: post
 tags:
     - macOS
-    - 科技产品
 categories:
     - tools
 ---
