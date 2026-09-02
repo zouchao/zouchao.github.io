@@ -6,7 +6,7 @@ tags:
     - git
     - grep
     - 搜索
-    - ruby
+    - Ruby
 categories:
     - git
 ---

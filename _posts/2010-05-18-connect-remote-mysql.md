@@ -4,7 +4,7 @@ title: mysql开放远程访问的设置问题
 keywords: mysql,远程访问,数据库
 layout: post
 tags:
-    - mysql
+    - MySQL
     - 远程访问
     - 数据库
 categories:

@@ -3,8 +3,8 @@ date: 2026-08-26 16:30:48
 title: 用 Nix 声明式管理我的 Mac：从入门到上手计划
 layout: post
 tags:
-   - nix
-   - macos
+   - Nix
+   - macOS
    - nix-darwin
    - home-manager
 categories:

@@ -5,7 +5,7 @@ layout: post
 tags:
     - git
     - 版本控制
-    - ssh
+    - SSH
 categories:
     - git
 ---

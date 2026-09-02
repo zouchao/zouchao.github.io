@@ -4,8 +4,8 @@ title: 一台 Mac 多个 git 身份：用 includeIf hasconfig 按远程地址自
 layout: post
 tags:
    - git
-   - github
-   - macos
+   - GitHub
+   - macOS
 categories:
    - 工具
 ---

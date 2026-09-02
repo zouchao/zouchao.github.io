@@ -3,7 +3,7 @@ date: 2018-09-25 09:45:08
 title: 给终端设置代理
 layout: post
 tags:
-    - 代理
+    - proxy
 categories:
     - 代理
 ---

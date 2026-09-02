@@ -3,9 +3,9 @@ date: 2015-06-03 12:36:33
 title: VirtualBox无法启动报错
 layout: post
 tags:
-    - virtual box
+    - VirtualBox
     - VM
-    - centos
+    - CentOS
 categories:
     - tools
 ---

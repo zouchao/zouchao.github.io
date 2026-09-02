@@ -3,7 +3,7 @@ date: 2015-06-07 20:46:53
 title: 苹果优惠及选购
 layout: post
 tags:
-    - mac
+    - macOS
     - 科技产品
 categories:
     - tools

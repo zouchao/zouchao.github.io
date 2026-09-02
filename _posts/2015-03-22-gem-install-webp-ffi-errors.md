@@ -3,8 +3,8 @@ date: 2015-03-22 16:06:00
 title: webp图片格式配置，bundle时web_ffi未成功
 layout: post
 tags:
-    - webp
-    - web-ffi
+    - WebP
+    - webp-ffi
     - bundle
     - gem
 categories:

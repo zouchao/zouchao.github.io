@@ -3,10 +3,10 @@ date: 2015-10-27 14:00:00
 title: 安装Laravel Homestead遇到的坑
 layout: post
 tags:
-    - php
-    - laravel
-    - vagrant
-    - virtualbox
+    - PHP
+    - Laravel
+    - Vagrant
+    - VirtualBox
 categories:
     - php
     - virtualbox

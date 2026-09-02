@@ -4,7 +4,7 @@ title: 关于浏览器缓存的利用
 layout: post
 tags:
     - 缓存
-    - php
+    - PHP
     - header
 categories:
     - 缓存

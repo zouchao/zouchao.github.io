@@ -3,10 +3,10 @@ date: 2019-02-14 11:14:12
 title: 记录一次mysql升级之后rails遇到的问题
 layout: post
 tags:
-   - rails
-   - activerecord
-   - mysql
-   - ruby
+   - Rails
+   - ActiveRecord
+   - MySQL
+   - Ruby
 categories:
    - activerecord
 ---

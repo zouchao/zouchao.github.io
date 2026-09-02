@@ -4,10 +4,10 @@ title: 本地虚拟机跑 OpenClash 接管整台 Mac 的代理，Raycast 一键�
 layout: post
 tags:
    - proxy
-   - openclash
-   - istoreos
-   - raycast
-   - macos
+   - OpenClash
+   - iStoreOS
+   - Raycast
+   - macOS
 categories:
    - 工具
 ---

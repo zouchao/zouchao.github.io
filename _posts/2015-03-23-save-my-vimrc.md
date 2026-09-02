@@ -4,7 +4,7 @@ title: Vundle管理vim插件
 layout: post
 tags:
     - git
-    - vim 
+    - Vim
     - Vundle
 categories:
     - vim
