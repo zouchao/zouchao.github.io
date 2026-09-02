@@ -8,8 +8,8 @@ tags:
     - Vagrant
     - VirtualBox
 categories:
-    - php
-    - virtualbox
+    - PHP
+    - 工具
 ---
 
 #### 一、安装条件

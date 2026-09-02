@@ -6,7 +6,7 @@ tags:
     - 缓存
     - PHP
 categories:
-    - 缓存
+    - 前端
 ---
 关于浏览器缓存，在header中有如下几个：（以下示例均为php代码）
 

@@ -8,7 +8,7 @@ tags:
     - bundle
     - gem
 categories:
-    - gem
+    - Ruby
 ---
 首先安装依赖包
 ### 1. 安装依赖包

@@ -7,7 +7,7 @@ tags:
     - PHP
     - curl
 categories:
-    - php
+    - PHP
 ---
 #### PHP中的CURL函数库（Client URL Library Function）
 + `curl_close` — 关闭一个curl会话

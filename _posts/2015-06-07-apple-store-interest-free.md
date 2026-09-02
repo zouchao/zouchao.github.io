@@ -5,7 +5,7 @@ layout: post
 tags:
     - macOS
 categories:
-    - tools
+    - 工具
 ---
 
 #### 思想针扎：

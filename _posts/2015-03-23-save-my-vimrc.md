@@ -7,7 +7,7 @@ tags:
     - Vim
     - Vundle
 categories:
-    - vim
+    - Vim
 ---
 ### 使用Vundle管理安装vim插件
 

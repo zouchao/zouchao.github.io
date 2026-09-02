@@ -8,7 +8,7 @@ tags:
    - MySQL
    - Ruby
 categories:
-   - activerecord
+   - Ruby
 ---
 
 mysql升级之后数据文件夹共用, 但是无法使用`db:migrate`

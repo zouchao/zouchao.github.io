@@ -5,7 +5,7 @@ layout: post
 tags:
     - proxy
 categories:
-    - 代理
+    - 工具
 ---
 
 如下是初级工程师Bob和老程序员Bill的又一个故事。

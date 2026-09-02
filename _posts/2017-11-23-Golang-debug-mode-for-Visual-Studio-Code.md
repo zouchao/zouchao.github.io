@@ -7,8 +7,7 @@ tags:
     - Golang
     - VSCode
 categories:
-    - 建站
-    - blog
+    - Go
 ---
 
 最近想玩玩golang，同事安利了一个编辑器`Visual Studio Code`, 是用nodejs开发的，用起来十分趁手,如何配置golang的环境就不表了，网上帖子一大把，自行查阅。
