@@ -59,14 +59,15 @@ avatar: /assets/img/avatar.jpg
 toc: true
 
 comments:
-  # Global switch for the post-comment system. Keeping it empty means disabled.
-  # 可切换为 giscus（基于 GitHub Discussions）› https://giscus.app/zh-CN
-  provider: # [disqus | utterances | giscus]
+  # 评论系统：giscus（基于 GitHub Discussions）› https://giscus.app/zh-CN
+  provider: giscus # [disqus | utterances | giscus]
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
+    repo: zouchao/zouchao.github.io
+    repo_id: MDEwOlJlcG9zaXRvcnk5Njc2NTU0
+    category: Announcements
+    category_id: DIC_kwDOAJOnCs4DEuem
+    mapping: pathname # 按文章 URL 匹配 Discussion，URL 稳定故评论不会串
+    lang: zh-CN
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
