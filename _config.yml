@@ -40,7 +40,7 @@ social:
 # Web Analytics Settings
 analytics:
   google:
-    id: # fill in your Google Analytics ID (GA4)
+    id: G-7Q2YWR8MFP # GA4 衡量 ID
 
 # Page views settings
 pageviews:
