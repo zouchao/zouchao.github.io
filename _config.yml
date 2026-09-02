@@ -41,10 +41,12 @@ social:
 analytics:
   google:
     id: G-7Q2YWR8MFP # GA4 衡量 ID
+  goatcounter:
+    id: zouchao # → https://zouchao.goatcounter.com
 
 # Page views settings
 pageviews:
-  provider: # now only supports 'goatcounter'
+  provider: goatcounter # 文章页显示阅读量
 
 # Prefer color scheme setting.
 # Keep empty will follow the system prefer color by default,
