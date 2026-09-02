@@ -19,3 +19,10 @@
   white-space: pre-wrap;
   overflow-wrap: break-word;
 }
+
+/* 行号列与代码列是两个独立 <pre>，折行后行高必然错位、行号对不上；
+   隐藏行号列是唯一不弄坏复制按钮的折中（复制按钮取的是 td.rouge-code）。
+   想要「换行 + 行号兼得」得写运行时 JS 重排行结构，代价大且易碎 */
+.highlight td.rouge-gutter {
+  display: none;
+}
