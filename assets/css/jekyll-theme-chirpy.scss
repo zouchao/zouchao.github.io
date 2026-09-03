@@ -37,3 +37,51 @@
     user-select: none;
   }
 }
+
+/* 主题强调色换成 logo 橙红（取自 avatar.jpg 笔画 #D04A1B）。
+   选择器面与主题 _base.scss 一致：显式 data-theme + 跟随系统两种情况都盖到，
+   同特异性下靠「后声明」取胜 */
+@mixin brand-accents-light {
+  --link-color: #c2410c;
+  --link-underline-color: #f2c0ab;
+  --toc-highlight: #c2410c;
+  --checkbox-checked-color: #d04a1b;
+  --btn-share-hover-color: #d04a1b;
+  --input-focus-border-color: #d04a1b;
+  --sidebar-hover-bg: rgb(208 74 27 / 8%);
+  --tag-hover: rgb(208 74 27 / 15%);
+  --footnote-target-bg: #ffe9de;
+  --categories-icon-hover-color: #b3400f;
+}
+
+@mixin brand-accents-dark {
+  --link-color: #f08050;
+  --link-underline-color: rgb(146 74 45);
+  --toc-highlight: #f08050;
+  --btn-share-hover-color: #f08050;
+  --input-focus-border-color: #f08050;
+  --sidebar-hover-bg: rgb(240 128 80 / 12%);
+  --tag-hover: rgb(240 128 80 / 20%);
+  --footnote-target-bg: rgb(240 128 80 / 25%);
+  --categories-icon-hover-color: #f08050;
+}
+
+:root[data-theme='light'] {
+  @include brand-accents-light;
+}
+
+:root[data-theme='dark'] {
+  @include brand-accents-dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    @include brand-accents-light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include brand-accents-dark;
+  }
+}
