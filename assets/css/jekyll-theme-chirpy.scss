@@ -52,6 +52,31 @@
   --tag-hover: rgb(208 74 27 / 15%);
   --footnote-target-bg: #ffe9de;
   --categories-icon-hover-color: #b3400f;
+
+  /* Bootstrap 主色按钮（热门标签、post-nav、PWA 提示）换成品牌橙 */
+  .btn-outline-primary {
+    --bs-btn-color: #c2410c;
+    --bs-btn-border-color: rgb(194 65 12 / 60%);
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #c2410c;
+    --bs-btn-hover-border-color: #c2410c;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #a83a0b;
+    --bs-btn-active-border-color: #a83a0b;
+    --bs-btn-disabled-color: rgb(194 65 12 / 50%);
+    --bs-btn-disabled-border-color: rgb(194 65 12 / 30%);
+    --bs-btn-focus-shadow-rgb: 194 65 12;
+  }
+
+  .btn-primary {
+    --bs-btn-bg: #c2410c;
+    --bs-btn-border-color: #c2410c;
+    --bs-btn-hover-bg: #a83a0b;
+    --bs-btn-hover-border-color: #a83a0b;
+    --bs-btn-active-bg: #a83a0b;
+    --bs-btn-active-border-color: #a83a0b;
+    --bs-btn-focus-shadow-rgb: 194 65 12;
+  }
 }
 
 @mixin brand-accents-dark {
@@ -64,6 +89,30 @@
   --tag-hover: rgb(240 128 80 / 20%);
   --footnote-target-bg: rgb(240 128 80 / 25%);
   --categories-icon-hover-color: #f08050;
+
+  .btn-outline-primary {
+    --bs-btn-color: #f08050;
+    --bs-btn-border-color: rgb(240 128 80 / 60%);
+    --bs-btn-hover-color: #1b1b1e;
+    --bs-btn-hover-bg: #f08050;
+    --bs-btn-hover-border-color: #f08050;
+    --bs-btn-active-color: #1b1b1e;
+    --bs-btn-active-bg: #f29066;
+    --bs-btn-active-border-color: #f29066;
+    --bs-btn-disabled-color: rgb(240 128 80 / 50%);
+    --bs-btn-disabled-border-color: rgb(240 128 80 / 30%);
+    --bs-btn-focus-shadow-rgb: 240 128 80;
+  }
+
+  .btn-primary {
+    --bs-btn-bg: #f08050;
+    --bs-btn-border-color: #f08050;
+    --bs-btn-hover-bg: #f29066;
+    --bs-btn-hover-border-color: #f29066;
+    --bs-btn-active-bg: #f29066;
+    --bs-btn-active-border-color: #f29066;
+    --bs-btn-focus-shadow-rgb: 240 128 80;
+  }
 }
 
 :root[data-theme='light'] {
