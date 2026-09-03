@@ -14,15 +14,26 @@
 
 /* append your custom style below */
 
-/* 代码块自动换行：长行不再横向滚动，而是在块内折行 */
-.highlight td.rouge-code pre {
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-}
+/* 代码块换行 + 行号对齐（与 /assets/js/custom.js 配套）：
+   JS 把行号列/代码列各拆成每行一个 span（.ln-line / .lc-line），
+   并令行号 span 高度跟随代码 span，折行后行号仍逐行对应。
+   无 JS 时不加 .wrapped，保持主题默认横向滚动。 */
+.highlight.wrapped {
+  .lc-line,
+  .ln-line {
+    display: block;
+    font-size: 0.85rem; /* = $code-font-size */
+    line-height: 1.4rem; /* = 主题 pre 行高 */
+  }
 
-/* 行号列与代码列是两个独立 <pre>，折行后行高必然错位、行号对不上；
-   隐藏行号列是唯一不弄坏复制按钮的折中（复制按钮取的是 td.rouge-code）。
-   想要「换行 + 行号兼得」得写运行时 JS 重排行结构，代价大且易碎 */
-.highlight td.rouge-gutter {
-  display: none;
+  .lc-line {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  .ln-line {
+    text-align: right;
+    color: var(--highlight-lineno-color);
+    user-select: none;
+  }
 }
