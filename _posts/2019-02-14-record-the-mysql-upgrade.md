@@ -9,6 +9,9 @@ tags:
    - Ruby
 categories:
    - Ruby
+image:
+    path: /assets/img/posts/record-the-mysql-upgrade/cover.png
+    alt: MySQL 升级后 performance_schema 表缺失导致 Rails db:migrate 报错的修复
 ---
 
 mysql升级之后数据文件夹共用, 但是无法使用`db:migrate`

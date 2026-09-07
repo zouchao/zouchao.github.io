@@ -4,12 +4,15 @@ title: 从我的 ~/.ssh 目录说起：SSH 认证、多账号 Git 与端口转�
 layout: post
 tags:
     - SSH
-    - Git
+    - git
     - macOS
     - 网络
     - 安全
 categories:
     - 工具
+image:
+    path: /assets/img/posts/ssh-config-notes/cover.png
+    alt: ~/.ssh 示意图：目录里的多把密钥分别映射到 GitHub、云效与 Tailscale 内网 Git，以及一条 LocalForward 隧道
 ---
 
 `~/.ssh` 是那种配好就再也不看的目录——直到某天换机器、加账号，或者 git push 突然开始报 `Permission denied (publickey)`，才会发现里面躺着一堆自己都认不出来的文件。这几天整理密钥，顺手把自己的配置逐行过了一遍，发现里面其实塞了不少 SSH 的典型用法：443 端口连 GitHub、一台机器三个 GitHub 账号、云效、走 Tailscale 的内网 Git 服务、还有把云上内网的 MySQL 转发到本地。

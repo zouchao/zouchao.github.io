@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">Cache</text>
+  <rect x="358" y="88" width="14" height="66" rx="2" fill="#fbbf24" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">Last-Modified · Expires · Cache-Control</text>
+  <text x="1520" y="212" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">HTTP_IF_MODIFIED_SINCE</text>
+
+  <!-- ================= Card 1: Last-Modified ================= -->
+  <rect x="80" y="260" width="460" height="560" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="308" x2="540" y2="308" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="284" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="284" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="284" r="7" fill="#28c840"/>
+  <text x="310" y="290" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">Last-Modified</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="112" y="350" fill="#94a3b8">第1次请求</text>
+    <text x="112" y="382"><tspan fill="#34d399">HTTP 200</tspan><tspan fill="#5d6f92">  返回页面内容</tspan></text>
+
+    <text x="112" y="440" fill="#94a3b8">第2次请求</text>
+    <text x="112" y="472"><tspan fill="#fbbf24" font-weight="700">HTTP 304</tspan><tspan fill="#5d6f92">  缓存命中</tspan></text>
+    <text x="112" y="504" font-size="15" fill="#5d6f92">HTTP_IF_MODIFIED_SINCE</text>
+    <text x="112" y="530" font-size="15" fill="#5d6f92">未过期 → 返回 304</text>
+
+    <text x="112" y="588" fill="#94a3b8">文件已删除</text>
+    <text x="112" y="620"><tspan fill="#f472b6">HTTP 404</tspan><tspan fill="#5d6f92">  资源不存在</tspan></text>
+  </g>
+
+  <!-- highlight -->
+  <rect x="100" y="456" width="420" height="34" rx="8" fill="#fbbf24" opacity="0.09"/>
+
+  <!-- chip -->
+  <rect x="112" y="670" width="240" height="50" rx="10" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.55"/>
+  <text x="232" y="702" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#fbbf24">header("HTTP/1.1 304")</text>
+
+  <!-- ================= Card 2: Expires ================= -->
+  <rect x="580" y="260" width="460" height="560" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="580" y1="308" x2="1040" y2="308" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="612" cy="284" r="7" fill="#ff5f57"/>
+  <circle cx="640" cy="284" r="7" fill="#febc2e"/>
+  <circle cx="668" cy="284" r="7" fill="#28c840"/>
+  <text x="810" y="290" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">Expires</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="612" y="350" fill="#94a3b8">第1次请求</text>
+    <text x="612" y="382"><tspan fill="#34d399">HTTP 200</tspan><tspan fill="#5d6f92">  返回页面内容</tspan></text>
+
+    <text x="612" y="440" fill="#94a3b8">第2次请求</text>
+    <text x="612" y="472"><tspan fill="#34d399">HTTP 200</tspan><tspan fill="#5d6f92">  客户端不发请求</tspan></text>
+
+    <text x="612" y="530" fill="#94a3b8">文件已删除</text>
+    <text x="612" y="562"><tspan fill="#34d399">HTTP 200</tspan><tspan fill="#5d6f92">  仍用本地缓存</tspan></text>
+
+    <text x="612" y="628" font-size="15" fill="#f472b6">⚠ 依赖服务端时间</text>
+    <text x="612" y="656" font-size="15" fill="#f472b6">  客户端时钟不同步时失效</text>
+  </g>
+
+  <!-- chip -->
+  <rect x="612" y="700" width="380" height="50" rx="10" fill="#1c2a4d" stroke="#60a5fa" stroke-opacity="0.55"/>
+  <text x="802" y="732" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#60a5fa">header("Expires: ".gmdate(...))</text>
+
+  <!-- ================= Card 3: Cache-Control ================= -->
+  <rect x="1080" y="260" width="460" height="560" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="1080" y1="308" x2="1540" y2="308" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="1112" cy="284" r="7" fill="#ff5f57"/>
+  <circle cx="1140" cy="284" r="7" fill="#febc2e"/>
+  <circle cx="1168" cy="284" r="7" fill="#28c840"/>
+  <text x="1310" y="290" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">Cache-Control</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="1112" y="350" fill="#94a3b8">第1次请求</text>
+    <text x="1112" y="382"><tspan fill="#34d399">HTTP 200</tspan><tspan fill="#5d6f92">  返回页面内容</tspan></text>
+
+    <text x="1112" y="440" fill="#94a3b8">第2次请求</text>
+    <text x="1112" y="472"><tspan fill="#34d399">HTTP 200</tspan><tspan fill="#5d6f92">  客户端不发请求</tspan></text>
+
+    <text x="1112" y="530" fill="#94a3b8">文件已删除</text>
+    <text x="1112" y="562"><tspan fill="#34d399">HTTP 200</tspan><tspan fill="#5d6f92">  仍用本地缓存</tspan></text>
+
+    <text x="1112" y="628" font-size="15" fill="#34d399">✓ 基于相对时间 (max-age)</text>
+    <text x="1112" y="656" font-size="15" fill="#34d399">  不依赖时钟同步</text>
+  </g>
+
+  <!-- highlight -->
+  <rect x="1100" y="456" width="420" height="34" rx="8" fill="#34d399" opacity="0.09"/>
+
+  <!-- chip -->
+  <rect x="1112" y="700" width="380" height="50" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="1302" y="732" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#34d399">Cache-Control: max-age=3600</text>
+</svg>

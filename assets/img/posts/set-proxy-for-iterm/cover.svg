@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+    <g id="proxyGlyph" fill="currentColor">
+      <rect x="-8" y="-1" width="16" height="12" rx="3"/>
+      <path d="M-5,-1 v-4 a5,5 0 0 1 10,0 v4" fill="none" stroke="currentColor" stroke-width="2"/>
+    </g>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">http_proxy</text>
+  <rect x="622" y="88" width="14" height="66" rx="2" fill="#fbbf24" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">终端代理 · Shadowsocks HTTP · alias 快切</text>
+  <text x="1520" y="212" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">127.0.0.1:1087</text>
+
+  <!-- ================= terminal card ================= -->
+  <rect x="80" y="250" width="760" height="570" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="298" x2="840" y2="298" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="274" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="274" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="274" r="7" fill="#28c840"/>
+  <text x="460" y="280" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">~/.zshrc — zsh</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="19">
+    <text x="112" y="348"><tspan fill="#5d6f92"># alias for proxy</tspan></text>
+
+    <rect x="100" y="368" width="720" height="38" rx="8" fill="#fbbf24" opacity="0.09"/>
+    <text x="112" y="394"><tspan fill="#60a5fa" font-weight="700">alias</tspan><tspan fill="#34d399"> proxy</tspan><tspan fill="#cbd5e1">="</tspan><tspan fill="#60a5fa">export</tspan><tspan fill="#cbd5e1"> http_proxy=</tspan><tspan fill="#a78bfa">http://127.0.0.1:1087</tspan></text>
+    <text x="140" y="430"><tspan fill="#cbd5e1">&amp;&amp; </tspan><tspan fill="#60a5fa">export</tspan><tspan fill="#cbd5e1"> https_proxy=</tspan><tspan fill="#a78bfa">http://127.0.0.1:1087</tspan><tspan fill="#cbd5e1">"</tspan></text>
+
+    <rect x="100" y="456" width="720" height="38" rx="8" fill="#60a5fa" opacity="0.09"/>
+    <text x="112" y="482"><tspan fill="#60a5fa" font-weight="700">alias</tspan><tspan fill="#34d399"> unproxy</tspan><tspan fill="#cbd5e1">="</tspan><tspan fill="#60a5fa">unset</tspan><tspan fill="#cbd5e1"> http_proxy &amp;&amp; </tspan><tspan fill="#60a5fa">unset</tspan><tspan fill="#cbd5e1"> https_proxy"</tspan></text>
+
+    <text x="112" y="530"><tspan fill="#60a5fa" font-weight="700">alias</tspan><tspan fill="#34d399"> ip</tspan><tspan fill="#cbd5e1">="curl https://ip.cn"</tspan></text>
+
+    <text x="112" y="596"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> proxy</tspan></text>
+    <text x="112" y="632"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> ip</tspan></text>
+    <text x="112" y="668" font-size="17"><tspan fill="#94a3b8">当前 IP: xxx.xxx.xxx.xxx 来自: 美国</tspan></text>
+
+    <text x="112" y="726"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> unproxy</tspan></text>
+    <text x="112" y="762"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> ip</tspan></text>
+    <text x="112" y="798" font-size="17"><tspan fill="#94a3b8">当前 IP: xxx.xxx.xxx.xxx 来自: 中国</tspan></text>
+  </g>
+
+  <!-- ================= right: flow diagram ================= -->
+  <!-- SS node -->
+  <rect x="920" y="270" width="600" height="120" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="960" y="320" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#fbbf24">Shadowsocks</text>
+  <text x="960" y="358" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">系统代理 = SOCKS5，终端不认</text>
+
+  <!-- Arrow down -->
+  <path d="M 1220 390 C 1220 430, 1220 430, 1220 450" fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <text x="1240" y="432" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#fbbf24">HTTP 端口</text>
+
+  <!-- HTTP Proxy node -->
+  <rect x="920" y="460" width="600" height="120" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <use href="#proxyGlyph" transform="translate(956, 504)" color="#60a5fa"/>
+  <text x="984" y="512" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#60a5fa">HTTP Proxy</text>
+  <text x="960" y="550" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#34d399">127.0.0.1:1087</tspan><tspan fill="#94a3b8"> — curl / go get 可用</tspan></text>
+
+  <!-- Arrow down -->
+  <path d="M 1220 580 C 1220 620, 1220 620, 1220 640" fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Terminal env -->
+  <rect x="920" y="650" width="600" height="120" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="960" y="700" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#34d399">Terminal</text>
+  <text x="960" y="738" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#cbd5e1">export http_proxy=...</tspan></text>
+  <text x="960" y="756" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#5d6f92">env 注入 → 子进程继承</text>
+
+  <!-- chips bottom-right -->
+  <rect x="920" y="800" width="280" height="50" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="1060" y="832" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#34d399">$proxy</text>
+  <rect x="1220" y="800" width="280" height="50" rx="10" fill="#1c2a4d" stroke="#f472b6" stroke-opacity="0.55"/>
+  <text x="1360" y="832" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#f472b6">$unproxy</text>
+</svg>

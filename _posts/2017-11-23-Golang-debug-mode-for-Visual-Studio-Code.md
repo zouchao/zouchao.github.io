@@ -8,6 +8,9 @@ tags:
     - VSCode
 categories:
     - Go
+image:
+    path: /assets/img/posts/Golang-debug-mode-for-Visual-Studio-Code/cover.png
+    alt: VSCode 调试 Golang 程序——launch.json 配置与 lldb-server 缺失修复
 ---
 
 最近想玩玩golang，同事安利了一个编辑器`Visual Studio Code`, 是用nodejs开发的，用起来十分趁手,如何配置golang的环境就不表了，网上帖子一大把，自行查阅。
@@ -21,7 +24,21 @@ categories:
 3. 点击绿色三角形符号的`Start Debugging`按钮
 
 4. 第一次使用VSCode会自动判断你的语言类型，生产如下的一个`launch.josn`文件
-![](https://ww1.sinaimg.cn/large/6a629b92gy1fluf8ejfztj21r41asan3.jpg)
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${file}"
+        }
+    ]
+}
+```
 
 5. 成功之后会在你所在的项目目录下生产如下2个文件
 ```
@@ -30,7 +47,12 @@ debug
 ```
 
 6. `git status`也能看到他们，所以别忘了把他们加到`.gitignore`文件中去哦
-![](https://ww1.sinaimg.cn/large/6a629b92gy1flufndpw0fj211w0vcag6.jpg)
+
+```text
+Untracked files:
+	debug
+	.vscode/launch.json
+```
 
 #### 当然你也有可能和我一样遇到如下问题：
 ```

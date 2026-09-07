@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">curl_</text>
+  <rect x="358" y="88" width="14" height="66" rx="2" fill="#fbbf24" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">PHP CURL · 函数全解 · 请求生命周期</text>
+  <text x="1520" y="212" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">CURLOPT_RETURNTRANSFER</text>
+
+  <!-- ============ lifecycle flow ============ -->
+  <!-- step 1: init -->
+  <rect x="80" y="270" width="310" height="220" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="112" y="312" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#34d399">① curl_init</text>
+  <text x="112" y="352" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">初始化会话</text>
+  <rect x="100" y="380" width="270" height="30" rx="6" fill="#fbbf24" opacity="0.09"/>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="16">
+    <text x="112" y="402" fill="#fbbf24">$ch = curl_init();</text>
+    <text x="112" y="440" fill="#5d6f92">// 可传入 URL</text>
+    <text x="112" y="466" fill="#cbd5e1">curl_init("http://...")</text>
+  </g>
+
+  <!-- step 2: setopt -->
+  <rect x="470" y="270" width="310" height="220" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="502" y="312" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#fbbf24">② curl_setopt</text>
+  <text x="502" y="352" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">配置请求参数</text>
+  <rect x="490" y="380" width="270" height="30" rx="6" fill="#fbbf24" opacity="0.09"/>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="15">
+    <text x="502" y="402" fill="#fbbf24">CURLOPT_URL</text>
+    <text x="502" y="428" fill="#cbd5e1">CURLOPT_RETURNTRANSFER</text>
+    <text x="502" y="454" fill="#cbd5e1">CURLOPT_TIMEOUT</text>
+    <text x="502" y="476" fill="#5d6f92">// ... 60+ 选项</text>
+  </g>
+
+  <!-- step 3: exec -->
+  <rect x="860" y="270" width="310" height="220" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="892" y="312" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#60a5fa">③ curl_exec</text>
+  <text x="892" y="352" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">发送 HTTP 请求</text>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="16">
+    <text x="892" y="402" fill="#cbd5e1">curl_exec($ch);</text>
+    <text x="892" y="440" fill="#5d6f92">// 返回响应体或 bool</text>
+  </g>
+
+  <!-- step 4: close -->
+  <rect x="1250" y="270" width="270" height="220" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="1282" y="312" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#f472b6">④ curl_close</text>
+  <text x="1282" y="352" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">释放资源</text>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="16">
+    <text x="1282" y="402" fill="#cbd5e1">curl_close($ch);</text>
+  </g>
+
+  <!-- arrows between steps -->
+  <g fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M 390 380 L 460 380"/>
+    <path d="M 780 380 L 850 380"/>
+    <path d="M 1170 380 L 1240 380"/>
+  </g>
+
+  <!-- ============ bottom: multi-handle + getinfo ============ -->
+  <!-- multi card -->
+  <rect x="80" y="540" width="720" height="290" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="588" x2="800" y2="588" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="564" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="564" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="564" r="7" fill="#28c840"/>
+  <text x="440" y="570" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">curl_multi — 并发批处理</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="112" y="630"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1">mh = curl_multi_init();</tspan></text>
+    <text x="112" y="668"><tspan fill="#cbd5e1">curl_multi_add_handle($mh, $ch1);</tspan></text>
+    <text x="112" y="706"><tspan fill="#cbd5e1">curl_multi_add_handle($mh, $ch2);</tspan></text>
+    <text x="112" y="744" fill="#fbbf24">curl_multi_exec($mh, $flag);</text>
+    <text x="112" y="782"><tspan fill="#cbd5e1">curl_multi_close($mh);</tspan></text>
+  </g>
+
+  <!-- getinfo card -->
+  <rect x="880" y="540" width="640" height="290" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="912" y="582" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#60a5fa">curl_getinfo</text>
+  <text x="912" y="616" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">请求诊断信息</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="17">
+    <text x="912" y="662"><tspan fill="#34d399">CURLINFO_HTTP_CODE</tspan><tspan fill="#5d6f92">      200</tspan></text>
+    <text x="912" y="698"><tspan fill="#fbbf24">CURLINFO_TOTAL_TIME</tspan><tspan fill="#5d6f92">     0.312s</tspan></text>
+    <text x="912" y="734"><tspan fill="#60a5fa">CURLINFO_CONNECT_TIME</tspan><tspan fill="#5d6f92">   0.045s</tspan></text>
+    <text x="912" y="770"><tspan fill="#f472b6">CURLINFO_NAMELOOKUP_TIME</tspan><tspan fill="#5d6f92"> 0.018s</tspan></text>
+    <text x="912" y="806"><tspan fill="#a78bfa">CURLINFO_SIZE_DOWNLOAD</tspan><tspan fill="#5d6f92">  12480</tspan></text>
+  </g>
+</svg>

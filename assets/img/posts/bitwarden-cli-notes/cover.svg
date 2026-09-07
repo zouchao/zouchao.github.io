@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+    <g id="lockGlyph" fill="currentColor">
+      <rect x="-7" y="-1" width="14" height="10" rx="2.5"/>
+      <path d="M-4,-1 v-3 a4,4 0 0 1 8,0 v3" fill="none" stroke="currentColor" stroke-width="2"/>
+    </g>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">bw</text>
+  <rect x="199" y="88" width="14" height="66" rx="2" fill="#fbbf24" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">Bitwarden CLI · 登录 · 解锁 · 终端取密钥</text>
+
+  <!-- watermark -->
+  <text x="1520" y="210" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">BW_SESSION</text>
+
+  <!-- ============= terminal card ============= -->
+  <rect x="80" y="250" width="680" height="555" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="298" x2="760" y2="298" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="274" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="274" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="274" r="7" fill="#28c840"/>
+  <text x="420" y="280" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">~ — zsh</text>
+
+  <!-- highlight bars -->
+  <rect x="100" y="350" width="640" height="38" rx="8" fill="#fbbf24" opacity="0.09"/>
+  <rect x="100" y="460" width="640" height="38" rx="8" fill="#34d399" opacity="0.09"/>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <!-- unlock -->
+    <text x="112" y="340"><tspan fill="#5d6f92"># 解锁 → 产生会话密钥</tspan></text>
+    <text x="112" y="376"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> </tspan><tspan fill="#60a5fa">export</tspan><tspan fill="#cbd5e1"> BW_SESSION=</tspan><tspan fill="#fbbf24">"$(bw unlock --raw)"</tspan></text>
+
+    <!-- list & get -->
+    <text x="112" y="430"><tspan fill="#5d6f92"># 搜索 + 取字段</tspan></text>
+    <text x="112" y="480"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> bw list items --search </tspan><tspan fill="#fbbf24">github</tspan></text>
+    <text x="112" y="518"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> bw get </tspan><tspan fill="#60a5fa">password</tspan><tspan fill="#cbd5e1"> github.com</tspan></text>
+    <text x="112" y="556"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> bw get </tspan><tspan fill="#60a5fa">totp</tspan><tspan fill="#cbd5e1"> github.com</tspan></text>
+
+    <!-- inject to env -->
+    <text x="112" y="610"><tspan fill="#5d6f92"># 注入环境变量，不落盘</tspan></text>
+    <text x="112" y="650"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> </tspan><tspan fill="#60a5fa">export</tspan><tspan fill="#cbd5e1"> GITHUB_TOKEN=</tspan><tspan fill="#fbbf24">"$(bw get \</tspan></text>
+    <text x="132" y="680"><tspan fill="#fbbf24">password github-api-token)"</tspan></text>
+
+    <!-- lock -->
+    <text x="112" y="735"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> bw lock</tspan></text>
+    <text x="112" y="770"><tspan fill="#5d6f92"># 会话密钥失效，密码库重新上锁</tspan></text>
+  </g>
+
+  <!-- ============= connectors ============= -->
+  <g fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M 760 480 C 870 480, 870 320, 984 320"/>
+    <path d="M 760 520 C 870 520, 870 430, 984 430"/>
+    <path d="M 760 556 C 870 556, 870 540, 984 540"/>
+    <path d="M 760 650 C 870 650, 870 650, 984 650"/>
+  </g>
+
+  <!-- ============= right cards: get targets ============= -->
+  <!-- password -->
+  <rect x="1000" y="268" width="520" height="88" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <use href="#lockGlyph" transform="translate(1034, 300)" color="#fbbf24"/>
+  <text x="1058" y="306" font-family="SF Mono, Menlo, Consolas, monospace" font-size="22" font-weight="700" fill="#fbbf24">password</text>
+  <text x="1058" y="338" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16"><tspan fill="#94a3b8">bw get password </tspan><tspan fill="#f1f5f9">github.com</tspan></text>
+
+  <!-- totp -->
+  <rect x="1000" y="376" width="520" height="88" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <use href="#lockGlyph" transform="translate(1034, 408)" color="#34d399"/>
+  <text x="1058" y="414" font-family="SF Mono, Menlo, Consolas, monospace" font-size="22" font-weight="700" fill="#34d399">totp</text>
+  <text x="1058" y="446" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16"><tspan fill="#94a3b8">bw get totp → </tspan><tspan fill="#f1f5f9">6 位验证码</tspan></text>
+
+  <!-- notes -->
+  <rect x="1000" y="484" width="520" height="88" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <use href="#lockGlyph" transform="translate(1034, 516)" color="#60a5fa"/>
+  <text x="1058" y="522" font-family="SF Mono, Menlo, Consolas, monospace" font-size="22" font-weight="700" fill="#60a5fa">notes</text>
+  <text x="1058" y="554" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16"><tspan fill="#94a3b8">bw get notes </tspan><tspan fill="#f1f5f9">some-secure-note</tspan></text>
+
+  <!-- attachment -->
+  <rect x="1000" y="592" width="520" height="88" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <use href="#lockGlyph" transform="translate(1034, 624)" color="#f472b6"/>
+  <text x="1058" y="630" font-family="SF Mono, Menlo, Consolas, monospace" font-size="22" font-weight="700" fill="#f472b6">attachment</text>
+  <text x="1058" y="662" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16"><tspan fill="#94a3b8">bw get attachment --itemid </tspan><tspan fill="#f1f5f9">&lt;id&gt;</tspan></text>
+
+  <!-- ============= Secrets Manager strip ============= -->
+  <rect x="1000" y="710" width="520" height="80" rx="14" fill="#101a31" stroke="#a78bfa" stroke-opacity="0.55" stroke-width="1.5"/>
+  <text x="1028" y="746" font-family="SF Mono, Menlo, Consolas, monospace" font-size="20" font-weight="700" fill="#a78bfa">bws</text>
+  <text x="1080" y="746" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">Secrets Manager</text>
+  <text x="1028" y="776" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#5d6f92">bws run -- 'npm run start'   # CI 注入</text>
+
+  <!-- ============= bottom chip ============= -->
+  <rect x="80" y="830" width="520" height="48" rx="10" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.55"/>
+  <text x="340" y="860" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#fbbf24">encrypted_json</tspan><tspan fill="#94a3b8"> 备份首选 · CSV 明文慎用</tspan></text>
+</svg>

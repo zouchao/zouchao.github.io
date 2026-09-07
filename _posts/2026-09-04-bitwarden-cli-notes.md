@@ -9,6 +9,9 @@ tags:
     - 安全
 categories:
     - 工具
+image:
+    path: /assets/img/posts/bitwarden-cli-notes/cover.png
+    alt: Bitwarden CLI 工作流：bw unlock 产生会话密钥，bw get 取各类密钥
 ---
 
 密码和各种 token 都放在 Bitwarden 里，但总有些时刻你需要在终端里拿到它们：脚本里要导出一个 GitHub token、命令行登录某个服务要临时取个 2FA 验证码、本地起服务要注入数据库密码。浏览器插件管不了这些场景——Bitwarden 官方提供了命令行工具 `bw`，登录解锁之后，整个密码库都能在命令行里读写。我在 Mac 上用了一段时间，这篇把安装、登录、取密钥、备份的完整流程整理一下，顺带记录几个坑。

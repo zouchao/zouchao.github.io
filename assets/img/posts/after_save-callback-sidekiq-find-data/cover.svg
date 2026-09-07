@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#f472b6" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">after_commit</text>
+  <rect x="727" y="88" width="14" height="66" rx="2" fill="#34d399" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">after_save vs after_commit · Sidekiq 查不到数据 · 事务时机</text>
+  <text x="1520" y="212" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">Couldn't find Question with 'id'=3</text>
+
+  <!-- left: after_save (wrong) -->
+  <rect x="80" y="250" width="720" height="310" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="298" x2="800" y2="298" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="274" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="274" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="274" r="7" fill="#28c840"/>
+  <text x="440" y="280" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">app/models/question.rb — after_save</text>
+
+  <rect x="100" y="316" width="680" height="38" rx="8" fill="#f472b6" opacity="0.09"/>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="112" y="342"><tspan fill="#f472b6" font-weight="700">after_save</tspan><tspan fill="#cbd5e1"> :index_for_search</tspan></text>
+    <text x="112" y="388"><tspan fill="#5d6f92">def </tspan><tspan fill="#60a5fa">index_for_search</tspan></text>
+    <text x="112" y="420"><tspan fill="#cbd5e1">  QuestionIndexerJob</tspan></text>
+    <text x="112" y="448"><tspan fill="#cbd5e1">    .perform_later(</tspan><tspan fill="#fbbf24">self</tspan><tspan fill="#cbd5e1">)</tspan></text>
+    <text x="112" y="476"><tspan fill="#5d6f92">end</tspan></text>
+  </g>
+
+  <g font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="16" fill="#f472b6">
+    <text x="112" y="530"> 事务未提交，Sidekiq 另一个进程查不到这条记录</text>
+  </g>
+
+  <!-- right: after_commit (correct) -->
+  <rect x="840" y="250" width="680" height="310" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="840" y1="298" x2="1520" y2="298" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="872" cy="274" r="7" fill="#ff5f57"/>
+  <circle cx="900" cy="274" r="7" fill="#febc2e"/>
+  <circle cx="928" cy="274" r="7" fill="#28c840"/>
+  <text x="1180" y="280" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">app/models/question.rb — after_commit</text>
+
+  <rect x="860" y="316" width="640" height="38" rx="8" fill="#34d399" opacity="0.09"/>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="872" y="342"><tspan fill="#34d399" font-weight="700">after_commit</tspan><tspan fill="#cbd5e1"> :index_for_search,</tspan></text>
+    <text x="872" y="374"><tspan fill="#cbd5e1">  on: [</tspan><tspan fill="#fbbf24">:create</tspan><tspan fill="#cbd5e1">, </tspan><tspan fill="#fbbf24">:update</tspan><tspan fill="#cbd5e1">]</tspan></text>
+    <text x="872" y="420"><tspan fill="#5d6f92"># 事务提交后才触发</tspan></text>
+    <text x="872" y="452"><tspan fill="#5d6f92"># Sidekiq 进程可以正常查到数据</tspan></text>
+    <text x="872" y="484"><tspan fill="#34d399">✓ 正确</tspan></text>
+  </g>
+
+  <!-- connector arrow between two cards -->
+  <g fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M 800 405 C 820 405, 820 405, 840 405"/>
+  </g>
+
+  <!-- bottom: test gotcha -->
+  <rect x="80" y="590" width="1440" height="230" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="638" x2="1520" y2="638" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="614" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="614" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="614" r="7" fill="#28c840"/>
+  <text x="800" y="620" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">测试陷阱 — test_after_commit gem / Rails 5 修复</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="112" y="680"><tspan fill="#5d6f92"># Rails 测试默认用单个事务包裹，after_commit 不会触发</tspan></text>
+    <text x="112" y="720"><tspan fill="#fbbf24" font-weight="700">No enqueued job found</tspan><tspan fill="#94a3b8"> with {:job=&gt;QuestionIndexerJob}</tspan></text>
+    <text x="112" y="770"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> Gemfile → gem </tspan><tspan fill="#fbbf24">"test_after_commit"</tspan><tspan fill="#94a3b8">  # Rails 4 解决方案</tspan></text>
+    <text x="112" y="802"><tspan fill="#94a3b8">Rails 5 已内置修复：</tspan><tspan fill="#60a5fa">github.com/rails/rails/pull/18458</tspan></text>
+  </g>
+</svg>

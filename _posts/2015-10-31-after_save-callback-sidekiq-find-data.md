@@ -8,6 +8,9 @@ tags:
     - ActiveRecord
 categories:
     - Ruby
+image:
+    path: /assets/img/posts/after_save-callback-sidekiq-find-data/cover.png
+    alt: after_save 与 after_commit 在 Sidekiq 多进程下查不到数据的回调时机对比
 ---
 
 > Callbacks are methods that get called at certain moments of an object's life cycle. With callbacks it is possible to write code that will run whenever an Active Record object is created, saved, updated, deleted, validated, or loaded from the database.

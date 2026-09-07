@@ -7,6 +7,9 @@ tags:
     - Golang
 categories:
     - Go
+image:
+    path: /assets/img/posts/Golang-study-notes/cover.png
+    alt: Go 语言基础概念：变量常量、基础类型、切片与映射
 ---
 
 ### Golang基础

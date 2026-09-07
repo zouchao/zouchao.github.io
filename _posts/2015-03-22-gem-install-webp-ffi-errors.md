@@ -9,6 +9,9 @@ tags:
     - gem
 categories:
     - Ruby
+image:
+    path: /assets/img/posts/gem-install-webp-ffi-errors/cover.png
+    alt: webp-ffi 安装流程：libwebp 编译、gem 安装与 ldconfig 动态库路径修复
 ---
 首先安装依赖包
 ### 1. 安装依赖包

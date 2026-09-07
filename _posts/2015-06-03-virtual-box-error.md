@@ -8,6 +8,9 @@ tags:
     - CentOS
 categories:
     - 工具
+image:
+    path: /assets/img/posts/virtual-box-error/cover.png
+    alt: VirtualBox 虚拟机 saved state invalid 报错与清除保存状态修复
 ---
 
 由于本屌穷且爱折腾，因此目前大多数时候的工作环境都是在linux虚拟机下面。虽然有备份但是一般也是几个月的周期才备份一次（原谅我是个懒人）

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">mysql</text>
+  <rect x="358" y="88" width="14" height="66" rx="2" fill="#60a5fa" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">GRANT 授权 · bind-address · 远程 3306</text>
+  <text x="1520" y="212" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">ERROR 2003 (HY000)</text>
+
+  <!-- ============ LEFT: client card ============ -->
+  <rect x="80" y="300" width="400" height="200" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="112" y="346" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#34d399">远程客户端</text>
+  <text x="112" y="386" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">PHP / Navicat / 另一台服务器</text>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="112" y="436"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> mysql -h 192.168.x.x</tspan></text>
+    <text x="128" y="470"><tspan fill="#cbd5e1">-u root -p</tspan></text>
+  </g>
+
+  <!-- ============ RIGHT: server card ============ -->
+  <rect x="1080" y="260" width="440" height="580" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+
+  <!-- DB cylinder icon -->
+  <ellipse cx="1300" cy="310" rx="36" ry="12" fill="none" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="1264" y1="310" x2="1264" y2="360" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="1336" y1="310" x2="1336" y2="360" stroke="#60a5fa" stroke-width="2"/>
+  <ellipse cx="1300" cy="360" rx="36" ry="12" fill="none" stroke="#60a5fa" stroke-width="2"/>
+
+  <text x="1112" y="410" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#f1f5f9">MySQL Server</text>
+  <text x="1112" y="448" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#60a5fa">:3306</text>
+
+  <!-- step 1: GRANT -->
+  <rect x="1100" y="480" width="400" height="36" rx="8" fill="#fbbf24" opacity="0.09"/>
+  <text x="1112" y="504" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#fbbf24">① GRANT 授权</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="15">
+    <text x="1112" y="544" fill="#cbd5e1">use mysql;</text>
+    <text x="1112" y="572" fill="#34d399">GRANT ALL PRIVILEGES</text>
+    <text x="1112" y="598" fill="#cbd5e1">  ON *.* TO 'root'@'%'</text>
+    <text x="1112" y="624" fill="#cbd5e1">  IDENTIFIED BY '***';</text>
+    <text x="1112" y="652" fill="#fbbf24">FLUSH PRIVILEGES;</text>
+  </g>
+
+  <!-- step 2: bind-address -->
+  <rect x="1100" y="682" width="400" height="36" rx="8" fill="#34d399" opacity="0.09"/>
+  <text x="1112" y="706" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#34d399">② 修改绑定地址</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="15">
+    <text x="1112" y="746" fill="#94a3b8"># /etc/mysql/my.cnf</text>
+    <text x="1112" y="774"><tspan fill="#cbd5e1">bind-address = </tspan><tspan fill="#f472b6">0.0.0.0</tspan></text>
+    <text x="1112" y="810" fill="#5d6f92"># 重启 mysqld 生效</text>
+  </g>
+
+  <!-- ============ connection arrow ============ -->
+  <g fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M 480 400 C 680 400, 880 500, 1070 500"/>
+  </g>
+
+  <!-- middle: connection path label -->
+  <rect x="640" y="368" width="300" height="60" rx="12" fill="#101a31" stroke="#27385e" stroke-width="1.5"/>
+  <text x="790" y="398" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#60a5fa">TCP :3306</text>
+  <text x="790" y="418" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="14" fill="#94a3b8">远程连接路径</text>
+
+  <!-- bottom left: chips -->
+  <rect x="80" y="570" width="400" height="50" rx="10" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.55"/>
+  <text x="280" y="602" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#fbbf24">GRANT ALL ON *.* TO '%' </text>
+
+  <rect x="80" y="640" width="400" height="50" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="280" y="672" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#34d399">bind-address = 0.0.0.0</text>
+
+  <text x="280" y="730" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#5d6f92">两步开放远程访问</text>
+</svg>

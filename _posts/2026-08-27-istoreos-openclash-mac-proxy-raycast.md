@@ -10,6 +10,9 @@ tags:
    - macOS
 categories:
    - 工具
+image:
+    path: /assets/img/posts/istoreos-openclash-mac-proxy-raycast/cover.png
+    alt: iStoreOS 虚拟机跑 OpenClash 向 Mac 提供代理，Raycast 一键切换
 ---
 
 浏览器可以靠 PAC 分流，但终端、各种 GUI 应用也想走代理，还希望一个热键全局开关——这是我折腾这套东西的出发点。方案：**iStoreOS 虚拟机里跑 OpenClash，向局域网提供代理服务；Mac 本机不装任何代理客户端**，只用几个 bash 脚本（挂到 Raycast）管理系统代理和环境变量。干净、可随时拆。

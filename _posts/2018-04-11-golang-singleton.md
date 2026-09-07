@@ -9,6 +9,9 @@ tags:
     - 并发编程
 categories:
     - Go
+image:
+    path: /assets/img/posts/golang-singleton/cover.png
+    alt: Go sync.Once 双检锁实现单例模式的流程解析
 ---
 
 单例模式是常见的设计模式，被广泛用于创建数据库，redis等单实例。作用在于可以控制实例个数节省系统资源

@@ -8,6 +8,9 @@ tags:
    - macOS
 categories:
    - git
+image:
+    path: /assets/img/posts/git-multi-identity-includeif-hasconfig/cover.png
+    alt: 用 includeIf hasconfig 按远程地址自动切换 Git 身份配置
 ---
 
 一台机器上同时有几个 git 身份是很常见的：个人 GitHub、公司仓库、也许还有几个上古马甲号。全局配置只能写一个身份，靠"每个仓库手动设 local"又吃记忆力——忘了设，就会把公司邮箱写进个人仓库的历史里，或者用一个拼错的邮箱提交（GitHub 根本不把这些 commit 算你头上）。踩完坑之后我换成了**按远程地址条件包含配置**，从此身份自动正确。

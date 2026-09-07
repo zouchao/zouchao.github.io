@@ -10,6 +10,9 @@ tags:
 categories:
     - PHP
     - 工具
+image:
+    path: /assets/img/posts/vagrant-box-add-laravel-homestead/cover.png
+    alt: vagrant box add laravel/homestead 下载中断、文件名篡改与断点续传踩坑
 ---
 
 #### 一、安装条件
@@ -28,9 +31,16 @@ vagrant box add laravel/Homestead
 
 #### 二、安装中断，没法继续？
 兴高采烈安Homestead，网速太渣报错误：
-![SSL read: error:00000000:lib(0):func(0):reason(0), errno 54] [1]
+
+```text
+SSL read: error:00000000:lib(0):func(0):reason(0), errno 54
+```
+
 无奈又来第二次，结果始终报如下错误:
-![HTTP server doesn't seem to support byte ranges. Cannot resume.] [2]
+
+```text
+HTTP server doesn't seem to support byte ranges. Cannot resume.
+```
 解决办法：
 
 ```shell
@@ -38,8 +48,12 @@ rm ~/.vagrant.d/tmp/*
 ```
 
 #### 三、更好的方式
-1. 更好的方式还是直接下载下来文件,但是用p2p工具的同学千万记住不要用离线下载, 也千万不要用高速通道，就是这么残忍，坑在这里：  
-    ![bsdtar: Error opening archive: gzip decompression failed] [3]  
+1. 更好的方式还是直接下载下来文件,但是用p2p工具的同学千万记住不要用离线下载, 也千万不要用高速通道，就是这么残忍，坑在这里：
+
+    ```text
+    bsdtar: Error opening archive: gzip decompression failed
+    ```
+
     没错 当你下载的文件名叫`virtualbox.box`那么你很可能已经陷入这个深坑了，正确的文件名大致是这样的`hc-download`，下载完毕了再修改文件名后缀
 
 2. 貌似还有一种方式：
@@ -58,7 +72,3 @@ vagrant box add laravel/Homestead -c
 [virtualbox_url]: https://www.virtualbox.org/wiki/Downloads
 [vagrant_url]: https://www.vagrantup.com/downloads.html
 [pan.baidu.com]: http://pan.baidu.com/s/1jGfIahw
-
-[1]: https://ws1.sinaimg.cn/large/6a629b92gy1fqh64k1hhcj20u008vju4.jpg 'SSL read: error:00000000:lib(0):func(0):reason(0), errno 54'
-[2]: https://ws1.sinaimg.cn/large/6a629b92gy1fqh65po22qj20u00ajjue.jpg "HTTP server doesn't seem to support byte ranges. Cannot resume."
-[3]: https://ws1.sinaimg.cn/large/6a629b92gy1fqh672m9urj20mn04n0ty.jpg "bsdtar: Error opening archive: gzip decompression failed"

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#f472b6" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- title strip -->
+  <text x="80" y="60" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="16" fill="#94a3b8">proxy / unproxy 切换后的出口对照</text>
+
+  <!-- terminal: proxy ON -->
+  <rect x="80" y="90" width="1440" height="370" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="138" x2="1520" y2="138" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="114" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="114" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="114" r="7" fill="#28c840"/>
+  <text x="800" y="120" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">~/Code — zsh — proxy ON</text>
+
+  <rect x="100" y="160" width="1400" height="44" rx="8" fill="#34d399" opacity="0.09"/>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="20">
+    <text x="112" y="192"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> proxy &amp;&amp; ip</tspan></text>
+  </g>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="112" y="246"><tspan fill="#94a3b8">curl https://ip.cn</tspan></text>
+    <text x="112" y="286"><tspan fill="#94a3b8">IP: </tspan><tspan fill="#fbbf24">x.x.x.x</tspan></text>
+    <text x="112" y="322"><tspan fill="#94a3b8">所在地: 美国 加利福尼亚州</tspan></text>
+  </g>
+
+  <!-- annotation -->
+  <rect x="112" y="360" width="480" height="56" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="352" y="395" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="18" fill="#34d399">出口 = 代理出口 · 走 127.0.0.1:1087 隧道</text>
+
+  <!-- flow arrow -->
+  <g fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M 800 388 C 820 388, 820 388, 900 388"/>
+  </g>
+
+  <!-- right annotation block -->
+  <g font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">
+    <text x="920" y="380">http_proxy 已设置</text>
+    <text x="920" y="408">curl 的请求经本地 HTTP 代理</text>
+    <text x="920" y="436">转发到远端 SS 服务器出去</text>
+  </g>
+
+  <!-- terminal: proxy OFF -->
+  <rect x="80" y="490" width="1440" height="370" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="538" x2="1520" y2="538" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="514" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="514" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="514" r="7" fill="#28c840"/>
+  <text x="800" y="520" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">~/Code — zsh — proxy OFF</text>
+
+  <rect x="100" y="560" width="1400" height="44" rx="8" fill="#f472b6" opacity="0.09"/>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="20">
+    <text x="112" y="592"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> unproxy &amp;&amp; ip</tspan></text>
+  </g>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="112" y="646"><tspan fill="#94a3b8">curl https://ip.cn</tspan></text>
+    <text x="112" y="686"><tspan fill="#94a3b8">IP: </tspan><tspan fill="#fbbf24">y.y.y.y</tspan></text>
+    <text x="112" y="722"><tspan fill="#94a3b8">所在地: 中国 广东</tspan></text>
+  </g>
+
+  <!-- annotation -->
+  <rect x="112" y="760" width="360" height="56" rx="10" fill="#1c2a4d" stroke="#f472b6" stroke-opacity="0.55"/>
+  <text x="292" y="795" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="18" fill="#f472b6">出口 = 本地直连</text>
+
+  <!-- flow arrow -->
+  <g fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M 800 788 C 820 788, 820 788, 900 788"/>
+  </g>
+
+  <!-- right annotation block -->
+  <g font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">
+    <text x="920" y="780">http_proxy 已 unset</text>
+    <text x="920" y="808">curl 直接连接目标服务器</text>
+    <text x="920" y="836">出口 IP 为本机真实地址</text>
+  </g>
+</svg>

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">darwin-rebuild</text>
+  <rect x="833" y="88" width="14" height="66" rx="2" fill="#34d399" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">Nix 声明式 macOS · nix-darwin · home-manager</text>
+
+  <!-- watermark -->
+  <text x="1520" y="210" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">aarch64-darwin</text>
+
+  <!-- ============= flake.nix terminal card ============= -->
+  <rect x="80" y="250" width="680" height="565" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="298" x2="760" y2="298" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="274" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="274" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="274" r="7" fill="#28c840"/>
+  <text x="420" y="280" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">flake.nix</text>
+
+  <!-- highlight bar -->
+  <rect x="100" y="478" width="640" height="38" rx="8" fill="#34d399" opacity="0.09"/>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="19">
+    <text x="112" y="340" fill="#5d6f92">inputs = {</text>
+    <text x="132" y="376"><tspan fill="#60a5fa">nixpkgs</tspan><tspan fill="#94a3b8">.url = </tspan><tspan fill="#fbbf24">"github:NixOS/nixpkgs/…"</tspan><tspan fill="#5d6f92">;</tspan></text>
+    <text x="132" y="412"><tspan fill="#60a5fa">nix-darwin</tspan><tspan fill="#94a3b8"> = {</tspan></text>
+    <text x="152" y="448"><tspan fill="#94a3b8">url = </tspan><tspan fill="#fbbf24">"github:LnL7/nix-darwin"</tspan><tspan fill="#5d6f92">;</tspan></text>
+    <text x="152" y="484"><tspan fill="#94a3b8">inputs.</tspan><tspan fill="#60a5fa">nixpkgs</tspan><tspan fill="#94a3b8">.follows = </tspan><tspan fill="#fbbf24">"nixpkgs"</tspan><tspan fill="#5d6f92">;</tspan></text>
+    <text x="132" y="520"><tspan fill="#94a3b8">};</tspan></text>
+    <text x="132" y="556"><tspan fill="#34d399">home-manager</tspan><tspan fill="#94a3b8"> = {</tspan></text>
+    <text x="152" y="592"><tspan fill="#94a3b8">url = </tspan><tspan fill="#fbbf24">"github:nix-community/home-manager"</tspan><tspan fill="#5d6f92">;</tspan></text>
+    <text x="132" y="628"><tspan fill="#94a3b8">};</tspan></text>
+    <text x="112" y="664" fill="#5d6f92">};</text>
+  </g>
+
+  <!-- chips at bottom of terminal -->
+  <rect x="112" y="720" width="262" height="48" rx="10" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.55"/>
+  <text x="243" y="751" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#fbbf24">cleanup = "none"</text>
+
+  <rect x="392" y="720" width="262" height="48" rx="10" fill="#1c2a4d" stroke="#60a5fa" stroke-opacity="0.55"/>
+  <text x="523" y="751" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#60a5fa">masApps = { … }</text>
+
+  <!-- ============= connectors ============= -->
+  <g fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M 760 360 C 880 360, 880 290, 984 290"/>
+    <path d="M 760 440 C 880 440, 880 418, 984 418"/>
+    <path d="M 760 520 C 880 520, 880 546, 984 546"/>
+    <path d="M 760 600 C 880 600, 880 674, 984 674"/>
+  </g>
+
+  <!-- ============= managed system cards ============= -->
+  <!-- card 1: System defaults -->
+  <rect x="1000" y="245" width="520" height="108" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="1036" y="290" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#f1f5f9">system.defaults</text>
+  <text x="1036" y="326" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#fbbf24">dock.autohide</tspan><tspan fill="#94a3b8"> = true</tspan></text>
+
+  <!-- card 2: Homebrew -->
+  <rect x="1000" y="373" width="520" height="108" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="1036" y="418" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#f1f5f9">Homebrew</text>
+  <text x="1036" y="454" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#34d399">ripgrep</tspan><tspan fill="#94a3b8"> · </tspan><tspan fill="#34d399">fd</tspan><tspan fill="#94a3b8"> · </tspan><tspan fill="#34d399">firefox</tspan></text>
+
+  <!-- card 3: home-manager -->
+  <rect x="1000" y="501" width="520" height="108" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="1036" y="546" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#f1f5f9">home-manager</text>
+  <text x="1036" y="582" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#60a5fa">~/.config/nvim</tspan><tspan fill="#94a3b8"> · </tspan><tspan fill="#60a5fa">.zshrc</tspan></text>
+
+  <!-- card 4: rollback -->
+  <rect x="1000" y="629" width="520" height="108" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="1036" y="674" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#f1f5f9">generation</text>
+  <text x="1036" y="710" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#f472b6">--rollback</tspan><tspan fill="#94a3b8"> 原子切换 · 随时回退</tspan></text>
+
+  <!-- bottom strip: rebuild command -->
+  <rect x="80" y="838" width="1440" height="46" rx="10" fill="#101a31" stroke="#27385e" stroke-width="1.5"/>
+  <text x="800" y="868" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> darwin-rebuild switch --flake .#hostname</tspan></text>
+</svg>

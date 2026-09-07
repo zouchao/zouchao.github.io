@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">launch.json</text>
+  <rect x="674" y="88" width="14" height="66" rx="2" fill="#60a5fa" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">VSCode · Golang · delve 调试 · lldb-server</text>
+  <text x="1520" y="212" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">dlv debug --headless --listen=:2345</text>
+
+  <!-- left terminal: setup steps -->
+  <rect x="80" y="250" width="720" height="570" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="298" x2="800" y2="298" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="274" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="274" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="274" r="7" fill="#28c840"/>
+  <text x="440" y="280" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">.vscode/launch.json</text>
+
+  <rect x="100" y="310" width="680" height="38" rx="8" fill="#60a5fa" opacity="0.09"/>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="112" y="336"><tspan fill="#60a5fa" font-weight="700">⇧⌘D</tspan><tspan fill="#cbd5e1">  呼出 debug 侧边栏</tspan></text>
+    <text x="112" y="380"><tspan fill="#34d399">▶</tspan><tspan fill="#cbd5e1">  Start Debugging（绿色三角）</tspan></text>
+
+    <text x="112" y="436" fill="#5d6f92">// 首次自动生成 launch.json</text>
+    <text x="112" y="468"><tspan fill="#94a3b8">{</tspan></text>
+    <text x="112" y="496"><tspan fill="#94a3b8">  "type": </tspan><tspan fill="#fbbf24">"go"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="112" y="524"><tspan fill="#94a3b8">  "request": </tspan><tspan fill="#fbbf24">"launch"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="112" y="552"><tspan fill="#94a3b8">  "mode": </tspan><tspan fill="#fbbf24">"debug"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="112" y="580"><tspan fill="#94a3b8">  "program": </tspan><tspan fill="#fbbf24">"${workspaceFolder}"</tspan></text>
+    <text x="112" y="608"><tspan fill="#94a3b8">}</tspan></text>
+  </g>
+
+  <!-- separator -->
+  <line x1="112" y1="640" x2="768" y2="640" stroke="#27385e" stroke-width="1"/>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="17">
+    <text x="112" y="676" fill="#5d6f92"># 生成文件，记得加入 .gitignore</text>
+    <text x="112" y="712"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> git status</tspan></text>
+    <text x="112" y="744"><tspan fill="#94a3b8">  </tspan><tspan fill="#fbbf24">debug</tspan></text>
+    <text x="112" y="772"><tspan fill="#94a3b8">  </tspan><tspan fill="#fbbf24">.vscode/launch.json</tspan></text>
+  </g>
+
+  <!-- chips -->
+  <rect x="112" y="800" width="240" height="50" rx="10" fill="#1c2a4d" stroke="#60a5fa" stroke-opacity="0.55"/>
+  <text x="232" y="832" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#60a5fa">package main</text>
+  <rect x="372" y="800" width="240" height="50" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="492" y="832" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#34d399">.gitignore</text>
+
+  <!-- right side -->
+  <rect x="840" y="250" width="680" height="200" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <g font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="24" font-weight="700" fill="#f1f5f9">
+    <text x="872" y="300"> 常见问题</text>
+  </g>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="16">
+    <text x="872" y="340"><tspan fill="#f472b6">could not launch process:</tspan></text>
+    <text x="872" y="368"><tspan fill="#f472b6">  exec: "lldb-server":</tspan></text>
+    <text x="872" y="396"><tspan fill="#f472b6">  executable file not found in $PATH</tspan></text>
+    <text x="872" y="432"><tspan fill="#5d6f92">Process exiting with code: 1</tspan></text>
+  </g>
+
+  <rect x="840" y="480" width="680" height="160" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <g font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="24" font-weight="700" fill="#f1f5f9">
+    <text x="872" y="530"> 解决方案</text>
+  </g>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="19">
+    <text x="872" y="576"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> xcode-select </tspan><tspan fill="#34d399" font-weight="700">--install</tspan></text>
+    <text x="872" y="616"><tspan fill="#94a3b8"># 安装 Xcode CLI 工具</tspan></text>
+    <text x="872" y="648"><tspan fill="#94a3b8"># 补齐 lldb-server 等调试依赖</tspan></text>
+  </g>
+
+  <rect x="840" y="670" width="680" height="150" rx="14" fill="#101a31" stroke="#27385e" stroke-width="1.5"/>
+  <g font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="24" font-weight="700" fill="#f1f5f9">
+    <text x="872" y="720"> 调试链路</text>
+  </g>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="17">
+    <text x="872" y="760"><tspan fill="#60a5fa">VSCode</tspan><tspan fill="#94a3b8"> → </tspan><tspan fill="#34d399">dlv debug</tspan><tspan fill="#94a3b8"> → </tspan><tspan fill="#fbbf24">Go binary</tspan></text>
+    <text x="872" y="792"><tspan fill="#94a3b8">delve 是 Go 官方调试器，VSCode 通过它下断点</tspan></text>
+  </g>
+
+  <!-- connectors -->
+  <g fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M 800 380 C 820 380, 820 350, 840 350"/>
+    <path d="M 800 560 C 820 560, 820 560, 840 560"/>
+    <path d="M 800 745 C 820 745, 820 745, 840 745"/>
+  </g>
+</svg>

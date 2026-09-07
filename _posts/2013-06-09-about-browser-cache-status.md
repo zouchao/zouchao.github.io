@@ -7,6 +7,9 @@ tags:
     - PHP
 categories:
     - 前端
+image:
+    path: /assets/img/posts/about-browser-cache-status/cover.png
+    alt: 浏览器缓存机制对比：Last-Modified、Expires、Cache-Control 与 HTTP 状态码
 ---
 关于浏览器缓存，在header中有如下几个：（以下示例均为php代码）
 

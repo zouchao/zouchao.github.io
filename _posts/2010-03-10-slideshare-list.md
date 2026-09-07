@@ -6,6 +6,9 @@ tags:
     - blog
 categories:
     - Vim
+image:
+    path: /assets/img/posts/slideshare-list/cover.png
+    alt: 演讲稿与代码片段知识库，Vim 演示文稿归档
 ---
 
 之前做过很多分享，都没有实际的记录下来，或者和公司内部资料相关不便分享。 今后准备用来记录一些演讲稿和代码片段以及一些有价值的站外链接,

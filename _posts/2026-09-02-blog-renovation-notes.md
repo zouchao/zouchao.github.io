@@ -9,6 +9,9 @@ tags:
     - GitHub
 categories:
     - 工具
+image:
+    path: /assets/img/posts/blog-renovation-notes/cover.png
+    alt: 博客翻新五件事：标签整理、Chirpy 主题、GitHub Actions、giscus、统计方案
 ---
 
 这个博客从 2010 年开站，主题还是当年手改的 Jekyll 默认模板，十几年下来积累了不少历史包袱：标签越打越散、代码块还在用 Google Code Prettify 的 `<pre class="prettyprint">`、统计用的 Universal Analytics 早被 Google 停服、评论区干脆没有。这次花了点时间一次性翻新，做了五件事：**整理标签和分类、迁移 Chirpy 主题、部署切到 GitHub Actions、接入 giscus 评论、换统计方案**。过程里踩了一串 GitHub Pages 的坑，值得一记。

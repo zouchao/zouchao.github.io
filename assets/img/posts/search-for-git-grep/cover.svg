@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">git grep</text>
+  <rect x="516" y="88" width="14" height="66" rx="2" fill="#a78bfa" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">版本库搜索 · 参数详解 · blame 追溯作者</text>
+  <text x="1520" y="212" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">aa4a326d4feb0f3b69f423bd66b6bc6558742c8d</text>
+
+  <!-- ================= LEFT: Main terminal card ================= -->
+  <rect x="80" y="250" width="720" height="570" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="298" x2="800" y2="298" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="274" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="274" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="274" r="7" fill="#28c840"/>
+  <text x="440" y="280" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">terminal — git grep</text>
+
+  <!-- highlighted row -->
+  <rect x="100" y="368" width="680" height="38" rx="8" fill="#a78bfa" opacity="0.09"/>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="112" y="348"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> git grep -ni Redis</tspan></text>
+    <text x="112" y="394"><tspan fill="#94a3b8">Gemfile:29:</tspan><tspan fill="#e2e8f0">gem "redis", ">= 2.2.0"</tspan></text>
+    <text x="112" y="430"><tspan fill="#94a3b8">user.rb:35:</tspan><tspan fill="#fbbf24">Redis</tspan><tspan fill="#e2e8f0">.current.hget(...)</tspan></text>
+    <text x="112" y="466"><tspan fill="#94a3b8">redis_initializer.rb:9:</tspan><tspan fill="#fbbf24">Redis</tspan><tspan fill="#e2e8f0">.current.client</tspan></text>
+    <text x="112" y="502"><tspan fill="#94a3b8">dashboard.js:59:</tspan><tspan fill="#e2e8f0">updateRedisStats(data)</tspan></text>
+
+    <text x="112" y="570"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> git grep -c Redis</tspan></text>
+    <text x="112" y="606"><tspan fill="#94a3b8">user.rb:</tspan><tspan fill="#a78bfa" font-weight="700">1</tspan></text>
+    <text x="112" y="642"><tspan fill="#94a3b8">redis_initializer.rb:</tspan><tspan fill="#a78bfa" font-weight="700">1</tspan></text>
+    <text x="112" y="678"><tspan fill="#94a3b8">dashboard.js:</tspan><tspan fill="#a78bfa" font-weight="700">2</tspan></text>
+    <text x="112" y="714"><tspan fill="#94a3b8">cheating_scores.rake:</tspan><tspan fill="#a78bfa" font-weight="700">1</tspan></text>
+  </g>
+
+  <!-- ================= RIGHT: Flag chips + blame card ================= -->
+  <!-- Flag chips row -->
+  <rect x="860" y="260" width="120" height="50" rx="10" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.55"/>
+  <text x="920" y="292" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="20" font-weight="700" fill="#fbbf24">-i</text>
+  <text x="920" y="336" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="14" fill="#94a3b8">忽略大小写</text>
+
+  <rect x="1000" y="260" width="120" height="50" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="1060" y="292" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="20" font-weight="700" fill="#34d399">-n</text>
+  <text x="1060" y="336" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="14" fill="#94a3b8">显示行号</text>
+
+  <rect x="1140" y="260" width="120" height="50" rx="10" fill="#1c2a4d" stroke="#a78bfa" stroke-opacity="0.55"/>
+  <text x="1200" y="292" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="20" font-weight="700" fill="#a78bfa">-c</text>
+  <text x="1200" y="336" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="14" fill="#94a3b8">匹配行数</text>
+
+  <rect x="1280" y="260" width="200" height="50" rx="10" fill="#1c2a4d" stroke="#60a5fa" stroke-opacity="0.55"/>
+  <text x="1380" y="292" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" font-weight="700" fill="#60a5fa">--name-only</text>
+  <text x="1380" y="336" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="14" fill="#94a3b8">仅显示文件名</text>
+
+  <!-- Blame terminal card -->
+  <rect x="860" y="380" width="660" height="340" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="860" y1="428" x2="1520" y2="428" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="892" cy="404" r="7" fill="#ff5f57"/>
+  <circle cx="920" cy="404" r="7" fill="#febc2e"/>
+  <circle cx="948" cy="404" r="7" fill="#28c840"/>
+  <text x="1190" y="410" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">blame_after_grep.rb</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="17">
+    <text x="892" y="470"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> ruby blame_after_grep.rb 'Redis'</tspan></text>
+    <text x="892" y="510"><tspan fill="#a78bfa" font-weight="700">ZouChao</tspan><tspan fill="#94a3b8"> user.rb +35</tspan></text>
+    <text x="892" y="544"><tspan fill="#e2e8f0">  Redis.current.hget(CheckinScore...)</tspan></text>
+    <text x="892" y="588"><tspan fill="#a78bfa" font-weight="700">ZouChao</tspan><tspan fill="#94a3b8"> cheating_scores.rake +25</tspan></text>
+    <text x="892" y="622"><tspan fill="#e2e8f0">  Redis.current.del(fourDaysAgoKey)</tspan></text>
+  </g>
+
+  <!-- highlight -->
+  <rect x="880" y="494" width="620" height="34" rx="8" fill="#a78bfa" opacity="0.09"/>
+
+  <!-- Tag search chip -->
+  <rect x="860" y="744" width="660" height="76" rx="14" fill="#101a31" stroke="#27385e" stroke-width="1.5"/>
+  <text x="888" y="789" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#94a3b8">历史搜索</text>
+  <line x1="1000" y1="782" x2="1140" y2="782" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <text x="1160" y="789" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#fbbf24">release_201306261815</tspan></text>
+  <text x="1520" y="789" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#5d6f92">tag / commit</text>
+</svg>

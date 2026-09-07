@@ -6,6 +6,9 @@ tags:
     - macOS
 categories:
     - 工具
+image:
+    path: /assets/img/posts/apple-store-interest-free/cover.png
+    alt: 苹果官网 URL 后缀对照——招行工行 12 期免息与教育优惠
 ---
 
 #### 思想针扎：

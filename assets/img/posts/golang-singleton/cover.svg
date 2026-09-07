@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">sync.Once</text>
+  <rect x="569" y="88" width="14" height="66" rx="2" fill="#34d399" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">单例模式 · 双检锁 · 原子标记</text>
+  <text x="1520" y="212" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">done uint32 · Mutex · atomic</text>
+
+  <!-- ================= Flow diagram ================= -->
+  <!-- Step 1: caller -->
+  <rect x="80" y="270" width="360" height="120" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="112" y="320" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#f1f5f9">GetIns()</text>
+  <text x="112" y="358" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#34d399">once.Do</tspan><tspan fill="#94a3b8">(func)</tspan></text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="440" y1="330" x2="520" y2="330" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: fast path -->
+  <rect x="540" y="270" width="420" height="120" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <rect x="556" y="290" width="388" height="36" rx="8" fill="#34d399" opacity="0.09"/>
+  <text x="572" y="318" font-family="SF Mono, Menlo, Consolas, monospace" font-size="19"><tspan fill="#60a5fa">atomic.LoadUint32</tspan><tspan fill="#cbd5e1">(&amp;done)</tspan></text>
+  <text x="572" y="356" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#34d399">== 1</tspan><tspan fill="#94a3b8"> → 直接 return（快速路径）</tspan></text>
+
+  <!-- Arrow 2→3 (down) -->
+  <path d="M 750 390 C 750 430, 750 430, 750 450" fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <text x="770" y="430" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#fbbf24">== 0</text>
+
+  <!-- Step 3: slow path - mutex -->
+  <rect x="540" y="460" width="420" height="120" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <rect x="556" y="480" width="388" height="36" rx="8" fill="#fbbf24" opacity="0.09"/>
+  <text x="572" y="508" font-family="SF Mono, Menlo, Consolas, monospace" font-size="19"><tspan fill="#fbbf24">o.m.Lock()</tspan><tspan fill="#5d6f92">  加锁</tspan></text>
+  <text x="572" y="546" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#cbd5e1">if done == 0</tspan><tspan fill="#94a3b8"> → 二次检查</tspan></text>
+
+  <!-- Arrow 3→4 -->
+  <path d="M 750 580 C 750 620, 750 620, 750 640" fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: execute + mark -->
+  <rect x="540" y="650" width="420" height="120" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="572" y="700" font-family="SF Mono, Menlo, Consolas, monospace" font-size="19"><tspan fill="#34d399">f()</tspan><tspan fill="#94a3b8">  创建实例</tspan></text>
+  <rect x="556" y="718" width="388" height="36" rx="8" fill="#60a5fa" opacity="0.09"/>
+  <text x="572" y="744" font-family="SF Mono, Menlo, Consolas, monospace" font-size="19"><tspan fill="#60a5fa">atomic.StoreUint32</tspan><tspan fill="#cbd5e1">(&amp;done, 1)</tspan></text>
+
+  <!-- ================= Right side: usage card ================= -->
+  <rect x="1040" y="270" width="480" height="500" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="1040" y1="318" x2="1520" y2="318" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="1072" cy="294" r="7" fill="#ff5f57"/>
+  <circle cx="1100" cy="294" r="7" fill="#febc2e"/>
+  <circle cx="1128" cy="294" r="7" fill="#28c840"/>
+  <text x="1280" y="300" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">singleton.go</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="1072" y="356"><tspan fill="#60a5fa" font-weight="700">type</tspan><tspan fill="#f1f5f9"> singleton </tspan><tspan fill="#60a5fa" font-weight="700">struct</tspan><tspan fill="#cbd5e1">{}</tspan></text>
+    <text x="1072" y="392"><tspan fill="#60a5fa" font-weight="700">var</tspan><tspan fill="#cbd5e1"> ins *singleton</tspan></text>
+    <text x="1072" y="428"><tspan fill="#60a5fa" font-weight="700">var</tspan><tspan fill="#cbd5e1"> once sync.Once</tspan></text>
+
+    <text x="1072" y="480"><tspan fill="#60a5fa" font-weight="700">func</tspan><tspan fill="#34d399"> GetIns</tspan><tspan fill="#cbd5e1">() *singleton {</tspan></text>
+
+    <rect x="1056" y="496" width="448" height="36" rx="8" fill="#34d399" opacity="0.09"/>
+    <text x="1072" y="522"><tspan fill="#cbd5e1">    once.</tspan><tspan fill="#34d399" font-weight="700">Do</tspan><tspan fill="#cbd5e1">(func(){</tspan></text>
+    <text x="1072" y="558"><tspan fill="#cbd5e1">        ins = &amp;singleton{}</tspan></text>
+    <text x="1072" y="594"><tspan fill="#cbd5e1">    })</tspan></text>
+    <text x="1072" y="630"><tspan fill="#cbd5e1">    </tspan><tspan fill="#60a5fa" font-weight="700">return</tspan><tspan fill="#cbd5e1"> ins</tspan></text>
+    <text x="1072" y="666"><tspan fill="#cbd5e1">}</tspan></text>
+  </g>
+
+  <!-- chips -->
+  <rect x="1072" y="700" width="200" height="44" rx="10" fill="#1c2a4d" stroke="#f472b6" stroke-opacity="0.55"/>
+  <text x="1172" y="728" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#f472b6">懒汉式</text>
+  <rect x="1292" y="700" width="200" height="44" rx="10" fill="#1c2a4d" stroke="#a78bfa" stroke-opacity="0.55"/>
+  <text x="1392" y="728" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#a78bfa">饿汉式</text>
+
+  <!-- connector from left to right -->
+  <g fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M 960 500 C 1000 500, 1010 440, 1040 440"/>
+  </g>
+
+  <!-- bottom note -->
+  <rect x="80" y="810" width="1440" height="50" rx="10" fill="#101a31" stroke="#27385e" stroke-width="1.5"/>
+  <text x="800" y="842" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#94a3b8">f() 内部报错，sync.Once 仍不会执行第二次 — done 在 defer 中设置</text>
+</svg>

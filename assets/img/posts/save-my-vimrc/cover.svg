@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">Vundle</text>
+  <rect x="410" y="88" width="14" height="66" rx="2" fill="#34d399" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">Vim 插件管理 · vimrc 配置 · PluginInstall</text>
+  <text x="1520" y="212" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">gmarik/Vundle.vim</text>
+
+  <!-- ================= LEFT: vimrc terminal card ================= -->
+  <rect x="80" y="250" width="720" height="570" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="298" x2="800" y2="298" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="274" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="274" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="274" r="7" fill="#28c840"/>
+  <text x="440" y="280" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">~/.vimrc</text>
+
+  <!-- highlighted rows -->
+  <rect x="100" y="358" width="680" height="38" rx="8" fill="#34d399" opacity="0.09"/>
+  <rect x="100" y="438" width="680" height="38" rx="8" fill="#a78bfa" opacity="0.09"/>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="17">
+    <text x="112" y="348" fill="#5d6f92">" 基础设置</text>
+    <text x="112" y="384"><tspan fill="#fbbf24">set tabstop=2</tspan></text>
+    <text x="112" y="418"><tspan fill="#fbbf24">set expandtab</tspan></text>
+    <text x="112" y="464"><tspan fill="#a78bfa">colorscheme solarized</tspan></text>
+
+    <text x="112" y="518" fill="#5d6f92">" Vundle 插件声明</text>
+    <text x="112" y="550"><tspan fill="#94a3b8">call </tspan><tspan fill="#34d399">vundle#begin()</tspan></text>
+    <text x="112" y="582"><tspan fill="#60a5fa">Plugin</tspan><tspan fill="#e2e8f0"> 'tpope/vim-fugitive'</tspan></text>
+    <text x="112" y="614"><tspan fill="#60a5fa">Plugin</tspan><tspan fill="#e2e8f0"> 'scrooloose/nerdtree'</tspan></text>
+    <text x="112" y="646"><tspan fill="#60a5fa">Plugin</tspan><tspan fill="#e2e8f0"> 'kien/ctrlp.vim'</tspan></text>
+    <text x="112" y="678"><tspan fill="#60a5fa">Plugin</tspan><tspan fill="#e2e8f0"> 'airblade/vim-gitgutter'</tspan></text>
+    <text x="112" y="710"><tspan fill="#94a3b8">call </tspan><tspan fill="#34d399">vundle#end()</tspan></text>
+  </g>
+
+  <!-- ================= RIGHT: Install steps ================= -->
+  <!-- Step 1: clone -->
+  <rect x="860" y="260" width="660" height="150" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="892" y="300" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#94a3b8">① 安装 Vundle</text>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="17">
+    <text x="892" y="340"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> git clone</tspan></text>
+    <text x="892" y="372"><tspan fill="#fbbf24">  https://github.com/gmarik/Vundle.vim.git</tspan></text>
+    <text x="892" y="400"><tspan fill="#e2e8f0">  ~/.vim/bundle/Vundle.vim</tspan></text>
+  </g>
+
+  <!-- Step 2: PluginInstall -->
+  <rect x="860" y="430" width="660" height="180" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <!-- highlighted row -->
+  <rect x="880" y="488" width="620" height="38" rx="8" fill="#34d399" opacity="0.09"/>
+  <text x="892" y="470" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#94a3b8">② 启动安装</text>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="17">
+    <text x="892" y="518"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> vim</tspan></text>
+    <text x="892" y="554"><tspan fill="#a78bfa">:</tspan><tspan fill="#fbbf24" font-weight="700">PluginInstall</tspan></text>
+    <text x="892" y="590" fill="#5d6f92">" 自动下载安装所有声明的插件</text>
+  </g>
+
+  <!-- Step 3: Commands -->
+  <rect x="860" y="630" width="660" height="190" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="892" y="670" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#94a3b8">③ 常用命令</text>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="17">
+    <text x="892" y="710"><tspan fill="#34d399">:PluginList</tspan><tspan fill="#94a3b8">    列出已安装插件</tspan></text>
+    <text x="892" y="746"><tspan fill="#34d399">:PluginInstall</tspan><tspan fill="#94a3b8"> 安装/更新</tspan></text>
+    <text x="892" y="782"><tspan fill="#34d399">:PluginSearch</tspan><tspan fill="#94a3b8"> 搜索插件</tspan></text>
+    <text x="892" y="814"><tspan fill="#34d399">:PluginClean</tspan><tspan fill="#94a3b8">  清理未使用的</tspan></text>
+  </g>
+</svg>

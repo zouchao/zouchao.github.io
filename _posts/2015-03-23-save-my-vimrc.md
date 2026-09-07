@@ -8,6 +8,9 @@ tags:
     - Vundle
 categories:
     - Vim
+image:
+    path: /assets/img/posts/save-my-vimrc/cover.png
+    alt: Vundle 管理 Vim 插件：vimrc 配置、Plugin 声明与 PluginInstall 安装
 ---
 ### 使用Vundle管理安装vim插件
 

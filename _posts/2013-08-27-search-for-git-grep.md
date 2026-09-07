@@ -8,6 +8,9 @@ tags:
     - Ruby
 categories:
     - git
+image:
+    path: /assets/img/posts/search-for-git-grep/cover.png
+    alt: git grep 版本库搜索：参数详解与 blame 追溯作者脚本
 ---
 背景：公司现在的团购站所使用的数据和主站有诸多联系，因此代码里面也有部分相互纠缠不清。现在要把他们单独独立出来。
 ### 首先还是介绍下git grep

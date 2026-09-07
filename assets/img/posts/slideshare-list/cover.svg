@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">:sl</text>
+  <rect x="256" y="88" width="14" height="66" rx="2" fill="#a78bfa" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">演讲稿 · 代码片段 · 站外知识库</text>
+
+  <!-- ============ terminal card ============ -->
+  <rect x="80" y="260" width="680" height="560" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="308" x2="760" y2="308" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="284" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="284" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="284" r="7" fill="#28c840"/>
+  <text x="420" y="290" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">slideshare — knowledge base</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="19">
+    <text x="112" y="358"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> ls ~/slideshare/</tspan></text>
+    <text x="112" y="404"><tspan fill="#a78bfa" font-weight="700">vim/</tspan><tspan fill="#5d6f92">          # VIM: THE UBIQUITOUS TEXT EDITOR</tspan></text>
+    <text x="112" y="474"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> cat ~/notes/README.md</tspan></text>
+    <text x="112" y="520"><tspan fill="#94a3b8"># 知识库归档</tspan></text>
+    <text x="112" y="556"><tspan fill="#94a3b8"># 演讲稿、代码片段、站外资料</tspan></text>
+    <text x="112" y="592"><tspan fill="#94a3b8"># 不便公开的留在内部</tspan></text>
+    <text x="112" y="662"><tspan fill="#34d399">$</tspan><tspan fill="#cbd5e1"> vim ~/slideshare/vim/index.html</tspan></text>
+  </g>
+
+  <!-- chips -->
+  <rect x="112" y="720" width="190" height="50" rx="10" fill="#1c2a4d" stroke="#a78bfa" stroke-opacity="0.55"/>
+  <text x="207" y="752" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#a78bfa">slideshare</text>
+  <rect x="322" y="720" width="190" height="50" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="417" y="752" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#34d399">代码片段</text>
+  <rect x="532" y="720" width="190" height="50" rx="10" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.55"/>
+  <text x="627" y="752" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#fbbf24">站外链接</text>
+
+  <!-- ============ right side: slide deck card ============ -->
+  <rect x="840" y="260" width="680" height="560" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+
+  <!-- slide mockup -->
+  <rect x="880" y="300" width="600" height="360" rx="10" fill="#101a31" stroke="#27385e" stroke-width="1"/>
+
+  <!-- slide header bar -->
+  <rect x="880" y="300" width="600" height="48" rx="10" fill="#1a2540"/>
+  <rect x="880" y="338" width="600" height="10" rx="0" fill="#1a2540"/>
+  <text x="1180" y="332" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" font-weight="700" fill="#a78bfa">VIM: THE UBIQUITOUS TEXT EDITOR</text>
+
+  <!-- vim key hints on slide -->
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="22" fill="#f1f5f9">
+    <text x="920" y="410"><tspan fill="#34d399">i</tspan><tspan fill="#94a3b8">  insert mode</tspan></text>
+    <text x="920" y="454"><tspan fill="#fbbf24">:</tspan><tspan fill="#94a3b8">  command mode</tspan></text>
+    <text x="920" y="498"><tspan fill="#60a5fa">/</tspan><tspan fill="#94a3b8">  search forward</tspan></text>
+    <text x="920" y="542"><tspan fill="#f472b6">v</tspan><tspan fill="#94a3b8">  visual select</tspan></text>
+    <text x="920" y="586"><tspan fill="#a78bfa">Esc</tspan><tspan fill="#94a3b8">  normal mode</tspan></text>
+  </g>
+
+  <!-- slide footer -->
+  <text x="1180" y="696" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="20" fill="#5d6f92">演示文稿 · 随时回顾</text>
+
+  <!-- connector arrow from terminal to slide -->
+  <g fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M 760 540 C 800 540, 810 440, 840 440"/>
+  </g>
+</svg>

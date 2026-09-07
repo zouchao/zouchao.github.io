@@ -9,6 +9,9 @@ tags:
    - home-manager
 categories:
    - 工具
+image:
+    path: /assets/img/posts/nix-declarative-macos-setup/cover.png
+    alt: Nix 声明式管理 macOS：flake.nix 经 darwin-rebuild 生成受管系统
 ---
 
 最近开始折腾 [Nix](https://nixos.org/)，目的很简单：不想再靠「手动装软件 + 手动改配置」来维护我的 Mac。这篇记录一下 Nix 是什么、能干什么，以及我打算怎么一步步把整台机器都交给它管。

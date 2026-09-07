@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+    <g id="cloudGlyph" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-14,4 a8,8 0 0 1 0,-12 a10,10 0 0 1 20,-2 a7,7 0 0 1 6,10 z"/>
+    </g>
+    <g id="cpuGlyph" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round">
+      <rect x="-10" y="-10" width="20" height="20" rx="3"/>
+      <rect x="-5" y="-5" width="10" height="10" rx="1"/>
+      <line x1="-4" y1="-10" x2="-4" y2="-14"/><line x1="4" y1="-10" x2="4" y2="-14"/>
+      <line x1="-4" y1="10" x2="-4" y2="14"/><line x1="4" y1="10" x2="4" y2="14"/>
+      <line x1="-10" y1="-4" x2="-14" y2="-4"/><line x1="-10" y1="4" x2="-14" y2="4"/>
+      <line x1="10" y1="-4" x2="14" y2="-4"/><line x1="10" y1="4" x2="14" y2="4"/>
+    </g>
+    <g id="chatGlyph" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-12,-8 h24 a3,3 0 0 1 3,3 v10 a3,3 0 0 1 -3,3 h-14 l-6,5 v-5 h-4 a3,3 0 0 1 -3,-3 v-10 a3,3 0 0 1 3,-3 z"/>
+    </g>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">nvim + AI</text>
+  <rect x="569" y="88" width="14" height="66" rx="2" fill="#a78bfa" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">Copilot Free · 本地 Ollama · 百炼大模型</text>
+  <text x="1520" y="212" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">LazyVim · home-manager · nix</text>
+
+  <!-- ================= Layer 1: copilot (cloud) ================= -->
+  <rect x="80" y="260" width="440" height="520" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <!-- icon + title -->
+  <use href="#cloudGlyph" transform="translate(120, 308)" color="#60a5fa"/>
+  <text x="148" y="316" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#60a5fa">L1 自动补全</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="112" y="360"><tspan fill="#f1f5f9" font-weight="700">copilot.lua</tspan></text>
+    <text x="112" y="394"><tspan fill="#94a3b8">GitHub Copilot Free</tspan></text>
+    <text x="112" y="428"><tspan fill="#94a3b8">2000 次/月</tspan></text>
+
+    <rect x="100" y="450" width="400" height="34" rx="8" fill="#60a5fa" opacity="0.09"/>
+    <text x="112" y="474"><tspan fill="#34d399">Tab</tspan><tspan fill="#94a3b8"> → 接受幽灵文本</tspan></text>
+
+    <text x="112" y="524" font-size="16" fill="#5d6f92">:Copilot auth signin</text>
+    <text x="112" y="554" font-size="16" fill="#5d6f92">:Copilot status</text>
+
+    <text x="112" y="604"><tspan fill="#94a3b8">next/prev = </tspan><tspan fill="#f472b6" font-weight="700">false</tspan></text>
+    <text x="112" y="634" font-size="15" fill="#5d6f92">让位 &lt;M-]&gt; 给 minuet</text>
+  </g>
+
+  <!-- chip -->
+  <rect x="112" y="680" width="220" height="44" rx="10" fill="#1c2a4d" stroke="#60a5fa" stroke-opacity="0.55"/>
+  <text x="222" y="708" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#60a5fa">auto_trigger</text>
+
+  <!-- ================= Layer 2: ollama (local) ================= -->
+  <rect x="580" y="260" width="440" height="520" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <use href="#cpuGlyph" transform="translate(620, 308)" color="#34d399"/>
+  <text x="648" y="316" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#34d399">L2 手动补全</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="612" y="360"><tspan fill="#f1f5f9" font-weight="700">minuet-ai.nvim</tspan></text>
+    <text x="612" y="394"><tspan fill="#94a3b8">ollama (本地)</tspan></text>
+    <text x="612" y="428"><tspan fill="#fbbf24">qwen2.5-coder:1.5b-base</tspan></text>
+
+    <rect x="600" y="450" width="400" height="34" rx="8" fill="#34d399" opacity="0.09"/>
+    <text x="612" y="474"><tspan fill="#34d399">A-]</tspan><tspan fill="#94a3b8"> → 按需召唤补全</tspan></text>
+
+    <text x="612" y="524" font-size="16" fill="#5d6f92">127.0.0.1:11434/v1/completions</text>
+    <text x="612" y="554" font-size="16" fill="#5d6f92">OpenAI FIM 兼容端点</text>
+
+    <text x="612" y="604"><tspan fill="#94a3b8">context_window = </tspan><tspan fill="#f1f5f9">1024</tspan></text>
+    <text x="612" y="634" font-size="15" fill="#5d6f92">代码不出机器，零成本</text>
+  </g>
+
+  <!-- chip -->
+  <rect x="612" y="680" width="220" height="44" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="722" y="708" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#34d399">FIM base</text>
+
+  <!-- ================= Layer 3: avante (chat) ================= -->
+  <rect x="1080" y="260" width="440" height="520" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <use href="#chatGlyph" transform="translate(1120, 308)" color="#fbbf24"/>
+  <text x="1148" y="316" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#fbbf24">L3 聊天/编辑</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="1112" y="360"><tspan fill="#f1f5f9" font-weight="700">avante.nvim</tspan></text>
+    <text x="1112" y="394"><tspan fill="#94a3b8">百炼 Anthropic 兼容</tspan></text>
+    <text x="1112" y="428"><tspan fill="#a78bfa">qwen3.8-max</tspan></text>
+
+    <rect x="1100" y="450" width="400" height="34" rx="8" fill="#fbbf24" opacity="0.09"/>
+    <text x="1112" y="474"><tspan fill="#fbbf24">leader aa</tspan><tspan fill="#94a3b8"> → 提问选区</tspan></text>
+
+    <text x="1112" y="524" font-size="16" fill="#5d6f92">cn-beijing.maas.aliyuncs.com</text>
+    <text x="1112" y="554" font-size="16" fill="#5d6f92">__inherited_from = "claude"</text>
+
+    <text x="1112" y="604"><tspan fill="#94a3b8">api_key_name = </tspan><tspan fill="#34d399">cmd:...</tspan></text>
+    <text x="1112" y="634" font-size="15" fill="#5d6f92">密钥不落盘，实时读取</text>
+  </g>
+
+  <!-- chip -->
+  <rect x="1112" y="680" width="220" height="44" rx="10" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.55"/>
+  <text x="1222" y="708" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#fbbf24">按量计费</text>
+
+  <!-- ================= connectors ================= -->
+  <g fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M 520 520 C 550 520, 550 520, 580 520"/>
+    <path d="M 1020 520 C 1050 520, 1050 520, 1080 520"/>
+  </g>
+
+  <!-- bottom strip -->
+  <rect x="80" y="810" width="1440" height="50" rx="10" fill="#101a31" stroke="#27385e" stroke-width="1.5"/>
+  <text x="800" y="842" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#94a3b8">日常补全 → Copilot Free  ·  敏感代码 → Ollama 本地  ·  上下文编辑 → 百炼大模型</text>
+</svg>

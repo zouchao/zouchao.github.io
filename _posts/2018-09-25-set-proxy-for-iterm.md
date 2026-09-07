@@ -6,6 +6,9 @@ tags:
     - proxy
 categories:
     - 工具
+image:
+    path: /assets/img/posts/set-proxy-for-iterm/cover.png
+    alt: 终端 HTTP 代理配置：Shadowsocks 端口与 zshrc alias 快切
 ---
 
 如下是初级工程师Bob和老程序员Bill的又一个故事。
@@ -19,11 +22,9 @@ categories:
 
 * 首先找到ss里面的HTTP Proxy Preference, 如下图：
 
-![](https://ws1.sinaimg.cn/large/6a629b92gy1fvmpbmzbm5j207l0dldgk.jpg)
+![Shadowsocks 的 HTTP Proxy 设置与端口](/assets/img/posts/set-proxy-for-iterm/pref-pane.png)
 
-* 然后查看你的端口：
-
-![](https://ws1.sinaimg.cn/large/6a629b92gy1fvmpcgrot0j20hu0ietax.jpg)
+* 然后确认端口（我这里是 1087，即下面 alias 里的地址）：
 
 * 在`~/.bashrc`或者`~/.zshrc`中加入如下代码:
 ```shell
@@ -35,4 +36,4 @@ alias ip="curl https://ip.cn"
 
 * 检查是否使用代理
 
-![](https://ws1.sinaimg.cn/large/6a629b92gy1fvmw5i1ngnj20hy0833zh.jpg)
+![proxy/unproxy 切换后的出口对照](/assets/img/posts/set-proxy-for-iterm/verify.png)

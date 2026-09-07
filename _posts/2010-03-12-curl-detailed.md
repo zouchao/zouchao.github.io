@@ -8,6 +8,9 @@ tags:
     - curl
 categories:
     - PHP
+image:
+    path: /assets/img/posts/curl-detailed/cover.png
+    alt: PHP CURL 函数全解，从初始化到并发请求的生命周期
 ---
 #### PHP中的CURL函数库（Client URL Library Function）
 + `curl_close` — 关闭一个curl会话

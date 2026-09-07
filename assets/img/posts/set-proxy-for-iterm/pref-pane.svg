@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- title strip -->
+  <text x="80" y="60" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="16" fill="#94a3b8">Shadowsocks · HTTP Proxy Preference</text>
+
+  <!-- preference window card -->
+  <rect x="80" y="90" width="680" height="720" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="138" x2="760" y2="138" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="114" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="114" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="114" r="7" fill="#28c840"/>
+  <text x="420" y="120" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">Shadowsocks — Preferences</text>
+
+  <!-- section label -->
+  <g font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="20" font-weight="700" fill="#f1f5f9">
+    <text x="112" y="186">HTTP Proxy Preference</text>
+  </g>
+
+  <!-- form rows -->
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="112" y="240"><tspan fill="#94a3b8">Listen Address:</tspan></text>
+    <text x="340" y="240"><tspan fill="#cbd5e1">127.0.0.1</tspan></text>
+
+    <text x="112" y="290"><tspan fill="#94a3b8">SOCKS5 Port:</tspan></text>
+    <text x="340" y="290"><tspan fill="#5d6f92">1080</tspan></text>
+  </g>
+
+  <!-- highlighted row -->
+  <rect x="100" y="318" width="640" height="44" rx="8" fill="#fbbf24" opacity="0.09"/>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="20">
+    <text x="112" y="348"><tspan fill="#fbbf24" font-weight="700">HTTP Proxy Port:</tspan></text>
+    <text x="380" y="348"><tspan fill="#fbbf24" font-weight="700">1087</tspan></text>
+  </g>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="112" y="406"><tspan fill="#94a3b8">Proxy Helper:</tspan></text>
+    <text x="340" y="406"><tspan fill="#5d6f92">Auto</tspan></text>
+  </g>
+
+  <!-- separator -->
+  <line x1="112" y1="440" x2="728" y2="440" stroke="#27385e" stroke-width="1"/>
+
+  <!-- explanation inside card -->
+  <g font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">
+    <text x="112" y="480">SS 在本地起两个端口：</text>
+    <text x="112" y="516"><tspan fill="#60a5fa">SOCKS5  (1080)</tspan><tspan fill="#94a3b8"> — 系统代理用这个</tspan></text>
+    <text x="112" y="548"><tspan fill="#34d399">HTTP    (1087)</tspan><tspan fill="#94a3b8"> — 终端代理用这个</tspan></text>
+  </g>
+
+  <g font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#5d6f92">
+    <text x="112" y="600">终端里的 curl / git / go get 等工具</text>
+    <text x="112" y="632">只认 http_proxy 环境变量，不认 SOCKS5。</text>
+  </g>
+
+  <!-- port badge -->
+  <rect x="112" y="680" width="260" height="56" rx="10" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.55"/>
+  <text x="242" y="715" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="20" fill="#fbbf24">http://127.0.0.1:1087</text>
+
+  <!-- ================= right side: comparison chips ================= -->
+  <rect x="800" y="90" width="720" height="340" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <g font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="24" font-weight="700" fill="#f1f5f9">
+    <text x="832" y="140">系统代理 vs 终端代理</text>
+  </g>
+
+  <!-- chip: socks5 (wrong for terminal) -->
+  <rect x="832" y="180" width="660" height="80" rx="12" fill="#1c2a4d" stroke="#f472b6" stroke-opacity="0.55"/>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="860" y="216"><tspan fill="#f472b6" font-weight="700">SOCKS5</tspan><tspan fill="#94a3b8">  系统代理（浏览器认）</tspan></text>
+    <text x="860" y="246"><tspan fill="#5d6f92">终端里的命令行工具 → 不认</tspan></text>
+  </g>
+
+  <!-- chip: http_proxy (correct) -->
+  <rect x="832" y="290" width="660" height="80" rx="12" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="860" y="326"><tspan fill="#34d399" font-weight="700">http_proxy</tspan><tspan fill="#94a3b8">  环境变量（终端认）</tspan></text>
+    <text x="860" y="356"><tspan fill="#5d6f92">curl / git / go get → 走 HTTP 代理端口</tspan></text>
+  </g>
+
+  <!-- connector -->
+  <g fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M 760 340 C 780 340, 780 220, 800 220"/>
+    <path d="M 760 540 C 780 540, 780 330, 800 330"/>
+  </g>
+
+  <!-- bottom right: alias card -->
+  <rect x="800" y="460" width="720" height="340" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="800" y1="508" x2="1520" y2="508" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="832" cy="484" r="7" fill="#ff5f57"/>
+  <circle cx="860" cy="484" r="7" fill="#febc2e"/>
+  <circle cx="888" cy="484" r="7" fill="#28c840"/>
+  <text x="1160" y="490" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">~/.zshrc</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="17">
+    <text x="832" y="546"><tspan fill="#5d6f92"># alias for proxy</tspan></text>
+    <text x="832" y="582"><tspan fill="#34d399">alias</tspan><tspan fill="#cbd5e1"> proxy=</tspan><tspan fill="#fbbf24">"export http_proxy=http://127.0.0.1:1087</tspan></text>
+    <text x="832" y="614"><tspan fill="#fbbf24">  &amp;&amp; export https_proxy=http://127.0.0.1:1087"</tspan></text>
+    <text x="832" y="660"><tspan fill="#34d399">alias</tspan><tspan fill="#cbd5e1"> unproxy=</tspan><tspan fill="#fbbf24">"unset http_proxy &amp;&amp; unset https_proxy"</tspan></text>
+    <text x="832" y="706"><tspan fill="#34d399">alias</tspan><tspan fill="#cbd5e1"> ip=</tspan><tspan fill="#fbbf24">"curl https://ip.cn"</tspan></text>
+  </g>
+
+  <!-- chips at bottom -->
+  <rect x="832" y="740" width="180" height="44" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="922" y="769" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#34d399">proxy</text>
+  <rect x="1032" y="740" width="180" height="44" rx="10" fill="#1c2a4d" stroke="#f472b6" stroke-opacity="0.55"/>
+  <text x="1122" y="769" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#f472b6">unproxy</text>
+  <rect x="1232" y="740" width="180" height="44" rx="10" fill="#1c2a4d" stroke="#60a5fa" stroke-opacity="0.55"/>
+  <text x="1322" y="769" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#60a5fa">ip</text>
+</svg>

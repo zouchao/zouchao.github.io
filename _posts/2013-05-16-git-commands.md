@@ -7,8 +7,10 @@ tags:
     - 版本控制
 categories:
     - git
+image:
+    path: /assets/img/posts/git-commands/cover.png
+    alt: Git 常用命令速查，远程仓库、分支、标签、子模块与版本回退
 ---
-### 1) 远程仓库相关命令
 
 > 检出仓库：`$ git clone git://github.com/jquery/jquery.git`  
 > 查看远程仓库：`$ git remote -v`  

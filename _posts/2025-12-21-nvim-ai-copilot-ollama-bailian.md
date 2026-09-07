@@ -9,6 +9,9 @@ tags:
    - Copilot
 categories:
    - 工具
+image:
+    path: /assets/img/posts/nvim-ai-copilot-ollama-bailian/cover.png
+    alt: Neovim AI 三层架构：Copilot Free 自动补全、Ollama 本地手动补全、百炼大模型聊天编辑
 ---
 
 GitHub Copilot 订阅到期了。续费之前先想清楚一个问题：**编辑器里的 AI 能力，到底需要几层、每层用什么最划算？** 折腾完的结论是三层分工——云端免费档管自动补全、本地模型管手动补全、国产大模型管聊天和改代码。这篇记录架构和一路踩的坑（最后一个键位冲突藏得极深）。

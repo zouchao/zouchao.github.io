@@ -7,6 +7,9 @@ tags:
     - git
 categories:
     - git
+image:
+    path: /assets/img/posts/centos-install-git/cover.png
+    alt: CentOS 源码编译安装 git，从依赖安装到 make install
 ---
 centos的yum源中没有git，所以需要源码安装。留文以作记录。
 #### 依赖包安装
