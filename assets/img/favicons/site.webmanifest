@@ -12,11 +12,11 @@
       "src": "/assets/img/favicons/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/index.html",
-  "theme_color": "#d04a1b",
+  "theme_color": "#e52e04",
   "background_color": "#ffffff",
   "display": "standalone"
 }
