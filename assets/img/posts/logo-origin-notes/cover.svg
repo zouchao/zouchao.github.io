@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.22" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.85" r="0.6">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">&lt;? ZouChao ?&gt;</text>
+  <rect x="780" y="88" width="14" height="66" rx="2" fill="#fbbf24" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">艾斯的帽子 · 人面蛇身 · 姓名首字母 · PHP 标签里的自画像</text>
+  <text x="1520" y="212" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">assets/img/favicons/favicon.svg</text>
+
+  <!-- ================= the real logo ================= -->
+  <image href="logo-transparent.png" x="120" y="216" width="567" height="600"/>
+
+  <!-- ================= connectors ================= -->
+  <g fill="none" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M 661 427 C 800 427, 830 316, 964 316"/>
+    <path d="M 592 515 C 770 515, 800 458, 964 458"/>
+    <path d="M 521 591 C 700 591, 800 600, 964 600"/>
+    <path d="M 507 757 C 700 757, 800 742, 964 742"/>
+  </g>
+
+  <!-- ================= part cards ================= -->
+  <!-- card 1: hat -->
+  <rect x="980" y="260" width="540" height="112" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="1012" y="308" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="24" font-weight="700" fill="#f1f5f9">帽子 · 艾斯的造型</text>
+  <text x="1012" y="346" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#fbbf24">ONE PIECE 艾斯</tspan><tspan fill="#94a3b8"> → 宽檐 + 两个圆徽章位</tspan></text>
+
+  <!-- card 2: php tags -->
+  <rect x="980" y="402" width="540" height="112" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="1012" y="450" font-size="24" font-weight="700"><tspan font-family="SF Mono, Menlo, Consolas, monospace" fill="#a78bfa">&lt;? ?&gt;</tspan><tspan font-family="PingFang SC, Hiragino Sans GB, sans-serif" fill="#f1f5f9"> · PHP 开闭标签</tspan></text>
+  <text x="1012" y="488" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#a78bfa">耳 &lt; &gt; · 眼 ?</tspan><tspan fill="#94a3b8"> → 一张脸读成一对标签</tspan></text>
+
+  <!-- card 3: initials -->
+  <rect x="980" y="544" width="540" height="112" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="1012" y="592" font-size="24" font-weight="700"><tspan font-family="SF Mono, Menlo, Consolas, monospace" fill="#fbbf24">z + c</tspan><tspan font-family="PingFang SC, Hiragino Sans GB, sans-serif" fill="#f1f5f9"> · 邹超</tspan></text>
+  <text x="1012" y="630" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#fbbf24">鼻嘴 z · 蛇身 c</tspan><tspan fill="#94a3b8"> → 姓名首字母</tspan></text>
+
+  <!-- card 4: zodiac -->
+  <rect x="980" y="686" width="540" height="112" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="1012" y="734" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="24" font-weight="700"><tspan fill="#34d399">人面蛇身</tspan><tspan fill="#f1f5f9"> · 属相蛇</tspan></text>
+  <text x="1012" y="772" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17"><tspan fill="#34d399">1989 己巳年</tspan><tspan fill="#94a3b8"> → 身体是一条蛇</tspan></text>
+</svg>
