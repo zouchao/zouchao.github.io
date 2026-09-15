@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.2" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+    <g id="lockGlyph" fill="currentColor">
+      <rect x="-7" y="-1" width="14" height="10" rx="2.5"/>
+      <path d="M-4,-1 v-3 a4,4 0 0 1 8,0 v3" fill="none" stroke="currentColor" stroke-width="2"/>
+    </g>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">Caffeine</text>
+  <rect x="516" y="88" width="14" height="66" rx="2" fill="#34d399" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">check-then-act 竞态 · cache.get 原子加载 · CHM 桶级锁</text>
+  <text x="1520" y="212" text-anchor="end" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#94a3b8" opacity="0.45">token response is empty</text>
+
+  <!-- ================= left card: incident log ================= -->
+  <rect x="80" y="250" width="680" height="430" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="298" x2="760" y2="298" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="274" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="274" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="274" r="7" fill="#28c840"/>
+  <text x="420" y="280" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">事故日志 · 16:48:27</text>
+
+  <!-- highlighted miss row -->
+  <rect x="100" y="418" width="640" height="38" rx="8" fill="#fbbf24" opacity="0.09"/>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="19">
+    <text x="112" y="348"><tspan fill="#5d6f92">16:48:27</tspan><tspan fill="#cbd5e1"> 线程A: 缓存 miss，开始获取 token</tspan></text>
+    <text x="112" y="444"><tspan fill="#5d6f92">16:48:27</tspan><tspan fill="#fbbf24" font-weight="700"> 线程B: 缓存 miss，开始获取 token</tspan></text>
+    <text x="112" y="484"><tspan fill="#5d6f92">16:48:28</tspan><tspan fill="#34d399"> 线程B: 获取成功，写入缓存</tspan></text>
+    <text x="112" y="524"><tspan fill="#5d6f92">16:48:28</tspan><tspan fill="#f472b6"> 线程A: token 响应为空 → 抛异常</tspan></text>
+  </g>
+
+  <!-- chips -->
+  <rect x="112" y="574" width="300" height="50" rx="10" fill="#1c2a4d" stroke="#f472b6" stroke-opacity="0.55"/>
+  <text x="262" y="606" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18"><tspan fill="#f472b6">getIfPresent</tspan><tspan fill="#5d6f92"> + </tspan><tspan fill="#f472b6">put</tspan><tspan fill="#94a3b8" font-family="PingFang SC, Hiragino Sans GB, sans-serif"> 非原子</tspan></text>
+  <rect x="428" y="574" width="300" height="50" rx="10" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.55"/>
+  <text x="578" y="606" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18"><tspan fill="#fbbf24">缓存击穿</tspan><tspan fill="#5d6f92"> / </tspan><tspan fill="#fbbf24">stampede</tspan></text>
+
+  <!-- ================= connector ================= -->
+  <line x1="766" y1="465" x2="834" y2="465" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ================= right card: the fix ================= -->
+  <rect x="840" y="250" width="680" height="430" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="840" y1="298" x2="1520" y2="298" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="872" cy="274" r="7" fill="#ff5f57"/>
+  <circle cx="900" cy="274" r="7" fill="#febc2e"/>
+  <circle cx="928" cy="274" r="7" fill="#28c840"/>
+  <text x="1180" y="280" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">修复 · cache.get(key, fn)</text>
+
+  <!-- highlighted fix row -->
+  <rect x="860" y="356" width="640" height="38" rx="8" fill="#fbbf24" opacity="0.09"/>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="19">
+    <text x="872" y="344"><tspan fill="#5d6f92" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="16">两行换一行：</tspan></text>
+    <text x="872" y="382"><tspan fill="#cbd5e1">Token t = </tspan><tspan fill="#34d399" font-weight="700">cache.get</tspan><tspan fill="#cbd5e1">(key, k -&gt; load());</tspan></text>
+    <text x="872" y="624" font-size="20" font-family="PingFang SC, Hiragino Sans GB, sans-serif"><tspan fill="#34d399" font-weight="700">✓ 并发双取 token，不再发生</tspan></text>
+    <text x="872" y="656" font-size="15" font-family="PingFang SC, Hiragino Sans GB, sans-serif" fill="#5d6f92">同 key 加载函数最多执行一次，其余线程阻塞等待后直接复用</text>
+  </g>
+
+  <!-- javadoc keyword boxes -->
+  <rect x="872" y="440" width="130" height="42" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="937" y="467" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#34d399">atomically</text>
+  <rect x="1018" y="440" width="232" height="42" rx="10" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.55"/>
+  <text x="1134" y="467" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#fbbf24">at most once per key</text>
+  <rect x="1266" y="440" width="171" height="42" rx="10" fill="#1c2a4d" stroke="#f472b6" stroke-opacity="0.55"/>
+  <text x="1352" y="467" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="17" fill="#f472b6">may be blocked</text>
+
+  <!-- chips -->
+  <rect x="872" y="520" width="250" height="50" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="997" y="551" text-anchor="middle" font-size="17"><tspan fill="#34d399" font-family="SF Mono, Menlo, Consolas, monospace">single-flight</tspan><tspan fill="#94a3b8" font-family="PingFang SC, Hiragino Sans GB, sans-serif"> 并发合并</tspan></text>
+  <rect x="1142" y="520" width="300" height="50" rx="10" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.55"/>
+  <text x="1292" y="551" text-anchor="middle" font-size="17"><tspan fill="#fbbf24" font-family="SF Mono, Menlo, Consolas, monospace">refreshAfterWrite</tspan><tspan fill="#94a3b8" font-family="PingFang SC, Hiragino Sans GB, sans-serif"> 异步刷新</tspan></text>
+
+  <!-- ================= bottom strip: mechanism ================= -->
+  <rect x="80" y="730" width="1440" height="90" rx="14" fill="#101a31" stroke="#27385e" stroke-width="1.5"/>
+  <use href="#lockGlyph" transform="translate(120, 767)" color="#34d399"/>
+  <text x="144" y="781" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="18" fill="#94a3b8">只执行一次的原理</text>
+
+  <rect x="316" y="747" width="311" height="56" rx="10" fill="#1c2a4d" stroke="#27385e" stroke-width="1.5"/>
+  <text x="471" y="781" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17"><tspan fill="#34d399">线程A</tspan><tspan fill="#94a3b8"> 抢桶锁执行 loader</tspan></text>
+  <line x1="633" y1="775" x2="673" y2="775" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <rect x="679" y="747" width="255" height="56" rx="10" fill="#1c2a4d" stroke="#27385e" stroke-width="1.5"/>
+  <text x="806" y="781" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17"><tspan fill="#f472b6">线程B</tspan><tspan fill="#94a3b8"> 阻塞在 </tspan><tspan fill="#94a3b8" font-family="SF Mono, Menlo, Consolas, monospace">synchronized</tspan></text>
+  <line x1="940" y1="775" x2="980" y2="775" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <rect x="986" y="747" width="227" height="56" rx="10" fill="#1c2a4d" stroke="#27385e" stroke-width="1.5"/>
+  <text x="1099" y="781" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17"><tspan fill="#34d399">二次检查</tspan><tspan fill="#94a3b8"> → 返回同一值</tspan></text>
+  <line x1="1219" y1="775" x2="1259" y2="775" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <rect x="1265" y="747" width="210" height="56" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="1370" y="781" text-anchor="middle" font-size="17"><tspan fill="#34d399" font-family="SF Mono, Menlo, Consolas, monospace">loader</tspan><tspan fill="#34d399" font-family="PingFang SC, Hiragino Sans GB, sans-serif"> 只跑一次</tspan></text>
+</svg>
