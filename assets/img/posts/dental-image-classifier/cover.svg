@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.12" cy="0.12" r="0.6">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.88" cy="0.88" r="0.55">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header motif -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">ResNet-18</text>
+  <!-- cursor: 8 chars × 88 × 0.60 + 14 = 422.4 + 14 = 436, x = 80 + 436 = 516 -->
+  <rect x="580" y="88" width="14" height="66" rx="2" fill="#34d399" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">4000 张牙科照片 · 10 分类 · 迁移学习到 ONNX 部署</text>
+
+  <!-- ========== terminal card: train_classifier.py ========== -->
+  <rect x="80" y="250" width="720" height="330" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="80" y1="298" x2="800" y2="298" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="274" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="274" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="274" r="7" fill="#28c840"/>
+  <text x="440" y="280" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">train_classifier.py</text>
+
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="18">
+    <text x="112" y="338"><tspan fill="#5d6f92"># fine-tune ResNet-18 on dental images</tspan></text>
+    <text x="112" y="370"><tspan fill="#e2e8f0">model = </tspan><tspan fill="#60a5fa">resnet18</tspan><tspan fill="#e2e8f0">(weights=</tspan><tspan fill="#fbbf24">IMAGENET1K_V1</tspan><tspan fill="#e2e8f0">)</tspan></text>
+    <text x="112" y="402"><tspan fill="#e2e8f0">model.fc = </tspan><tspan fill="#60a5fa">Linear</tspan><tspan fill="#e2e8f0">(</tspan><tspan fill="#a78bfa">512</tspan><tspan fill="#e2e8f0">, </tspan><tspan fill="#34d399">10</tspan><tspan fill="#e2e8f0">)</tspan></text>
+    <text x="112" y="450"><tspan fill="#5d6f92"># ⚠ no horizontal flip — swaps L/R</tspan></text>
+    <text x="112" y="482"><tspan fill="#e2e8f0">augment = [</tspan><tspan fill="#60a5fa">RandomCrop</tspan><tspan fill="#e2e8f0">(</tspan><tspan fill="#a78bfa">224</tspan><tspan fill="#e2e8f0">), </tspan><tspan fill="#60a5fa">Rotate</tspan><tspan fill="#e2e8f0">(±</tspan><tspan fill="#a78bfa">10</tspan><tspan fill="#e2e8f0">°)]</tspan></text>
+    <text x="112" y="514"><tspan fill="#e2e8f0">optimizer = </tspan><tspan fill="#60a5fa">AdamW</tspan><tspan fill="#e2e8f0">(lr=</tspan><tspan fill="#fbbf24">3e-4</tspan><tspan fill="#e2e8f0">)</tspan></text>
+  </g>
+
+  <!-- highlight row: no horizontal flip -->
+  <rect x="100" y="428" width="680" height="32" rx="8" fill="#fbbf24" opacity="0.09"/>
+
+  <!-- ========== RIGHT: VL vs ResNet comparison ========== -->
+  <!-- VL card -->
+  <rect x="860" y="250" width="300" height="200" rx="14" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <text x="892" y="286" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="20" font-weight="700" fill="#94a3b8">VL 大模型（零样本）</text>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="17">
+    <text x="892" y="324"><tspan fill="#5d6f92">准确率</tspan><tspan fill="#f472b6" dx="40">73.6%</tspan></text>
+    <text x="892" y="356"><tspan fill="#5d6f92">延迟</tspan><tspan fill="#f472b6" dx="56">20-30s</tspan></text>
+    <text x="892" y="388"><tspan fill="#5d6f92">微笑/闭嘴</tspan><tspan fill="#f472b6" dx="8">0%</tspan></text>
+    <text x="892" y="420"><tspan fill="#5d6f92">上颌/下颌</tspan><tspan fill="#f472b6" dx="8">12.5%</tspan></text>
+  </g>
+
+  <!-- ResNet card -->
+  <rect x="1220" y="250" width="300" height="200" rx="14" fill="#131d35" stroke="#34d399" stroke-opacity="0.6" stroke-width="1.5"/>
+  <text x="1252" y="286" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="20" font-weight="700" fill="#34d399">ResNet-18（微调）</text>
+  <g font-family="SF Mono, Menlo, Consolas, monospace" font-size="17">
+    <text x="1252" y="324"><tspan fill="#5d6f92">准确率</tspan><tspan fill="#34d399" dx="40">98.5%</tspan></text>
+    <text x="1252" y="356"><tspan fill="#5d6f92">延迟</tspan><tspan fill="#34d399" dx="56">6ms</tspan></text>
+    <text x="1252" y="388"><tspan fill="#5d6f92">微笑/闭嘴</tspan><tspan fill="#34d399" dx="8">100%</tspan></text>
+    <text x="1252" y="420"><tspan fill="#5d6f92">上颌/下颌</tspan><tspan fill="#34d399" dx="8">100%</tspan></text>
+  </g>
+
+  <!-- VS label -->
+  <text x="1190" y="360" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#27385e">VS</text>
+
+  <!-- WINNER chip -->
+  <!-- checkmark badge -->
+  <circle cx="1500" cy="264" r="14" fill="#34d399" opacity="0.18"/>
+  <path d="M1492,264 l5,5 l9,-10" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ========== BOTTOM: pipeline flow ========== -->
+  <rect x="80" y="620" width="1440" height="200" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+
+  <!-- pipeline title -->
+  <text x="120" y="660" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="20" font-weight="700" fill="#f1f5f9">全链路流水线</text>
+
+  <!-- pipeline nodes -->
+  <!-- 1: OSS 扫描 -->
+  <rect x="120" y="688" width="160" height="76" rx="10" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="200" y="718" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="16" font-weight="700" fill="#fbbf24">OSS 扫描</text>
+  <text x="200" y="744" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#94a3b8">4000 张</text>
+
+  <!-- arrow -->
+  <line x1="280" y1="726" x2="330" y2="726" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- 2: 清洗 -->
+  <rect x="340" y="688" width="160" height="76" rx="10" fill="#1c2a4d" stroke="#f472b6" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="420" y="718" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="16" font-weight="700" fill="#f472b6">清洗</text>
+  <text x="420" y="744" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#94a3b8">去噪 7%</text>
+
+  <!-- arrow -->
+  <line x1="500" y1="726" x2="550" y2="726" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- 3: 训练 -->
+  <rect x="560" y="688" width="160" height="76" rx="10" fill="#1c2a4d" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="640" y="718" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="16" font-weight="700" fill="#a78bfa">训练</text>
+  <text x="640" y="744" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#94a3b8">15 min MPS</text>
+
+  <!-- arrow -->
+  <line x1="720" y1="726" x2="770" y2="726" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- 4: ONNX -->
+  <rect x="780" y="688" width="160" height="76" rx="10" fill="#1c2a4d" stroke="#60a5fa" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="860" y="718" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#60a5fa">ONNX</text>
+  <text x="860" y="744" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#94a3b8">fp16 21.3MB</text>
+
+  <!-- arrow -->
+  <line x1="940" y1="726" x2="990" y2="726" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- 5: 部署 -->
+  <rect x="1000" y="688" width="160" height="76" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="1080" y="718" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#34d399">FastAPI</text>
+  <text x="1080" y="744" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#94a3b8">6ms/张</text>
+
+  <!-- arrow -->
+  <line x1="1160" y1="726" x2="1210" y2="726" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- 6: 自动分类 -->
+  <rect x="1220" y="688" width="260" height="76" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.6" stroke-width="1.5"/>
+  <text x="1350" y="718" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="16" font-weight="700" fill="#34d399">自动分类上传</text>
+  <text x="1350" y="744" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#94a3b8">10 类 · 置信度 ≥ 0.7</text>
+
+  <!-- ========== stat chips row ========== -->
+  <rect x="860" y="490" width="138" height="50" rx="10" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="929" y="522" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#34d399">98.5%</text>
+
+  <rect x="1018" y="490" width="120" height="50" rx="10" fill="#1c2a4d" stroke="#60a5fa" stroke-opacity="0.55"/>
+  <text x="1078" y="522" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#60a5fa">6ms</text>
+
+  <rect x="1158" y="490" width="138" height="50" rx="10" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.55"/>
+  <text x="1227" y="522" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#fbbf24">21.3MB</text>
+
+  <rect x="1316" y="490" width="204" height="50" rx="10" fill="#1c2a4d" stroke="#a78bfa" stroke-opacity="0.55"/>
+  <text x="1418" y="522" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="18" fill="#a78bfa">10 CLASSES</text>
+
+  <!-- chip labels -->
+  <text x="929" y="562" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="13" fill="#5d6f92">ACCURACY</text>
+  <text x="1078" y="562" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="13" fill="#5d6f92">INFERENCE</text>
+  <text x="1227" y="562" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="13" fill="#5d6f92">FP16 ONNX</text>
+  <text x="1418" y="562" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="13" fill="#5d6f92">分类数</text>
+
+</svg>
