@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.15" cy="0.15" r="0.65">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.85" cy="0.85" r="0.6">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#8ea2c8" opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5f92"/>
+    </marker>
+    <marker id="arrowTeal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#34d399" opacity="0.6"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#60a5fa" opacity="0.6"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glowTL)"/>
+  <rect width="1600" height="900" fill="url(#glowBR)"/>
+
+  <!-- header motif: L4 / L7 -->
+  <text x="80" y="152" font-family="SF Mono, Menlo, Consolas, monospace" font-size="88" font-weight="700" fill="#f8fafc">L4 / L7</text>
+  <!-- cursor: 7 chars × 88 × 0.60 + 14 = 369.6 + 14 ≈ 384, x = 80 + 384 = 464 -->
+  <rect x="464" y="88" width="14" height="66" rx="2" fill="#34d399" opacity="0.9"/>
+  <text x="84" y="204" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="27" fill="#94a3b8">四层与七层负载均衡 · 概念对比 · 选型指南</text>
+
+  <!-- ========== LEFT: L4 card ========== -->
+  <rect x="80" y="270" width="680" height="290" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <!-- card title bar -->
+  <line x1="80" y1="318" x2="760" y2="318" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="112" cy="294" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="294" r="7" fill="#febc2e"/>
+  <circle cx="168" cy="294" r="7" fill="#28c840"/>
+  <text x="420" y="300" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">Layer 4 — 传输层</text>
+
+  <!-- L4 content -->
+  <text x="112" y="356" font-family="SF Mono, Menlo, Consolas, monospace" font-size="20" font-weight="700" fill="#34d399">四层负载均衡</text>
+  <text x="112" y="394" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">只看 IP + Port，不解析应用层内容</text>
+  <text x="112" y="432" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">透传 TCP/UDP 连接，几乎线速转发</text>
+
+  <!-- L4 chips -->
+  <rect x="112" y="464" width="120" height="38" rx="8" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="172" y="490" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#34d399">LVS</text>
+  <rect x="248" y="464" width="120" height="38" rx="8" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="308" y="490" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#34d399">NLB</text>
+  <rect x="384" y="464" width="168" height="38" rx="8" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="468" y="490" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#34d399">HAProxy TCP</text>
+  <rect x="568" y="464" width="120" height="38" rx="8" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.55"/>
+  <text x="628" y="490" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#34d399">DPVS</text>
+
+  <!-- L4 icon: simple network stack -->
+  <g transform="translate(690, 350)">
+    <rect x="0" y="0" width="40" height="10" rx="3" fill="#34d399" opacity="0.3"/>
+    <rect x="0" y="14" width="40" height="10" rx="3" fill="#34d399" opacity="0.5"/>
+    <rect x="0" y="28" width="40" height="10" rx="3" fill="#34d399" opacity="0.2"/>
+    <rect x="0" y="42" width="40" height="10" rx="3" fill="#34d399" opacity="0.15"/>
+  </g>
+
+  <!-- ========== RIGHT: L7 card ========== -->
+  <rect x="840" y="270" width="680" height="290" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+  <line x1="840" y1="318" x2="1520" y2="318" stroke="#27385e" stroke-width="1.5"/>
+  <circle cx="872" cy="294" r="7" fill="#ff5f57"/>
+  <circle cx="900" cy="294" r="7" fill="#febc2e"/>
+  <circle cx="928" cy="294" r="7" fill="#28c840"/>
+  <text x="1180" y="300" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#7d8ca8">Layer 7 — 应用层</text>
+
+  <!-- L7 content -->
+  <text x="872" y="356" font-family="SF Mono, Menlo, Consolas, monospace" font-size="20" font-weight="700" fill="#60a5fa">七层负载均衡</text>
+  <text x="872" y="394" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">解析 URL / Header / Cookie / Body</text>
+  <text x="872" y="432" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#94a3b8">精细路由、SSL 卸载、WAF、灰度发布</text>
+
+  <!-- L7 chips -->
+  <rect x="872" y="464" width="134" height="38" rx="8" fill="#1c2a4d" stroke="#60a5fa" stroke-opacity="0.55"/>
+  <text x="939" y="490" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#60a5fa">Nginx</text>
+  <rect x="1022" y="464" width="134" height="38" rx="8" fill="#1c2a4d" stroke="#60a5fa" stroke-opacity="0.55"/>
+  <text x="1089" y="490" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#60a5fa">Envoy</text>
+  <rect x="1172" y="464" width="108" height="38" rx="8" fill="#1c2a4d" stroke="#60a5fa" stroke-opacity="0.55"/>
+  <text x="1226" y="490" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#60a5fa">ALB</text>
+  <rect x="1296" y="464" width="142" height="38" rx="8" fill="#1c2a4d" stroke="#60a5fa" stroke-opacity="0.55"/>
+  <text x="1367" y="490" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#60a5fa">Traefik</text>
+
+  <!-- L7 icon: HTTP magnifier -->
+  <g transform="translate(1450, 350)">
+    <circle cx="14" cy="14" r="14" fill="none" stroke="#60a5fa" stroke-width="2" opacity="0.4"/>
+    <line x1="24" y1="24" x2="36" y2="36" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
+    <text x="14" y="19" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#60a5fa" opacity="0.6">H</text>
+  </g>
+
+  <!-- ========== BOTTOM: architecture flow ========== -->
+  <rect x="80" y="610" width="1440" height="210" rx="16" fill="#131d35" stroke="#27385e" stroke-width="1.5"/>
+
+  <!-- flow title -->
+  <text x="120" y="652" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="20" font-weight="700" fill="#f1f5f9">经典三级架构</text>
+  <text x="310" y="652" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="17" fill="#5d6f92">L4 在前扛量，L7 在后做智能路由</text>
+
+  <!-- Client node -->
+  <rect x="120" y="686" width="148" height="100" rx="12" fill="#1c2a4d" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="194" y="726" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="18" font-weight="700" fill="#fbbf24">客户端</text>
+  <text x="194" y="756" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#94a3b8">HTTP/TCP</text>
+
+  <!-- Arrow: client → L4 -->
+  <line x1="268" y1="736" x2="370" y2="736" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- L4 node -->
+  <rect x="380" y="686" width="200" height="100" rx="12" fill="#1c2a4d" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="480" y="722" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="20" font-weight="700" fill="#34d399">L4</text>
+  <text x="480" y="750" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="15" fill="#94a3b8">LVS / NLB</text>
+  <text x="480" y="772" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="13" fill="#5d6f92">扛百万连接</text>
+
+  <!-- Arrow: L4 → L7 -->
+  <line x1="580" y1="736" x2="682" y2="736" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- L7 node -->
+  <rect x="692" y="686" width="200" height="100" rx="12" fill="#1c2a4d" stroke="#60a5fa" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="792" y="722" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="20" font-weight="700" fill="#60a5fa">L7</text>
+  <text x="792" y="750" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="15" fill="#94a3b8">Nginx / Envoy</text>
+  <text x="792" y="772" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="13" fill="#5d6f92">智能路由 · SSL 卸载</text>
+
+  <!-- Arrows: L7 → backends (fan-out) -->
+  <line x1="892" y1="716" x2="1042" y2="706" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="892" y1="736" x2="1042" y2="736" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="892" y1="756" x2="1042" y2="766" stroke="#4a5f92" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Backend nodes -->
+  <rect x="1052" y="680" width="170" height="38" rx="8" fill="#1c2a4d" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="1137" y="706" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#a78bfa">/api/users</text>
+
+  <rect x="1052" y="724" width="170" height="38" rx="8" fill="#1c2a4d" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="1137" y="750" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#a78bfa">/api/orders</text>
+
+  <rect x="1052" y="768" width="170" height="38" rx="8" fill="#1c2a4d" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="1137" y="794" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="15" fill="#a78bfa">/static/*</text>
+
+  <!-- Backend cluster label -->
+  <text x="1280" y="706" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="13" fill="#5d6f92">用户服务</text>
+  <text x="1280" y="750" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="13" fill="#5d6f92">订单服务</text>
+  <text x="1280" y="794" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="13" fill="#5d6f92">CDN / 静态</text>
+
+  <!-- VS divider in header area -->
+  <text x="780" y="430" text-anchor="middle" font-family="SF Mono, Menlo, Consolas, monospace" font-size="36" font-weight="700" fill="#27385e">VS</text>
+
+</svg>
