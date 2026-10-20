@@ -267,5 +267,39 @@
       "isAdult": false
     }
   ],
-  "liveSources": []
+  "liveSources": [
+    {
+      "name": "📡 范明明 IPv6",
+      "url": "https://live.fanmingming.com/tv/m3u/ipv6.m3u",
+      "epg": "https://live.fanmingming.com/e.xml"
+    },
+    {
+      "name": "🌐 范明明 全量",
+      "url": "https://live.fanmingming.com/tv/m3u/global.m3u",
+      "epg": "https://live.fanmingming.com/e.xml"
+    },
+    {
+      "name": "🇨🇳 iptv-org 中国",
+      "url": "https://iptv-org.github.io/iptv/countries/cn.m3u"
+    },
+    {
+      "name": "🌍 iptv-org 全球",
+      "url": "https://iptv-org.github.io/iptv/index.m3u"
+    },
+    {
+      "name": "📺 YueChan 直播",
+      "url": "https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u",
+      "epg": "https://epg.112114.xyz/pp.xml"
+    },
+    {
+      "name": "🤖 Guovin 自动聚合",
+      "url": "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
+      "epg": "https://epg.112114.xyz/pp.xml"
+    },
+    {
+      "name": "🎯 Kimentanm APTV",
+      "url": "https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
+      "epg": "https://epg.112114.xyz/pp.xml"
+    }
+  ]
 }
