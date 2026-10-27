@@ -170,3 +170,35 @@
     opacity: 1;
   }
 }
+
+/* ── 动画 ③ 标签 hover 上浮 + 品牌色渐变 ────────────────── */
+a.tag,
+a.post-tag {
+  transition: transform 0.25s ease, background-color 0.25s ease,
+    color 0.25s ease, border-color 0.25s ease;
+}
+a.tag:hover,
+a.post-tag:hover {
+  transform: translateY(-2px);
+}
+
+/* 热门标签样式对齐标签页 a.tag：同款圆角、边框、阴影、配色 */
+a.post-tag.btn.btn-outline-primary {
+  --bs-btn-bg: transparent;
+  --bs-btn-color: var(--link-color);
+  --bs-btn-border-color: var(--tag-border);
+  --bs-btn-hover-bg: var(--tag-hover);
+  --bs-btn-hover-color: var(--link-color);
+  --bs-btn-hover-border-color: var(--tag-hover);
+  --bs-btn-active-bg: var(--tag-hover);
+  --bs-btn-active-color: var(--link-color);
+  --bs-btn-active-border-color: var(--tag-hover);
+  border-radius: 0.7em;
+  padding: 6px 8px 7px;
+  margin-right: 0.8rem;
+  line-height: 3rem;
+  letter-spacing: 0;
+  font-size: inherit;
+  font-family: inherit;
+  box-shadow: 0 0 3px 0 var(--tag-shadow);
+}
