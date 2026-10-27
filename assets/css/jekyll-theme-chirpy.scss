@@ -202,3 +202,8 @@ a.post-tag.btn.btn-outline-primary {
   font-family: inherit;
   box-shadow: 0 0 3px 0 var(--tag-shadow);
 }
+
+/* 覆盖主题 .btn.btn-outline-primary:not(.disabled):hover 的 !important 蓝色边框 */
+a.post-tag.btn.btn-outline-primary:not(.disabled):hover {
+  border-color: transparent !important;
+}
