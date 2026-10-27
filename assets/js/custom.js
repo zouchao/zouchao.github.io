@@ -96,3 +96,36 @@
 
   document.querySelectorAll('.highlight').forEach(restructure);
 })();
+
+/* ── 首页文章卡片滚动渐入 ────────────────────────────────
+ *  用 IntersectionObserver 监听 #post-list 里的 .card-wrapper，
+ *  进入视口时加 .visible 触发 CSS fade-in-up 动画，只播一次。
+ *  首屏卡片依次 stagger 100ms；滚动进入的立即播放。
+ */
+(function () {
+  'use strict';
+
+  var cards = document.querySelectorAll('#post-list .card-wrapper');
+  if (!cards.length) return;
+
+  /* 没有 IntersectionObserver 就直接全部显示 */
+  if (!('IntersectionObserver' in window)) {
+    cards.forEach(function (c) { c.classList.add('visible'); });
+    return;
+  }
+
+  var staggerIndex = 0;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var card = entry.target;
+      card.style.animationDelay = (staggerIndex * 100) + 'ms';
+      card.classList.add('visible');
+      staggerIndex++;
+      observer.unobserve(card);
+    });
+  }, { threshold: 0.08 });
+
+  cards.forEach(function (card) { observer.observe(card); });
+})();

@@ -134,3 +134,39 @@
     @include brand-accents-dark;
   }
 }
+
+/* ── 动画 ① 侧边栏头像 hover 微缩放 ─────────────────────── */
+#avatar img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#avatar img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
+}
+
+/* ── 动画 ② 首页文章卡片滚动渐入 ──────────────────────── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#post-list .card-wrapper {
+  opacity: 0; /* 初始隐藏，JS 触发后才播放动画 */
+}
+
+#post-list .card-wrapper.visible {
+  animation: fade-in-up 0.5s ease forwards;
+}
+
+/* 无 JS 兜底：直接显示，不卡内容 */
+@media (scripting: none) {
+  #post-list .card-wrapper {
+    opacity: 1;
+  }
+}
