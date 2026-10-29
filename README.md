@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/img/logo-zouchao-animated.svg" alt="ZOUCHAO" width="720">
+</p>
+
 # 邹超的博客
 
 > 记录、整理、分享 —— 一个程序猿的技术自留地
