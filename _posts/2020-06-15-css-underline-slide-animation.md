@@ -6,6 +6,9 @@ tags:
   - CSS
 categories:
   - 前端
+image:
+    path: /assets/img/posts/css-underline-slide-animation/cover.png
+    alt: 用 background-size 和 background-position 实现下划线从左到右滑入滑出
 ---
 
 给链接加个 hover 下划线不稀奇，但如果下划线能**像穿越一样滑过去**——鼠标移入时从左到右划过，移出时也从左到右消失——就像一条线从文字底部滑过然后离开，整体质感立刻不一样。这个效果不需要 JavaScript，纯 CSS 就能搞定，核心就一招：**用 `background-image` 画一条渐变线，靠 `background-size` 和 `background-position` 控制动画方向**。
