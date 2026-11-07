@@ -7,7 +7,8 @@ tags:
 categories:
   - 前端
 image:
-    path: /assets/img/posts/css-underline-slide-animation/cover.png
+    path: /assets/img/posts/css-underline-slide-animation/cover-anim.svg
+    og: /assets/img/posts/css-underline-slide-animation/cover.png
     alt: 用 background-size 和 background-position 实现下划线从左到右滑入滑出
 ---
 
